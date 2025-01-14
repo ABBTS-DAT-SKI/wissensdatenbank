@@ -1,0 +1,38 @@
+site_name: Data Science Wissensdatenbank
+repo_url: https://github.com/ABBTS-DAT-SKI/wissensdatenbank
+site_url: https://abbts-dat-ski.github.io/wissensdatenbank/
+site_description: Wissensdatenbank für das Modul DAT-SKI
+edit_uri: edit/wissensdatenbank/docs/
+repo_name: ABBTS-DAT-SKI/wissensdatenbank
+
+nav:
+  - Startseite: index.md
+plugins:
+  - search
+theme:
+  name: material
+  feature:
+    tabs: true
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    logo: fontawesome/solid/flask
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.snippets

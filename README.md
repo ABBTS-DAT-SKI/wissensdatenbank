@@ -1,2 +1,2 @@
-# modul-unterlagen
-Materialien und Unterlagen für das Modul.
+# Data Science Wissensdatenbank
+Wissensdatenbank für das Modul DAT-SKI.
