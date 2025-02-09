@@ -20,6 +20,8 @@ theme:
   name: material
   feature:
     tabs: true
+  features:
+    - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
