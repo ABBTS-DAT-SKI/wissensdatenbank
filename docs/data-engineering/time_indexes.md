@@ -26,13 +26,13 @@ print(df)
 
 **Ausgabe:**
 ```txt
-            Temperatur
-Datum                  
-2025-02-03        22.5
-2025-02-01        23.0
-2025-02-02         <NA>
-2025-02-05        24.0
-2025-02-04        25.0
+           Temperatur
+Datum
+2025-02-03       22.5
+2025-02-01       23.0
+2025-02-02       <NA>
+2025-02-05       24.0
+2025-02-04       25.0
 ```
 
 ### Erklärung:
@@ -53,13 +53,13 @@ print(df)
 
 **Ausgabe:**
 ```txt
-            Temperatur
-Datum                  
-2025-02-01        23.0
-2025-02-02         <NA>
-2025-02-03        22.5
-2025-02-04        25.0
-2025-02-05        24.0
+           Temperatur
+Datum
+2025-02-01       23.0
+2025-02-02       <NA>
+2025-02-03       22.5
+2025-02-04       25.0
+2025-02-05       24.0
 ```
 
 ## Fehlende Daten finden
@@ -71,15 +71,15 @@ Fehlende Werte sind häufig in Zeitreihen und können durch verschiedene Faktore
 ```python
 # Ausgabe der Zeilen mit fehlenden Daten
 print("Zeilen mit fehlenden Daten:")
-print(df[df.isnull()])
+print(df[df.isnull().values])
 ```
 
 **Ausgabe:**
 ```txt
 Zeilen mit fehlenden Daten:
-            Temperatur
-Datum                  
-2025-02-02         <NA>
+           Temperatur
+Datum
+2025-02-02       <NA>
 ```
 
 ## Zeitzonen und Sommerzeit
@@ -103,13 +103,13 @@ print(df)
 
 **Ausgabe:**
 ```txt
-                           Temperatur
-Datum                                 
-2025-02-01 23:00:00+00:00        23.0
-2025-02-02 23:00:00+00:00         <NA>
-2025-02-03 23:00:00+00:00        22.5
-2025-02-04 23:00:00+00:00        25.0
-2025-02-05 23:00:00+00:00        24.0
+                          Temperatur
+Datum
+2025-01-31 23:00:00+00:00       23.0
+2025-02-01 23:00:00+00:00       <NA>
+2025-02-02 23:00:00+00:00       22.5
+2025-02-03 23:00:00+00:00       25.0
+2025-02-04 23:00:00+00:00       24.0
 ```
 
 **Erklärung:**
@@ -124,16 +124,16 @@ Resampling ist eine Technik, um die Frequenz einer Zeitreihe zu ändern. Wenn du
 
 Die Methode `asfreq()` wird verwendet, um die Frequenz einer Zeitreihe zu ändern, ohne die vorhandenen Werte zu interpolieren oder aufzufüllen. Wenn du die Frequenz von täglichen Daten auf stündliche Daten änderst, fügt `asfreq()` für die Stunden, für die keine Daten vorhanden sind, `NaN` (Not a Number) ein.
 
-- **Frequenz**: Die Frequenz wird mit dem Argument `'H'` (für stündlich) angegeben. Du kannst auch andere Frequenzen angeben, je nachdem, welche du benötigst. Hier sind einige häufig genutzte Frequenzen:
+- **Frequenz**: Die Frequenz wird mit dem Argument `'h'` (für stündlich) angegeben. Du kannst auch andere Frequenzen angeben, je nachdem, welche du benötigst. Hier sind einige häufig genutzte Frequenzen:
+  - `'h'` – stündlich
+  - `'min'` – minütlich
+  - `'s'` – sekundlich
   - `'D'` – täglich
-  - `'H'` – stündlich
-  - `'T'` oder `'min'` – minütlich
-  - `'S'` – sekundlich
-  - `'W'` – wöchentlich
-  - `'M'` – monatlich
-  - `'Q'` – vierteljährlich
-  - `'A'` oder `'Y'` – jährlich
   - `'B'` – Werktage
+  - `'W'` – wöchentlich
+  - `'ME'` – monatlich
+  - `'QE'` – vierteljährlich
+  - `'YE'` – jährlich
 
 - **Fehlende Daten**: Stunden, für die keine Daten vorhanden sind, werden mit `NaN` gefüllt.
 
@@ -143,7 +143,7 @@ In diesem Beispiel haben wir eine Zeitreihe mit täglichen Temperaturwerten und 
 
 ```python
 # Resampling auf stündliche Frequenz ohne Auffüllen der fehlenden Werte
-df_resampled = df.resample('H').asfreq()
+df_resampled = df.resample('h').asfreq()
 
 # Ausgabe des resampleten DataFrames ohne Auffüllen
 print(df_resampled)
@@ -151,17 +151,17 @@ print(df_resampled)
 
 **Ausgabe:**
 ```txt
-                           Temperatur
-2025-02-01 00:00:00+00:00        23.0
+                          Temperatur
+Datum
+2025-01-31 23:00:00+00:00       23.0
+2025-02-01 00:00:00+00:00        NaN
 2025-02-01 01:00:00+00:00        NaN
 2025-02-01 02:00:00+00:00        NaN
 2025-02-01 03:00:00+00:00        NaN
-2025-02-01 04:00:00+00:00        NaN
-2025-02-01 05:00:00+00:00        NaN
-2025-02-01 06:00:00+00:00        NaN
-...
-2025-02-02 00:00:00+00:00        <NA>
-2025-02-02 01:00:00+00:00        NaN
-2025-02-02 02:00:00+00:00        NaN
-...
+...                              ...
+2025-02-04 19:00:00+00:00        NaN
+2025-02-04 20:00:00+00:00        NaN
+2025-02-04 21:00:00+00:00        NaN
+2025-02-04 22:00:00+00:00        NaN
+2025-02-04 23:00:00+00:00       24.0
 ```
