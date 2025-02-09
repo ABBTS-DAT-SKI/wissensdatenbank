@@ -33,17 +33,17 @@ print(df_cleaned)
 **Ausgabe:**  
 ```txt
 Originale Sensordaten:
-           Zeitstempel  Temperatur
-0 2025-02-01 12:00        22.5
-1 2025-02-01 12:10        23.0
-2 2025-02-01 12:10        23.0
-3 2025-02-01 12:20        24.5
+          Zeitstempel  Temperatur
+0 2025-02-01 12:00:00        22.5
+1 2025-02-01 12:10:00        23.0
+2 2025-02-01 12:10:00        23.0
+3 2025-02-01 12:20:00        24.5
 
 Nach Entfernen der Duplikate basierend auf dem Zeitstempel:
-           Zeitstempel  Temperatur
-0 2025-02-01 12:00        22.5
-1 2025-02-01 12:10        23.0
-3 2025-02-01 12:20        24.5
+          Zeitstempel  Temperatur
+0 2025-02-01 12:00:00        22.5
+1 2025-02-01 12:10:00        23.0
+3 2025-02-01 12:20:00        24.5
 ```
 
 ## Beispiel 2: Duplikate vollständig entfernen  
@@ -60,7 +60,7 @@ print(df_cleaned)
 **Ausgabe:**  
 ```txt
 Nach vollständigem Entfernen der Duplikate:
-           Zeitstempel  Temperatur
-0 2025-02-01 12:00        22.5
-3 2025-02-01 12:20        24.5
+          Zeitstempel  Temperatur
+0 2025-02-01 12:00:00        22.5
+3 2025-02-01 12:20:00        24.5
 ```
