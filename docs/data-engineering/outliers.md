@@ -4,7 +4,7 @@ In Sensordaten können Ausreisser auftreten, z. B. durch fehlerhafte Messungen o
 
 ## Was ist der z-Score?  
 
-Der **z-Score** ist ein Wert, der dir hilft zu verstehen, wie weit ein bestimmter Wert vom **Durchschnitt** der anderen Werte entfernt ist. Um dies zu berechnen, verwenden wir die **Standardabweichung**, ein Maß dafür, wie stark die Werte normalerweise vom Durchschnitt abweichen.
+Der **z-Score** ist ein Wert, der dir hilft zu verstehen, wie weit ein bestimmter Wert vom **Durchschnitt** der anderen Werte entfernt ist. Um dies zu berechnen, verwenden wir die **Standardabweichung**, ein Mass dafür, wie stark die Werte normalerweise vom Durchschnitt abweichen.
 
 Die Formel für den z-Score lautet:
 
@@ -20,7 +20,7 @@ Dabei ist:
 
 ## Was ist die Standardabweichung?  
 
-Die **Standardabweichung** ist ein Maß dafür, wie weit die einzelnen Werte im Durchschnitt vom Mittelwert entfernt sind. Wenn alle Werte in etwa gleich dem Durchschnitt sind, ist die Standardabweichung klein. Wenn die Werte stark variieren, ist die Standardabweichung groß.
+Die **Standardabweichung** ist ein Mass dafür, wie weit die einzelnen Werte im Durchschnitt vom Mittelwert entfernt sind. Wenn alle Werte in etwa gleich dem Durchschnitt sind, ist die Standardabweichung klein. Wenn die Werte stark variieren, ist die Standardabweichung gross.
 
 ## Was bedeutet der z-Score?  
 
@@ -33,14 +33,14 @@ Der z-Score zeigt uns, wie weit ein Wert vom Durchschnitt entfernt ist, und gibt
 
 ## Warum ist der z-Score nützlich?  
 
-Der z-Score hilft uns zu erkennen, ob ein Wert **normal** oder **ungewöhnlich** ist. Ein hoher z-Score (z. B. > 3) oder ein sehr niedriger z-Score (z. B. < -3) deutet darauf hin, dass der Wert **weit vom Durchschnitt** entfernt liegt und daher als **Ausreißer** betrachtet werden könnte. Solche Werte kommen in einer normalen Verteilung nur selten vor.
+Der z-Score hilft uns zu erkennen, ob ein Wert **normal** oder **ungewöhnlich** ist. Ein hoher z-Score (z. B. > 3) oder ein sehr niedriger z-Score (z. B. < -3) deutet darauf hin, dass der Wert **weit vom Durchschnitt** entfernt liegt und daher als **Ausreisser** betrachtet werden könnte. Solche Werte kommen in einer normalen Verteilung nur selten vor.
 
 ## Ein einfaches Beispiel:  
 
 Stell dir vor, du misst die Temperatur an verschiedenen Tagen und bekommst Werte wie:
 - 20°C, 22°C, 21°C, 100°C, 23°C
 
-Der Durchschnitt dieser Temperaturen liegt bei **22°C**. Wenn wir die **Standardabweichung** berechnen und den z-Score für die Temperatur von **100°C** berechnen, werden wir feststellen, dass dieser Wert **weit vom Durchschnitt** entfernt ist. Der z-Score für 100°C wird sehr hoch sein, was darauf hinweist, dass dieser Wert ein **Ausreißer** ist. In einer normalen Verteilung würden Werte wie 100°C nur in **weniger als 0,3%** der Fälle vorkommen (mehr als 3 Standardabweichungen vom Durchschnitt entfernt).
+Der Durchschnitt dieser Temperaturen liegt bei **22°C**. Wenn wir die **Standardabweichung** berechnen und den z-Score für die Temperatur von **100°C** berechnen, werden wir feststellen, dass dieser Wert **weit vom Durchschnitt** entfernt ist. Der z-Score für 100°C wird sehr hoch sein, was darauf hinweist, dass dieser Wert ein **Ausreisser** ist. In einer normalen Verteilung würden Werte wie 100°C nur in **weniger als 0,3%** der Fälle vorkommen (mehr als 3 Standardabweichungen vom Durchschnitt entfernt).
 
 ## Hinweis zu Sensordaten:  
 
@@ -74,13 +74,13 @@ std_temp = df['Temperatur'].std()
 # Berechnung des z-Scores
 df['z_score'] = (df['Temperatur'] - mean_temp) / std_temp
 
-# Entfernen von Werten mit z-Score größer als 3 oder kleiner als -3
+# Entfernen von Werten mit z-Score grösser als 3 oder kleiner als -3
 df_cleaned = df[df['z_score'].abs() <= 3]
 
 # Entfernen der Spalte 'z_score'
 df_cleaned = df_cleaned.drop(columns=['z_score'])
 
-print("\nNach Entfernen der Ausreißer:")
+print("\nNach Entfernen der Ausreisser:")
 print(df_cleaned)
 ```
 
