@@ -1,4 +1,4 @@
-## Entfernen von Ausreissern mit dem z-Score  
+# Entfernen von Ausreissern mit dem z-Score  
 
 In Sensordaten können Ausreisser auftreten, z. B. durch fehlerhafte Messungen oder ungewöhnliche Ereignisse. Ein häufiger Ansatz, um solche Werte zu erkennen und zu entfernen, ist die Berechnung des z-Scores.  
 
@@ -8,7 +8,7 @@ Der z-Score gibt an, wie viele Standardabweichungen ein Datenpunkt vom Mittelwer
 **Hinweis zu Sensordaten:**  
 Das Entfernen von Ausreissern kann die Datenqualität verbessern, indem Extremwerte, die möglicherweise Fehler sind, beseitigt werden. Allerdings besteht die Gefahr, dass auch gültige, aber seltene Ereignisse entfernt werden, was zu einem Informationsverlust führen könnte.  
 
-### Beispiel: Entfernen von Ausreissern aus Temperaturdaten  
+## Beispiel: Entfernen von Ausreissern aus Temperaturdaten  
 
 ```python
 import pandas as pd
@@ -56,5 +56,5 @@ Nach Entfernen der Ausreisser basierend auf dem z-Score:
 4 2025-02-01 12:40        25.0
 ```
 
-### Erklärung zur Folge des Entfernens von Ausreissern  
+## Erklärung zur Folge des Entfernens von Ausreissern  
 Durch das Entfernen von Ausreissern können Sensordaten konsistenter und für maschinelles Lernen oder Zeitreihenanalysen besser nutzbar gemacht werden. Allerdings könnten echte, aber seltene Ereignisse (z. B. ein extremer Temperaturanstieg) ebenfalls entfernt werden. Daher sollte der Schwellenwert für den z-Score mit Bedacht gewählt und der Kontext der Daten berücksichtigt werden.
