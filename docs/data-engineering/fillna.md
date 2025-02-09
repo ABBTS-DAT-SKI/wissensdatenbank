@@ -3,11 +3,13 @@
 In der Arbeit mit Sensordaten treten oft Lücken in den Datensätzen auf, da Sensoren gelegentlich keine Messwerte liefern können. Diese fehlenden Werte (`NaN`) müssen häufig bereinigt werden, um eine korrekte Analyse und Modellierung zu ermöglichen. Die Methode `fillna` von pandas bietet eine effektive Möglichkeit, solche Lücken zu schliessen, indem fehlende Werte durch feste Werte, statistische Kennzahlen (z. B. Mittelwert) oder eine Füllstrategie wie Vorwärts- oder Rückwärtsfüllung ersetzt werden.
 
 Für Sensordaten ist diese Methode besonders nützlich, um:
+
 - Zeitreihen zu glätten und kontinuierliche Daten sicherzustellen.
 - Fehlende Werte auf Basis historischer Daten sinnvoll zu ersetzen.
 - Daten für maschinelles Lernen oder weitere Analysen vorzubereiten.
 
 **Hauptparameter für Sensordaten:**
+
 - **value**: Feste Werte, z. B. `0`, falls ein Sensorfehler oder ein erwartetes physikalisches Verhalten dies nahelegt.
 - **method**: Vorwärtsfüllung (`method='ffill'`) oder Rückwärtsfüllung (`method='bfill'`), um Messlücken basierend auf benachbarten Werten zu schliessen.
 

@@ -1,7 +1,8 @@
 # Entfernen von Duplikaten
 In der Arbeit mit Sensordaten können durch fehlerhafte Erfassung oder doppelte Übertragung Duplikate entstehen. Die Methode `drop_duplicates` von pandas ermöglicht es, solche Duplikate effizient zu entfernen und so die Daten konsistenter zu gestalten.  
 
-**Hauptparameter für Sensordaten:**  
+**Hauptparameter für Sensordaten:** 
+ 
 - **subset**: Gibt die Spalten an, auf deren Basis Duplikate geprüft werden sollen, z. B. Zeitstempel oder Sensormessungen.  
 - **keep**: Bestimmt, welches Duplikat beibehalten wird (`'first'`, `'last'` oder `False` für keines).  
 

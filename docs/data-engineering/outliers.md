@@ -13,6 +13,7 @@ z = \frac{X - \mu}{\sigma}
 \]
 
 Dabei ist:
+
 - **\(X\)**: Der Wert, den du untersuchen möchtest (z. B. eine gemessene Temperatur).
 - **\(\mu\)**: Der **Durchschnitt** der Werte (also der Mittelwert, den du aus allen Messungen berechnest).
 - **\(\sigma\)**: Die **Standardabweichung**, die angibt, wie stark sich die Werte **vom Durchschnitt** unterscheiden. Eine hohe Standardabweichung bedeutet, dass die Werte weit verstreut sind, eine niedrige bedeutet, dass sie dicht beieinander liegen.
