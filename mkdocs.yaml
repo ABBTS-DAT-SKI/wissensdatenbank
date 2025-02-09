@@ -10,7 +10,8 @@ nav:
   - Datenverarbeitung: 
     - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
     - Befüllen von fehlenden Werten: data-engineering/fillna.md
-    -  Entfernen von Ausreissern: data-engineering/outliers.md
+    - Entfernen von Ausreissern: data-engineering/outliers.md
+    - Time-Indexes: data-engineering/time_indexes.md
 
 plugins:
   - search
