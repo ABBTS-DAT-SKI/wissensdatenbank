@@ -11,8 +11,10 @@ nav:
     - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
     - Befüllen von fehlenden Werten: data-engineering/fillna.md
     -  Entfernen von Ausreissern: data-engineering/outliers.md
+
 plugins:
   - search
+
 theme:
   name: material
   feature:
@@ -40,3 +42,9 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
