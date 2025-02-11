@@ -138,7 +138,7 @@ Die Methode `resample()` wird verwendet, um die Frequenz einer Zeitreihe zu änd
   - `'QE'` – vierteljährlich
   - `'YE'` – jährlich
   
-- **Methode zur Aggregation**: Nachdem die Frequenz geändert wurde, kannst du eine Aggregationsmethode auf den resampleten Datensatz anwenden, z.B. `mean()`, `sum()`, `max()`, usw.
+**Methode zur Aggregation**: Nachdem die Frequenz geändert wurde, kannst du eine Aggregationsmethode auf den resampleten Datensatz anwenden, z.B. `mean()`, `sum()`, `max()`, usw.
 
 **Beispiel: Resampling auf stündliche Frequenz mit Mittelwert**
 
