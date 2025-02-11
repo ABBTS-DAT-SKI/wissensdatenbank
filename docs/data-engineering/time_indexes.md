@@ -114,17 +114,20 @@ Datum
 
 **Erklärung:**
 - Zunächst haben wir den `datetime`-Index in die Zeitzone `Europe/Zurich` lokalisiert.
-- Anschließend wurde der Index in die UTC-Zeitzone konvertiert.
+- Anschliessend wurde der Index in die UTC-Zeitzone konvertiert.
 
 ### Resampling einer Zeitreihe
 
 Resampling ist eine Technik, um die Frequenz einer Zeitreihe zu ändern. Wenn du zum Beispiel tägliche Daten auf stündliche Daten umstellen möchtest, kannst du Resampling verwenden. Dabei ist es wichtig, zu verstehen, wie mit fehlenden Zeitstempeln umgegangen wird.
 
-#### Erklärung zu `asfreq()`
+#### Erklärung zu `resample()`
 
-Die Methode `asfreq()` wird verwendet, um die Frequenz einer Zeitreihe zu ändern, ohne die vorhandenen Werte zu interpolieren oder aufzufüllen. Wenn du die Frequenz von täglichen Daten auf stündliche Daten änderst, fügt `asfreq()` für die Stunden, für die keine Daten vorhanden sind, `NaN` (Not a Number) ein.
+Die Methode `resample()` wird verwendet, um die Frequenz einer Zeitreihe zu ändern und dabei Daten zu aggregieren. Zum Beispiel kannst du tägliche Daten auf monatliche Daten umstellen oder stündliche Daten auf tägliche Daten reduzieren. Die Methode erlaubt es dir, eine Frequenz für die Zeitreihe zu definieren und dann eine Aggregationsmethode anzuwenden (z.B. Mittelwert, Summe, etc.).
 
-- **Frequenz**: Die Frequenz wird mit dem Argument `'h'` (für stündlich) angegeben. Du kannst auch andere Frequenzen angeben, je nachdem, welche du benötigst. Hier sind einige häufig genutzte Frequenzen:
+**Parameter von `resample()`**:
+
+- **Frequenz**: Die neue Frequenz, die du für die Zeitreihe angeben möchtest. Die Frequenz wird durch einen String bestimmt, wie z.B.:
+
   - `'h'` – stündlich
   - `'min'` – minütlich
   - `'s'` – sekundlich
@@ -134,16 +137,25 @@ Die Methode `asfreq()` wird verwendet, um die Frequenz einer Zeitreihe zu änder
   - `'ME'` – monatlich
   - `'QE'` – vierteljährlich
   - `'YE'` – jährlich
+  
+- **Methode zur Aggregation**: Nachdem die Frequenz geändert wurde, kannst du eine Aggregationsmethode auf den resampleten Datensatz anwenden, z.B. `mean()`, `sum()`, `max()`, usw.
 
-- **Fehlende Daten**: Stunden, für die keine Daten vorhanden sind, werden mit `NaN` gefüllt.
+**Beispiel: Resampling auf stündliche Frequenz mit Mittelwert**
 
-#### Beispiel: Resampling auf stündliche Daten
+```python
+# Resampling auf stündliche Frequenz und Berechnung des Mittelwerts
+df_resampled = df.resample('H').mean()
+```
 
-In diesem Beispiel haben wir eine Zeitreihe mit täglichen Temperaturwerten und möchten diese auf stündliche Werte resamplen.
+#### Erklärung zu `asfreq()`
+
+Die Methode `asfreq()` wird verwendet, um die Frequenz einer Zeitreihe zu ändern, ohne dabei die Daten zu aggregieren. Sie fügt einfach fehlende Zeitstempel basierend auf der angegebenen Frequenz hinzu und füllt die Werte mit `NaN`, falls für diese Zeitstempel keine Daten vorhanden sind. Es erfolgt keine Aggregation der Daten, sondern lediglich eine Umstellung der Zeitreihenfrequenz.
+
+**Beispiel: Resampling auf stündliche Frequenz ohne Aggregation**
 
 ```python
 # Resampling auf stündliche Frequenz ohne Auffüllen der fehlenden Werte
-df_resampled = df.resample('h').asfreq()
+df_resampled = df.resample('H').asfreq()
 
 # Ausgabe des resampleten DataFrames ohne Auffüllen
 print(df_resampled)
