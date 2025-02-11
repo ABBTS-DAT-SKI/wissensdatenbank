@@ -1,2 +1,6 @@
 # Data Science Wissensdatenbank
-Wissensdatenbank für das Modul DAT-SKI.
+
+- TODO: Modulporträt
+- TODO: Bewertungskriterien 
+- TODO: Erklärung Wissensdatenbank
+- TODO: Verlinkung der Aufgaben
