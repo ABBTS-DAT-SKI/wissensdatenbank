@@ -1,10 +1,10 @@
 # Entfernen von Ausreissern mit dem z-Score  
 
-In Sensordaten können Ausreisser auftreten, z. B. durch fehlerhafte Messungen oder ungewöhnliche Ereignisse. Ein häufiger Ansatz, um solche Werte zu erkennen und zu entfernen, ist die Berechnung des z-Scores.  
+In Sensordaten können Ausreisser auftreten, zum Beispiel durch fehlerhafte Messungen oder ungewöhnliche Ereignisse. Ein häufiger Ansatz, um solche Werte zu erkennen und zu entfernen, ist die Berechnung des z-Scores.  
 
 ## Was ist der z-Score?  
 
-Der **z-Score** ist ein Wert, der dir hilft zu verstehen, wie weit ein bestimmter Wert vom **Durchschnitt** der anderen Werte entfernt ist. Um dies zu berechnen, verwenden wir die **Standardabweichung**, ein Mass dafür, wie stark die Werte normalerweise vom Durchschnitt abweichen.
+Der **z-Score** ist ein Wert, der Ihnen hilft zu verstehen, wie weit ein bestimmter Wert vom **Durchschnitt** der anderen Werte entfernt ist. Um dies zu berechnen, verwenden wir die **Standardabweichung**, ein Mass dafür, wie stark die Werte normalerweise vom Durchschnitt abweichen.
 
 Die Formel für den z-Score lautet:
 
@@ -14,8 +14,8 @@ z = \frac{X - \mu}{\sigma}
 
 Dabei ist:
 
-- **\(X\)**: Der Wert, den du untersuchen möchtest (z. B. eine gemessene Temperatur).
-- **\(\mu\)**: Der **Durchschnitt** der Werte (also der Mittelwert, den du aus allen Messungen berechnest).
+- **\(X\)**: Der Wert, den Sie untersuchen möchten (z. B. eine gemessene Temperatur).
+- **\(\mu\)**: Der **Durchschnitt** der Werte (also der Mittelwert, den Sie aus allen Messungen berechnen).
 - **\(\sigma\)**: Die **Standardabweichung**, die angibt, wie stark sich die Werte **vom Durchschnitt** unterscheiden. Eine hohe Standardabweichung bedeutet, dass die Werte weit verstreut sind, eine niedrige bedeutet, dass sie dicht beieinander liegen.
 
 ## Was ist die Standardabweichung?  
@@ -24,7 +24,7 @@ Die **Standardabweichung** ist ein Mass dafür, wie weit die einzelnen Werte im 
 
 ## Was bedeutet der z-Score?  
 
-Der z-Score zeigt uns, wie weit ein Wert vom Durchschnitt entfernt ist, und gibt dabei auch eine Vorstellung davon, wie **normal** oder **ungewöhnlich** dieser Wert im Vergleich zu den anderen ist. Hier einige Beispiele:
+Der z-Score zeigt Ihnen, wie weit ein Wert vom Durchschnitt entfernt ist, und gibt dabei auch eine Vorstellung davon, wie **normal** oder **ungewöhnlich** dieser Wert im Vergleich zu den anderen ist. Hier einige Beispiele:
 
 - **z-Score = 0**: Der Wert liegt **genau im Durchschnitt**. Das bedeutet, dass der Wert keinen Abstand zum Mittelwert hat.
 - **z-Score = +1**: Der Wert liegt **1 Standardabweichung über** dem Durchschnitt. Etwa **68%** der Werte in einer normal verteilten Menge liegen innerhalb von 1 Standardabweichung vom Durchschnitt.
@@ -33,14 +33,14 @@ Der z-Score zeigt uns, wie weit ein Wert vom Durchschnitt entfernt ist, und gibt
 
 ## Warum ist der z-Score nützlich?  
 
-Der z-Score hilft uns zu erkennen, ob ein Wert **normal** oder **ungewöhnlich** ist. Ein hoher z-Score (z. B. > 3) oder ein sehr niedriger z-Score (z. B. < -3) deutet darauf hin, dass der Wert **weit vom Durchschnitt** entfernt liegt und daher als **Ausreisser** betrachtet werden könnte. Solche Werte kommen in einer normalen Verteilung nur selten vor.
+Der z-Score hilft Ihnen zu erkennen, ob ein Wert **normal** oder **ungewöhnlich** ist. Ein hoher z-Score (z. B. > 3) oder ein sehr niedriger z-Score (z. B. < -3) deutet darauf hin, dass der Wert **weit vom Durchschnitt** entfernt liegt und daher als **Ausreisser** betrachtet werden könnte. Solche Werte kommen in einer normalen Verteilung nur selten vor.
 
 ## Ein einfaches Beispiel:  
 
-Stell dir vor, du misst die Temperatur an verschiedenen Tagen und bekommst Werte wie:
+Stellen Sie sich vor, Sie messen die Temperatur an verschiedenen Tagen und bekommen Werte wie:
 - 20°C, 22°C, 21°C, 100°C, 23°C
 
-Der Durchschnitt dieser Temperaturen liegt bei **22°C**. Wenn wir die **Standardabweichung** berechnen und den z-Score für die Temperatur von **100°C** berechnen, werden wir feststellen, dass dieser Wert **weit vom Durchschnitt** entfernt ist. Der z-Score für 100°C wird sehr hoch sein, was darauf hinweist, dass dieser Wert ein **Ausreisser** ist. In einer normalen Verteilung würden Werte wie 100°C nur in **weniger als 0,3%** der Fälle vorkommen (mehr als 3 Standardabweichungen vom Durchschnitt entfernt).
+Der Durchschnitt dieser Temperaturen liegt etwa bei **22°C**. Wenn wir die **Standardabweichung** berechnen und den z-Score für die Temperatur von **100°C** berechnen, werden wir feststellen, dass dieser Wert **weit vom Durchschnitt** entfernt ist. Der z-Score für 100°C wird sehr hoch sein, was darauf hinweist, dass dieser Wert ein **Ausreisser** ist. In einer normalen Verteilung würden Werte wie 100°C nur in **weniger als 0,3%** der Fälle vorkommen (mehr als 3 Standardabweichungen vom Durchschnitt entfernt).
 
 ## Hinweis zu Sensordaten:  
 

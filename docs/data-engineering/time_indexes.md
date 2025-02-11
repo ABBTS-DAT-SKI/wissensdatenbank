@@ -37,7 +37,7 @@ Datum
 
 ### Erklärung:
 - Die Zeitstempel in der Liste `dates_unsorted` werden mit `pd.to_datetime()` in das `datetime`-Format konvertiert.
-- Der DataFrame wird dann mit `set_index()` so verändert, dass der `Datum`-Spalte als Index verwendet wird. 
+- Der DataFrame wird dann mit `set_index()` so verändert, dass die `Datum`-Spalte als Index verwendet wird.
 
 ## Index-Sortierung
 
@@ -64,7 +64,7 @@ Datum
 
 ## Fehlende Daten finden
 
-Fehlende Werte sind häufig in Zeitreihen und können durch verschiedene Faktoren wie Sensorfehler oder Datenlücken entstehen. In Pandas kannst du fehlende Werte leicht erkennen, indem du `isnull()` verwendest.
+Fehlende Werte sind häufig in Zeitreihen und können durch verschiedene Faktoren wie Sensorfehler oder Datenlücken entstehen. In Pandas können Sie fehlende Werte leicht erkennen, indem Sie `isnull()` verwenden.
 
 ### Beispiel: Fehlende Daten finden
 
@@ -84,7 +84,7 @@ Datum
 
 ## Zeitzonen und Sommerzeit
 
-Es ist wichtig, sicherzustellen, dass Zeitstempel mit der richtigen Zeitzone und unter Berücksichtigung der Sommerzeit (Daylight Saving Time) behandelt werden. Um dies zu erreichen, kannst du die `tz_localize()` und `tz_convert()` Funktionen in Pandas verwenden.
+Es ist wichtig, sicherzustellen, dass Zeitstempel mit der richtigen Zeitzone und unter Berücksichtigung der Sommerzeit (Daylight Saving Time) behandelt werden. Um dies zu erreichen, können Sie die `tz_localize()` und `tz_convert()` Funktionen in Pandas verwenden.
 
 ### Beispiel: Umgang mit Zeitzonen und Sommerzeit
 
@@ -118,15 +118,15 @@ Datum
 
 ### Resampling einer Zeitreihe
 
-Resampling ist eine Technik, um die Frequenz einer Zeitreihe zu ändern. Wenn du zum Beispiel tägliche Daten auf stündliche Daten umstellen möchtest, kannst du Resampling verwenden. Dabei ist es wichtig, zu verstehen, wie mit fehlenden Zeitstempeln umgegangen wird.
+Resampling ist eine Technik, um die Frequenz einer Zeitreihe zu ändern. Wenn Sie zum Beispiel tägliche Daten auf stündliche Daten umstellen möchten, können Sie Resampling verwenden. Dabei ist es wichtig, zu verstehen, wie mit fehlenden Zeitstempeln umgegangen wird.
 
 #### Erklärung zu `resample()`
 
-Die Methode `resample()` wird verwendet, um die Frequenz einer Zeitreihe zu ändern und dabei Daten zu aggregieren. Zum Beispiel kannst du tägliche Daten auf monatliche Daten umstellen oder stündliche Daten auf tägliche Daten reduzieren. Die Methode erlaubt es dir, eine Frequenz für die Zeitreihe zu definieren und dann eine Aggregationsmethode anzuwenden (z.B. Mittelwert, Summe, etc.).
+Die Methode `resample()` wird verwendet, um die Frequenz einer Zeitreihe zu ändern und dabei Daten zu aggregieren. Zum Beispiel können Sie tägliche Daten auf monatliche Daten umstellen oder stündliche Daten auf tägliche Daten reduzieren. Die Methode erlaubt es Ihnen, eine Frequenz für die Zeitreihe zu definieren und dann eine Aggregationsmethode anzuwenden (z.B. Mittelwert, Summe, etc.).
 
 **Parameter von `resample()`**:
 
-- **Frequenz**: Die neue Frequenz, die du für die Zeitreihe angeben möchtest. Die Frequenz wird durch einen String bestimmt, wie z.B.:
+- **Frequenz**: Die neue Frequenz, die Sie für die Zeitreihe angeben möchten. Die Frequenz wird durch einen String bestimmt, wie z.B.:
 
   - `'h'` – stündlich
   - `'min'` – minütlich
@@ -139,7 +139,7 @@ Die Methode `resample()` wird verwendet, um die Frequenz einer Zeitreihe zu änd
   - `'YE'` – jährlich
   - Zusammengesetzte Frequenzen sind ebenfalls möglich, z.B. `'2W'` für alle zwei Wochen.
   
-**Methode zur Aggregation**: Nachdem die Frequenz geändert wurde, kannst du eine Aggregationsmethode auf den resampleten Datensatz anwenden, z.B. `mean()`, `sum()`, `max()`, usw.
+**Methode zur Aggregation**: Nachdem die Frequenz geändert wurde, können Sie eine Aggregationsmethode auf den resampleten Datensatz anwenden, z.B. `mean()`, `sum()`, `max()`, usw.
 
 **Beispiel: Resampling auf stündliche Frequenz mit Mittelwert**
 
