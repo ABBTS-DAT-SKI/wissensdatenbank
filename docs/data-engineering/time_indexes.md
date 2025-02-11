@@ -144,7 +144,7 @@ Die Methode `resample()` wird verwendet, um die Frequenz einer Zeitreihe zu änd
 
 ```python
 # Resampling auf stündliche Frequenz und Berechnung des Mittelwerts
-df_resampled = df.resample('H').mean()
+df_resampled = df.resample('h').mean()
 ```
 
 #### Erklärung zu `asfreq()`
@@ -155,7 +155,7 @@ Die Methode `asfreq()` wird verwendet, um die Frequenz einer Zeitreihe zu änder
 
 ```python
 # Resampling auf stündliche Frequenz ohne Auffüllen der fehlenden Werte
-df_resampled = df.resample('H').asfreq()
+df_resampled = df.resample('h').asfreq()
 
 # Ausgabe des resampleten DataFrames ohne Auffüllen
 print(df_resampled)
