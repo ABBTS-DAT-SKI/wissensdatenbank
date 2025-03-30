@@ -7,6 +7,7 @@ In diesem Guide zeigen wir dir, wie du Python auf deinem Computer installierst u
 ## Installation auf Windows
 
 Lade die Python Version 3.12 vom Microsoft Store herunter:
+
 - [Python 3.12](https://www.microsoft.com/store/productId/9NCVDN91XZQP)
 
 ## Packages
