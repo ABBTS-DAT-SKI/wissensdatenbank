@@ -7,6 +7,7 @@ repo_name: ABBTS-DAT-SKI/wissensdatenbank
 
 nav:
   - Startseite: index.md
+  - Mini Challenge: mini_challenge.md
   - Datenverarbeitung: 
     - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
     - Befüllen von fehlenden Werten: data-engineering/fillna.md
@@ -57,6 +58,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - github-callouts
 
 extra_javascript:
   - javascripts/katex.js
