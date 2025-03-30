@@ -1,4 +1,4 @@
-site_name: Data Science Wissensdatenbank
+site_name: Modul DAT_SKI
 repo_url: https://github.com/ABBTS-DAT-SKI/wissensdatenbank
 site_url: https://abbts-dat-ski.github.io/wissensdatenbank/
 site_description: Wissensdatenbank für das Modul DAT-SKI
@@ -8,11 +8,12 @@ repo_name: ABBTS-DAT-SKI/wissensdatenbank
 nav:
   - Startseite: index.md
   - Mini Challenge: mini_challenge.md
-  - Datenverarbeitung: 
-    - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
-    - Befüllen von fehlenden Werten: data-engineering/fillna.md
-    - Entfernen von Ausreissern: data-engineering/outliers.md
-    - Time-Indexes: data-engineering/time_indexes.md
+  - Wissensdatenbank:
+    - Datenverarbeitung: 
+      - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
+      - Befüllen von fehlenden Werten: data-engineering/fillna.md
+      - Entfernen von Ausreissern: data-engineering/outliers.md
+      - Time-Indexes: data-engineering/time_indexes.md
 
 plugins:
   - search
