@@ -10,11 +10,12 @@ nav:
   - Mini Challenge: mini_challenge.md
   - Python Installation: python_installation.md
   - Wissensdatenbank:
-    - Datenverarbeitung: 
-      - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
-      - Befüllen von fehlenden Werten: data-engineering/fillna.md
-      - Entfernen von Ausreissern: data-engineering/outliers.md
-      - Time-Indexes: data-engineering/time_indexes.md
+      - Datenverarbeitung:
+          - Übersicht Datentypen: data-engineering/data_types.md
+          - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
+          - Befüllen von fehlenden Werten: data-engineering/fillna.md
+          - Entfernen von Ausreissern: data-engineering/outliers.md
+          - Time-Indexes: data-engineering/time_indexes.md
 
 plugins:
   - search
