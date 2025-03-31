@@ -11,6 +11,7 @@ nav:
   - Python Installation: python_installation.md
   - Wissensdatenbank:
       - Datenverarbeitung:
+          - Einführung Pandas: data-engineering/introduction.md
           - Übersicht Datentypen: data-engineering/data_types.md
           - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
           - Befüllen von fehlenden Werten: data-engineering/fillna.md
@@ -65,8 +66,8 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/auto-render.min.js
+  - javascripts/katex.min.js
 
 extra_css:
-  - https://unpkg.com/katex@0/dist/katex.min.css
+  - css/katex.css
