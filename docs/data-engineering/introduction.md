@@ -86,3 +86,23 @@ Durchschnittswert einer Spalte:
 ```python
 df["Preis"].mean()
 ```
+
+## 6. Sampling von Daten
+
+### Zufällige Stichprobe ziehen
+Eine zufällige Stichprobe von n Zeilen aus dem DataFrame ziehen:
+```python
+df.sample(n=10)
+```
+
+### Zufällige Stichprobe mit einem bestimmten Anteil der Daten
+Um z.B. 20% der Zeilen zufällig auszuwählen:
+```python
+df.sample(frac=0.2)
+```
+
+### Stichprobe mit einer festen Zufallsgenerierung
+Falls man reproduzierbare Zufallsauswahlen treffen möchte, kann ein Zufallszahlengenerator gesetzt werden:
+```python
+df.sample(n=10, random_state=42)
+```
