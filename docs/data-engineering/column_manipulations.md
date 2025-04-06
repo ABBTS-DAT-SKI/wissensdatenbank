@@ -166,7 +166,7 @@ print(f"Minimale Temperatur: {sensordaten['temp'].min():.1f}°C")
 print(f"Maximale Temperatur: {sensordaten['temp'].max():.1f}°C")
 
 # Weitere nützliche Statistiken
-print(f"Median-Temperatur: {sensordaten['temp'].median():.1f}°C")  # Robust gegen Ausreißer
+print(f"Median-Temperatur: {sensordaten['temp'].median():.1f}°C")  # Robust gegen Ausreisser
 print(f"Standardabweichung: {sensordaten['temp'].std():.1f}°C")    # Streuung der Werte
 
 # Alle Statistiken auf einmal mit describe()
@@ -201,7 +201,7 @@ print(tageszeit_stats)
 
 ## 5. Zeilen auswählen (Row-Slicing)
 
-Neben der Spaltenmanipulation ist die Auswahl bestimmter Zeilen eine wichtige Technik in Pandas. Mit Row-Slicing kannst du Teilmengen deiner Daten basierend auf Positionen oder Bedingungen extrahieren. Diese Methoden sind unverzichtbar, um gezielt mit relevanten Daten zu arbeiten und unnötige Informationen auszuschließen.
+Neben der Spaltenmanipulation ist die Auswahl bestimmter Zeilen eine wichtige Technik in Pandas. Mit Row-Slicing kannst du Teilmengen deiner Daten basierend auf Positionen oder Bedingungen extrahieren. Diese Methoden sind unverzichtbar, um gezielt mit relevanten Daten zu arbeiten und unnötige Informationen auszuschliessen.
 
 ### Zeilen mit iloc auswählen (positionsbasiert)
 
