@@ -13,6 +13,7 @@ nav:
       - Datenverarbeitung:
           - Einführung Pandas: data-engineering/introduction.md
           - Übersicht Datentypen: data-engineering/data_types.md
+          - Datenformate: data-engineering/data_formats.md
           - Entfernen von Duplikaten: data-engineering/drop_duplicates.md
           - Befüllen von fehlenden Werten: data-engineering/fillna.md
           - Entfernen von Ausreissern: data-engineering/outliers.md
