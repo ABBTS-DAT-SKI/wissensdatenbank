@@ -5,7 +5,7 @@ Die Arbeit mit Daten in Pandas dreht sich oft um das Manipulieren von Spalten in
 ## Schnellübersicht: Pandas "Cheat Sheet"
 
 | Operation                       | Syntax                                                    | Beschreibung                           |
-|---------------------------------|-----------------------------------------------------------|----------------------------------------|
+| ------------------------------- | --------------------------------------------------------- | -------------------------------------- |
 | Spalte auswählen                | `df['Spalte']` oder `df.Spalte`                           | Einzelne Spalte als Series             |
 | Mehrere Spalten                 | `df[['Spalte1', 'Spalte2']]`                              | Mehrere Spalten als DataFrame          |
 | Neue Spalte erstellen           | `df['Neue_Spalte'] = Wert`                                | Fügt eine neue Spalte hinzu            |
@@ -57,6 +57,22 @@ print(f"Typ: {type(temp_feuchte)}")  # <class 'pandas.core.frame.DataFrame'>
 ```
 
 > **Tipp für Anfänger**: Der Unterschied zwischen `df['Spalte']` (Series) und `df[['Spalte']]` (DataFrame) ist wichtig und führt oft zu Verwirrung. Mit doppelten Klammern erhältst du immer einen DataFrame, auch wenn du nur eine Spalte auswählst.
+
+### Spalten nach Muster auswählen
+
+Oft möchtest du Spalten auswählen, die einem bestimmten Benennungsmuster folgen. Zum Beispiel könntest du alle Temperatur-Sensoren oder alle Aussenmessungen auswählen wollen. Pandas bietet mehrere Methoden, um Spalten basierend auf ihren Namen zu filtern.
+
+```python
+# Methode 1: Mit filter() und like-Parameter - wählt Spalten aus, die den String enthalten
+temperatur_spalten = sensordaten.filter(like='Temperatur', axis=1)
+# Ergebnis: DataFrame mit "Temperatur_Innen", "Temperatur_Aussen", etc.
+
+# Methode 2: Mit startswith() und List Comprehension - präziser für Präfixe
+temperatur_spalten = sensordaten[[col for col in sensordaten.columns if col.startswith('Temperatur')]]
+# Gleiches Ergebnis, aber explizit nur Spalten, die mit "Temperatur" BEGINNEN
+```
+
+Bei der zweiten Methode verwendest du die `startswith()`-Methode, die prüft, ob ein String mit einem bestimmten Präfix beginnt. Das ist präziser als `filter(like='...')`, das nach dem Vorkommen des Strings irgendwo im Spaltennamen sucht.
 
 ## 2. Spalten erstellen und transformieren
 
