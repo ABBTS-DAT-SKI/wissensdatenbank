@@ -29,6 +29,7 @@ theme:
     tabs: true
   features:
     - content.code.copy
+
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -70,6 +71,7 @@ extra_javascript:
   - javascripts/katex.js
   - javascripts/auto-render.min.js
   - javascripts/katex.min.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
-  - css/katex.css
+  - css/katex.min.css
