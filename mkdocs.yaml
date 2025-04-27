@@ -21,6 +21,7 @@ nav:
           - Time-Indexes: data-engineering/time_indexes.md
           - Imputationen: data-engineering/imputation.md
           - Horizontale Joins: data-engineering/joins.md
+          - Pivo/Melt: data-engineering/pivot_melt.md
 
 plugins:
   - search
