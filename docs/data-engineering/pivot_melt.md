@@ -1,10 +1,12 @@
 # Pivot und Melt in Pandas
 
 Daten können in zwei grundlegenden Formaten vorliegen:
+
 - **Langes Format**: Jede Beobachtung hat eine eigene Zeile. Hat es zu einem bestimmten Zeitpunkt mehrere Sensormesswerte, so stehen diese in jeweils einer neuen Zeile.
 - **Breites Format**: Verschiedene Sensoren sind in Spalten organisiert. Jeder Sensor hat also seine eigene Spalte. Der Zeitstempel jeder Zeile gibt es nur einmal.
 
 Pivot- und Melt-Operationen sind notwendig, um:
+
 - Daten für verschiedene Analysen in das richtige Format zu bringen
 - Zeitreihendaten für Visualisierungen zu strukturieren
 - Pivot-Tabellen für Berichte zu erstellen
@@ -55,7 +57,7 @@ Zeitstempel
 ### Grundlegendes Melt
 
 Die `melt()`-Funktion transformiert Daten von einem breiten in ein langes Format.
-Hier müssen mit `value_vars` Die Spalten identifiziert werden, welche eine Messreihe darstellen. Des Weiteren muss ein neuer Name für die Spalte angegeben werden, die die Namen der Messreihen beinhaltet. Sowie für die Spalte, die den tatsächlichen Wert beinhaltet. 
+Hier müssen mit `value_vars` Die Spalten identifiziert werden, welche eine Messreihe darstellen. Des Weiteren muss ein neuer Name für die Spalte angegeben werden, die die Namen der Messreihen beinhaltet (`var_name`). Sowie für die Spalte, die den tatsächlichen Wert beinhaltet (`value_name`). 
 
 ```python
 # Erstellen eines breiten DataFrames
@@ -98,5 +100,6 @@ Melt-Ergebnis (langes Datenformat):
 ## Zusammenfassung
 
 **Melt vs. Pivot**:
+
    - `melt()`: Breit zu lang
    - `pivot()`: Lang zu breit
