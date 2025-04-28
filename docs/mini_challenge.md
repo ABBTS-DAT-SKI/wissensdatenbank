@@ -33,6 +33,12 @@ Die Ergebnisse dokumentieren Sie in einem Bericht, der maximal 8 Seiten umfasst 
 
 Die Abgabe des Berichts erfolgt als PDF bis spätestens 01.06.2025.
 
+### Check-In
+
+Um sich zu stellen, dass Sie auf dem richtigen Weg sind ist es wichtig, dass Sie bis Ende Semesterwoche 5 auf Teams das Check-In dieser Mini-Challenge abgeben. Dort sollen Sie in zwei bis drei Sätzen kurz beschreiben welchen Datensatz Sie verwenden und welches Analyseziel das Sie verfolgen. Damit können wir sicherstellen, dass Sie sich nicht zu viel Aufwand machen und sich der Datensatz auch eignet für diese Mini-Challenge.
+
+Wenn Sie bereits früher beginnen wollen, können Sie selbstverständlich uns auch eine E-Mail schreiben. 
+
 ## Bewertungsraster
 
 ### 1. **Datenauswahl und Zieldefinition (10%)**
