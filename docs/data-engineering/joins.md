@@ -68,7 +68,6 @@ Date
 2025-01-07         19.0  508.9
 ```
 
-
 ### Left Join
 
 Der Left Join behält alle Zeilen aus dem linken DataFrame und fügt passende Daten aus dem rechten DataFrame hinzu.
@@ -142,3 +141,49 @@ Date
 2025-01-09          NaN  745.8
 ```
 
+## Join mit einem generierten Zeitindex
+
+Es kann nützlich sein, das eigene Datenframe mit einem neuen generierten Zeitindex zu joinen, um herauszufinden an welchen Tagen es fehlende Werte gibt. Dies ist besonders nützlich bei grossen Datenframes, da man dort schnell die Übersicht verliert. Dies wird erreicht indem eine neue Date-Range erstellt mit dem Start und Endwert des aktuellen Datenframes und diese beide dann wie gewohnt joined werden.
+
+
+```python
+import pandas as pd
+
+# Erstellen von Beispiel-DataFrames mit Zeitreihendaten
+dates_temp = pd.date_range('2025-01-01', '2025-01-07')
+temp_values = [22.0, 20.7, 19.7, 20.5, 19.5, 20.7, 19.0]
+df_temp = pd.DataFrame({'Temperature': temp_values}, index=dates_temp)
+df_temp.index.name = 'Date'
+
+# Fehlender Wert hinzufügen
+df_temp = df_temp[df_temp.index != pd.to_datetime('2025-01-05')]
+
+# Neues Datenframe mit künstlichem Zeitindex erstellen
+time_idx = pd.date_range(start=df_temp.index.min(), end=df_temp.index.max(), freq='1D')
+time_df = pd.DataFrame(index=time_idx)
+
+full_df = df_temp.join(time_df, how="outer")
+
+print(full_df)
+
+# Nur Zeilen mit fehlenden Werten ausgeben
+print(full_df[full_df.isna().any(axis=1)])
+```
+
+**Ausgabe (Datenframe mit sichtbaren fehlenden Werten):**
+```txt
+            Temperature
+2025-01-01         22.0
+2025-01-02         20.7
+2025-01-03         19.7
+2025-01-04         20.5
+2025-01-05          NaN
+2025-01-06         20.7
+2025-01-07         19.0
+```
+
+**Ausgabe (nur fehlende Werte):**
+```txt
+            Temperature
+2025-01-05          NaN
+```
