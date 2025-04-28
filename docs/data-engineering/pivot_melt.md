@@ -14,6 +14,52 @@ Pivot- und Melt-Operationen sind notwendig, um:
 - Zwischen verschiedenen Datenformaten zu konvertieren
 
 
+## Wann eignet sich welches Format?
+
+Das breite Datenformat ist für die meisten Anwendungsfälle gut geeignet. Das breite Datenformat eignet sich aber besonders für Machine Learrning Tasks.
+
+Das lange Datenformat eignet sich vor allem dann, wenn es sich um Event-Daten handelt, wie zum Beispiel ein Lichtschalter. Da müssen dann nicht z.B. alle 5 Minuten eine neue Zeile erstellt werden, sondern nur wenn sich der Wert verändert. Folgendes Beispiel soll dies veranschaulichen:
+
+**Langes Datenformat**
+```txt
+                                    state
+timestamp           sensor               
+2025-04-28 10:00:00 Lichtschalter1      1
+2025-04-28 11:00:00 Lichtschalter1      0
+2025-04-28 17:00:00 Lichtschalter2      1
+2025-04-28 23:00:00 Lichtschalter2      0
+```
+
+**Breites Datenformat**
+```txt
+timestamp            Lichtschalter1  Lichtschalter2
+2025-04-28 00:00:00             0.0             0.0
+2025-04-28 01:00:00             0.0             0.0
+2025-04-28 02:00:00             0.0             0.0
+2025-04-28 03:00:00             0.0             0.0
+2025-04-28 04:00:00             0.0             0.0
+2025-04-28 05:00:00             0.0             0.0
+2025-04-28 06:00:00             0.0             0.0
+2025-04-28 07:00:00             0.0             0.0
+2025-04-28 08:00:00             0.0             0.0
+2025-04-28 09:00:00             0.0             0.0
+2025-04-28 10:00:00             1.0             0.0
+2025-04-28 11:00:00             0.0             0.0
+2025-04-28 12:00:00             0.0             0.0
+2025-04-28 13:00:00             0.0             0.0
+2025-04-28 14:00:00             0.0             0.0
+2025-04-28 15:00:00             0.0             0.0
+2025-04-28 16:00:00             0.0             0.0
+2025-04-28 17:00:00             0.0             1.0
+2025-04-28 18:00:00             0.0             1.0
+2025-04-28 19:00:00             0.0             1.0
+2025-04-28 20:00:00             0.0             1.0
+2025-04-28 21:00:00             0.0             1.0
+2025-04-28 22:00:00             0.0             1.0
+2025-04-28 23:00:00             0.0             0.0
+2025-04-29 00:00:00             0.0             0.0
+```
+
 ## Pivot-Operationen
 
 Die `pivot()`-Funktion ermöglicht es, Daten von einem langen in ein breites Format zu transformieren. Bei der `pivot()`-Operation muss angegeben werden, welche Spalte den Index bildet (meistens der Zeitstempel). Welche Spalten den Namen der Messreihe beinhalten und welche Spalte die effektiven Werte beinhaltet.
