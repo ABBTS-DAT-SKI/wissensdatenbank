@@ -125,97 +125,97 @@ daily_sales = transactions.resample('D').sum()
 
 #### Statistische Aggregationen
 
-1. **`mean()`** - Arithmetischer Mittelwert
+- **`mean()`** - Arithmetischer Mittelwert
 
-   - Berechnet den Durchschnitt aller Werte
-   - Glättet Ausreisser und Variationen
-   
-   ```python
-   # Durchschnittliche Temperatur pro Tag
-   daily_avg_temp = hourly_temp.resample('D').mean()
-   ```
+    - Berechnet den Durchschnitt aller Werte
+    - Glättet Ausreisser und Variationen
+    
+    ```python
+    # Durchschnittliche Temperatur pro Tag
+    daily_avg_temp = hourly_temp.resample('D').mean()
+    ```
 
-2. **`sum()`** - Summation
+- **`sum()`** - Summation
 
-   - Addiert alle Werte innerhalb des Zeitfensters
-   - Erhält die Gesamtmenge
-   
-   ```python
-   # Gesamter Regenfall pro Monat
-   monthly_rainfall = daily_rainfall.resample('ME').sum()
-   ```
+    - Addiert alle Werte innerhalb des Zeitfensters
+    - Erhält die Gesamtmenge
+    
+    ```python
+    # Gesamter Regenfall pro Monat
+    monthly_rainfall = daily_rainfall.resample('ME').sum()
+    ```
 
-3. **`max()`** - Maximum
+- **`max()`** - Maximum
 
-   - Behält den höchsten Wert
-   - Wichtig für Spitzenwerte
-   
-   ```python
-   # Maximale Temperatur pro Monat
-   monthly_max_temp = daily_temp.resample('ME').max()
-   ```
+    - Behält den höchsten Wert
+    - Wichtig für Spitzenwerte
+    
+    ```python
+    # Maximale Temperatur pro Monat
+    monthly_max_temp = daily_temp.resample('ME').max()
+    ```
 
-4. **`min()`** - Minimum
+- **`min()`** - Minimum
 
-   - Behält den niedrigsten Wert
-   - Kritisch für Grenzwertüberwachung
-   
-   ```python
-   # Niedrigste Luftfeuchtigkeit pro Monat
-   monthly_min_humidity = hourly_humidity.resample('ME').min()
-   ```
+    - Behält den niedrigsten Wert
+    - Kritisch für Grenzwertüberwachung
+    
+    ```python
+    # Niedrigste Luftfeuchtigkeit pro Monat
+    monthly_min_humidity = hourly_humidity.resample('ME').min()
+    ```
 
 5. **`count()`** - Anzahl
 
-   - Zählt gültige Werte (nicht NaN)
-   - Für Datenqualitätsprüfung
-   
-   ```python
-   # Anzahl der Messungen pro Tag
-   daily_measurements = hourly_data.resample('D').count()
-   ```
+    - Zählt gültige Werte (nicht NaN)
+    - Für Datenqualitätsprüfung
+    
+    ```python
+    # Anzahl der Messungen pro Tag
+    daily_measurements = hourly_data.resample('D').count()
+    ```
 
 6. **`std()`** - Standardabweichung
 
-   - Misst die Streuung innerhalb des Zeitfensters
-   - Indikator für Variabilität
-   
-   ```python
-   # Temperaturvariabilität pro Woche
-   weekly_temp_std = daily_temp.resample('W').std()
-   ```
+    - Misst die Streuung innerhalb des Zeitfensters
+    - Indikator für Variabilität
+    
+    ```python
+    # Temperaturvariabilität pro Woche
+    weekly_temp_std = daily_temp.resample('W').std()
+    ```
 
 7. **`median()`** - Median
 
-   - Mittlerer Wert bei Sortierung
-   - Robust gegen Ausreisser
-   
-   ```python
-   # Medianpreis pro Monat (weniger anfällig für extreme Werte)
-   monthly_median_price = daily_prices.resample('ME').median()
-   ```
+    - Mittlerer Wert bei Sortierung
+    - Robust gegen Ausreisser
+    
+    ```python
+    # Medianpreis pro Monat (weniger anfällig für extreme Werte)
+    monthly_median_price = daily_prices.resample('ME').median()
+    ```
 
 #### Temporale Aggregationen
 
-1. **`first()`** - Erster Wert
+- **`first()`** - Erster Wert
 
-   - Nimmt den ersten gültigen Wert
-   - Repräsentiert Zeitfensterbeginn
-   
-   ```python
-   # Eröffnungskurs am Beginn jeder Woche
-   weekly_open = daily_prices.resample('W').first()
-   ```
+    - Nimmt den ersten gültigen Wert
+    - Repräsentiert Zeitfensterbeginn
+    
+    ```python
+    # Eröffnungskurs am Beginn jeder Woche
+    weekly_open = daily_prices.resample('W').first()
+    ```
 
-2. **`last()`** - Letzter Wert
+- **`last()`** - Letzter Wert
 
-   - Nimmt den letzten gültigen Wert
-   - Repräsentiert Zeitfensterende
-   
-   ```python
-   # Schlusskurs am Ende jeder Woche
-   weekly_close = daily_prices.resample('W').last()
-   ```
+    - Nimmt den letzten gültigen Wert
+    - Repräsentiert Zeitfensterende
+    
+    ```python
+    # Schlusskurs am Ende jeder Woche
+    weekly_close = daily_prices.resample('W').last()
+    ```
 
 #### Benutzerdefinierte Aggregationen
 
@@ -265,25 +265,25 @@ daily_end = hourly_data.resample('D').asfreq(how='end')
 
 #### Forward/Backward Fill
 
-1. **`ffill()` - Forward Fill**
+- **`ffill()` - Forward Fill**
 
-   - Propagiert letzten bekannten Wert vorwärts
-   - Bis zum nächsten gültigen Datenpunkt
-   
-   ```python
-   # Beispiel: Preise "halten" zwischen Handelstagen
-   daily_prices = weekly_prices.resample('D').ffill()
-   ```
+    - Propagiert letzten bekannten Wert vorwärts
+    - Bis zum nächsten gültigen Datenpunkt
+    
+    ```python
+    # Beispiel: Preise "halten" zwischen Handelstagen
+    daily_prices = weekly_prices.resample('D').ffill()
+    ```
 
-2. **`bfill()` - Backward Fill**
+- **`bfill()` - Backward Fill**
 
-   - Propagiert nächsten bekannten Wert rückwärts
-   - Für Füllungen in Richtung Vergangenheit
-   
-   ```python
-   # Beispiel: Vorausschau auf nächsten bekannten Wert
-   filled_backwards = monthly_data.resample('D').bfill()
-   ```
+    - Propagiert nächsten bekannten Wert rückwärts
+    - Für Füllungen in Richtung Vergangenheit
+    
+    ```python
+    # Beispiel: Vorausschau auf nächsten bekannten Wert
+    filled_backwards = monthly_data.resample('D').bfill()
+    ```
 
 #### Spezifische Füllwerte
 
@@ -302,42 +302,42 @@ hourly_data['humidity'].fillna(method='ffill')  # Forward Fill für Feuchtigkeit
 
 #### Mathematische Interpolationstypen
 
-1. **Lineare Interpolation (`linear`)**
+- **Lineare Interpolation (`linear`)**
 
-   - Gerade Linien zwischen Punkten
-   - Standard für stetige Daten
-   
-   ```python
-   # Gleichmässige Verteilung zwischen Messpunkten
-   hourly_linear = daily_temp.resample('H').interpolate(method='linear')
-   ```
+    - Gerade Linien zwischen Punkten
+    - Standard für stetige Daten
+    
+    ```python
+    # Gleichmässige Verteilung zwischen Messpunkten
+    hourly_linear = daily_temp.resample('H').interpolate(method='linear')
+    ```
 
-2. **Zeitbasierte Interpolation (`time`)**
+- **Zeitbasierte Interpolation (`time`)**
 
-   - Gewichtet nach zeitlichen Abständen
-   - Für ungleichmässige Zeitintervalle
-   
-   ```python
-   # Berücksichtigt tatsächliche Zeitabstände
-   interpolated = irregular_data.resample('H').interpolate(method='time')
-   ```
+    - Gewichtet nach zeitlichen Abständen
+    - Für ungleichmässige Zeitintervalle
+    
+    ```python
+    # Berücksichtigt tatsächliche Zeitabstände
+    interpolated = irregular_data.resample('H').interpolate(method='time')
+    ```
 
-3. **Nächster Nachbar (`nearest`)**
+- **Nächster Nachbar (`nearest`)**
 
-   - Kein Übergang, Stufenfunktion
-   - Für diskrete Werte
-   
-   ```python
-   # Diskrete Werte wie Kategorien
-   category_hourly = daily_category.resample('H').interpolate(method='nearest')
-   ```
+    - Kein Übergang, Stufenfunktion
+    - Für diskrete Werte
+    
+    ```python
+    # Diskrete Werte wie Kategorien
+    category_hourly = daily_category.resample('H').interpolate(method='nearest')
+    ```
 
-4. **Polynomische Interpolation (`polynomial`)**
+- **Polynomische Interpolation (`polynomial`)**
 
-   - Polynome n-ter Ordnung
-   - Parameter `order` bestimmt Grad
-   
-   ```python
-   # Glatte Kurven für natürliche Phänomene
-   smooth_curve = daily_data.resample('H').interpolate(method='polynomial', order=3)
-   ```
+    - Polynome n-ter Ordnung
+    - Parameter `order` bestimmt Grad
+    
+    ```python
+    # Glatte Kurven für natürliche Phänomene
+    smooth_curve = daily_data.resample('H').interpolate(method='polynomial', order=3)
+    ```
