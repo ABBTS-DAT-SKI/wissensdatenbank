@@ -19,6 +19,7 @@ nav:
           - Befüllen von fehlenden Werten: data-engineering/fillna.md
           - Entfernen von Ausreissern: data-engineering/outliers.md
           - Time-Indexes: data-engineering/time_indexes.md
+          - Resampling: data-engineering/resampling.md
           - Imputationen: data-engineering/imputation.md
           - Horizontale Joins: data-engineering/joins.md
           - Pivot/Melt: data-engineering/pivot_melt.md
