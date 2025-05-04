@@ -9,8 +9,8 @@ nav:
   - Startseite: index.md
   - Mini Challenge: mini_challenge.md
   - Python Installation: python_installation.md
-  - Wissensdatenbank:
-      - Datenverarbeitung:
+  - Wissensdatenbank: 
+      - Datenverarbeitung: 
           - Einführung Pandas: data-engineering/introduction.md
           - Übersicht Datentypen: data-engineering/data_types.md
           - Datenformate: data-engineering/data_formats.md
@@ -21,7 +21,9 @@ nav:
           - Time-Indexes: data-engineering/time_indexes.md
           - Imputationen: data-engineering/imputation.md
           - Horizontale Joins: data-engineering/joins.md
-          - Pivo/Melt: data-engineering/pivot_melt.md
+          - Pivot/Melt: data-engineering/pivot_melt.md
+      - Statistik: 
+          - Univariate Statistik: statistics/univariate_statistics.md
 
 plugins:
   - search
@@ -32,6 +34,8 @@ theme:
     tabs: true
   features:
     - content.code.copy
+    - navigation.expand
+    - navigation.path
 
   palette:
     - media: "(prefers-color-scheme: light)"
