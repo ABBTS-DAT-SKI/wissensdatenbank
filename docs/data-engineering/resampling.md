@@ -128,7 +128,7 @@ daily_sales = transactions.resample('D').sum()
 1. **`mean()`** - Arithmetischer Mittelwert
 
    - Berechnet den Durchschnitt aller Werte
-   - Glättet Ausreißer und Variationen
+   - Glättet Ausreisser und Variationen
    
    ```python
    # Durchschnittliche Temperatur pro Tag
@@ -188,7 +188,7 @@ daily_sales = transactions.resample('D').sum()
 7. **`median()`** - Median
 
    - Mittlerer Wert bei Sortierung
-   - Robust gegen Ausreißer
+   - Robust gegen Ausreisser
    
    ```python
    # Medianpreis pro Monat (weniger anfällig für extreme Werte)
@@ -308,14 +308,14 @@ hourly_data['humidity'].fillna(method='ffill')  # Forward Fill für Feuchtigkeit
    - Standard für stetige Daten
    
    ```python
-   # Gleichmäßige Verteilung zwischen Messpunkten
+   # Gleichmässige Verteilung zwischen Messpunkten
    hourly_linear = daily_temp.resample('H').interpolate(method='linear')
    ```
 
 2. **Zeitbasierte Interpolation (`time`)**
 
    - Gewichtet nach zeitlichen Abständen
-   - Für ungleichmäßige Zeitintervalle
+   - Für ungleichmässige Zeitintervalle
    
    ```python
    # Berücksichtigt tatsächliche Zeitabstände
