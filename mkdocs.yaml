@@ -9,8 +9,8 @@ nav:
   - Startseite: index.md
   - Mini Challenge: mini_challenge.md
   - Python Installation: python_installation.md
-  - Wissensdatenbank: 
-      - Datenverarbeitung: 
+  - Wissensdatenbank:
+      - Datenverarbeitung:
           - Einführung Pandas: data-engineering/introduction.md
           - Übersicht Datentypen: data-engineering/data_types.md
           - Datenformate: data-engineering/data_formats.md
@@ -23,8 +23,10 @@ nav:
           - Imputationen: data-engineering/imputation.md
           - Horizontale Joins: data-engineering/joins.md
           - Pivot/Melt: data-engineering/pivot_melt.md
-      - Statistik: 
+      - Statistik:
           - Univariate Statistik: statistics/univariate_statistics.md
+      - Datenschutz:
+          - Datenschutz: data-protection/data_protection.md
 
 plugins:
   - search
