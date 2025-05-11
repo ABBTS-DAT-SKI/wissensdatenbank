@@ -25,13 +25,15 @@ Identifizieren Sie zwei Variablen, deren Zusammenspiel Sie analysieren möchten,
 > Die Nutzung von ChatGPT oder anderen KI-Tools ist erlaubt und für Wissensfragen sogar deutlich empfohlen. Jedoch sollte die Nutzung in einem Mass stattfinden, dass Sie verstehen, was gemacht wird und warum gewisse Entscheidungen getroffen werden. In der Abschlussprüfung können Fragen zur Mini-Challenge gestellt werden, die dies testen.
 
 ## Abgabe  
-Die Ergebnisse dokumentieren Sie in einem Bericht, der maximal 8 Seiten umfasst (ohne Titelblatt, Inhaltsverzeichnis oder Ähnliches). Der Bericht sollte eine klare Struktur haben und die folgenden Punkte abdecken:  
+Die Ergebnisse dokumentieren Sie in einem Bericht (als PDF), der maximal 8 Seiten umfasst (ohne Titelblatt, Inhaltsverzeichnis oder Ähnliches). Der Bericht sollte eine klare Struktur haben und die folgenden Punkte abdecken:  
 
 - Beschreibung des Datensatzes und der Zielsetzung  
 - Vorgehen bei der Datenanalyse und -bereinigung  
 - Beschreibung der Modellierung und Interpretation der Ergebnisse  
 
-Die Abgabe des Berichts erfolgt als PDF bis spätestens 01.06.2025.
+Geben Sie des Weiteren den Code als ZIP oder Notebook ab.
+
+Die Abgabe des Berichts und Code erfolgt bis spätestens 01.06.2025.
 
 ### Check-In
 
