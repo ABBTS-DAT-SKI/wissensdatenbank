@@ -5,7 +5,7 @@ Fehlende Werte in Datensätzen sind ein häufiges Problem in der Datenanalyse. S
 ## Grundlegende Imputationsmethoden
 
 
-Die einfachste Form der Imputation ist das Ersetzen fehlender Werte durch einen konstanten Wert. Diese ist in [Entfernen von Ausreissern](../fillna) schon beschrieben.
+Die einfachste Form der Imputation ist das Ersetzen fehlender Werte durch einen konstanten Wert. Diese ist in [Entfernen von Ausreissern](fillna.md) schon beschrieben.
 
 ## Fortgeschrittene Imputationsmethoden
 
