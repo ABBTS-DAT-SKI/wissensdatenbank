@@ -31,7 +31,7 @@ Alle Aufgaben sind ebenfalls auf GitHub verfügbar: [https://github.com/ABBTS-DA
 Der Kompetenznachweis erfolgt durch:
 
 - Eine benotete Abgabe (Mini-Challenge). Weitere Informationen dazu finden Sie [hier](mini_challenge.md).
-- Eine schriftliche Prüfung in der 10. Semesterwoche. 
+- Eine schriftliche Prüfung in der 10. Semesterwoche. Zur schriftlichen Prüfung darf ein Spick mitgebracht werden. Dieser muss physisch sein (auf Papier), darf aber auf dem Computer erstellt und ausgedruckt werden.
 
 ## Wissensdatenbank
 Die Wissensdatenbank ist eine zentrale Sammlung aller Lerninhalte, Beispiele und Erklärungen. Sie unterstützt Studierende dabei, das Gelernte zu vertiefen und direkt in Aufgaben anzuwenden. Sollte Material fehlen oder unklar sein, wird gebeten, die Dozenten darauf aufmerksam zu machen, damit es zeitnah ergänzt werden kann.
