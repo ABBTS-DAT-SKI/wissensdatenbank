@@ -19,11 +19,17 @@ nav:
           - Befüllen von fehlenden Werten: data-engineering/fillna.md
           - Entfernen von Ausreissern: data-engineering/outliers.md
           - Time-Indexes: data-engineering/time_indexes.md
+          - Resampling: data-engineering/resampling.md
           - Imputationen: data-engineering/imputation.md
           - Horizontale Joins: data-engineering/joins.md
-          - Pivo/Melt: data-engineering/pivot_melt.md
+          - Pivot/Melt: data-engineering/pivot_melt.md
+      - Statistik:
+          - Univariate Statistik: statistics/univariate_statistics.md
+      - Datenschutz:
+          - Datenschutz: data-protection/data_protection.md
       - Visualisierungen: visualization.md
       - Korrelation: correlation.md
+
 plugins:
   - search
 
@@ -33,6 +39,8 @@ theme:
     tabs: true
   features:
     - content.code.copy
+    - navigation.expand
+    - navigation.path
 
   palette:
     - media: "(prefers-color-scheme: light)"
