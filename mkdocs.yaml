@@ -22,7 +22,8 @@ nav:
           - Imputationen: data-engineering/imputation.md
           - Horizontale Joins: data-engineering/joins.md
           - Pivo/Melt: data-engineering/pivot_melt.md
-
+      - Visualisierungen:
+          - Visualisierungen: visualization/visualization.md
 plugins:
   - search
 
