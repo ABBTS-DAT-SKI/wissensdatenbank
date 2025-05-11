@@ -23,6 +23,7 @@ nav:
           - Horizontale Joins: data-engineering/joins.md
           - Pivo/Melt: data-engineering/pivot_melt.md
       - Visualisierungen: visualization.md
+      - Korrelation: correlation.md
 plugins:
   - search
 

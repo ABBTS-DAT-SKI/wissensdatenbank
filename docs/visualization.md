@@ -1,6 +1,6 @@
 ## Visualisierungen
 
-Daten-Visualisierungen helfen, Muster, Ausreißer und Zusammenhänge in Daten schnell zu erfassen. Im Folgenden vier grundlegende Diagrammtypen:
+Daten-Visualisierungen helfen, Muster, Ausreisser und Zusammenhänge in Daten schnell zu erfassen. Im Folgenden vier grundlegende Diagrammtypen:
 
 1. **Line Plot (Linienplot)**
 2. **Histogramm**
@@ -115,7 +115,7 @@ fig.show()
 
 ### 4. Scatter Plot (Punktwolke)
 
-Ein Scatter Plot zeigt die Beziehung zwischen **zwei numerischen** Variablen als Punktwolke. Er hilft, **Zusammenhänge**, Cluster und Ausreißer zu erkennen.
+Ein Scatter Plot zeigt die Beziehung zwischen **zwei numerischen** Variablen als Punktwolke. Er hilft, **Zusammenhänge**, Cluster und Ausreisser zu erkennen.
 
 **Anwendungsfälle**
 
