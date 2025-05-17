@@ -43,6 +43,47 @@ fig.show()
 
 ![Tägliche Temperaturwerte](./img/daily_temp.png)
 
+
+#### Zwei Linien
+
+Um zwei Linien in der gleichen Grafik darzustellen, kann ein weiterer Trace hinzugefügt werden. 
+
+Wichtig ist, dass jetzt auch die Eigenschaft **Name** gesetzt wird.
+
+**Beispielcode**
+
+```python
+import pandas as pd
+import plotly.graph_objects as go
+
+# Pseudodaten: tägliche Temperaturwerte für zwei Orte
+dates = pd.date_range('2025-01-01', periods=10, freq='D')
+temperature_room1 = [5, 7, 6, 8, 10, 9, 11, 10.5, 12, 13]
+temperature_room2 = [3, 4, 5, 6.5, 7, 8, 8.5, 9, 10, 10.5]
+
+df = pd.DataFrame({
+    'Datum': dates,
+    'Raum A': temperature_room1,
+    'Raum B': temperature_room2
+})
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=df['Datum'], y=df['Raum A'], mode='markers+lines', name='Raum A'))
+fig.add_trace(go.Scatter(x=df['Datum'], y=df['Raum B'], mode='markers+lines', name='Raum B'))
+
+fig.update_layout(
+    title='Tägliche Temperaturwerte in zwei Städten',
+    xaxis_title='Datum',
+    yaxis_title='Temperatur (°C)',
+    legend_title='Raum'
+)
+
+fig.show()
+```
+
+![2 Linien](./img/2_lines.png)
+
+
 ---
 
 ### 2. Histogramm
