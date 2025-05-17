@@ -76,6 +76,32 @@ print(df.corr())
 # Spearman-Korrelation
 print("Spearman R:")
 print(df.corr(method="spearman"))
+
+# Die Korrelationsmatrix lässt sich auch visualisieren
+# Pearson-Korrelation
+pearson_corr = df.corr().round(2)
+pearson_text = pearson_corr.astype(str)
+
+fig_pearson = go.Figure(data=go.Heatmap(
+    z=pearson_corr.values,
+    x=pearson_corr.columns,
+    y=pearson_corr.columns,
+    text=pearson_text.values,
+    texttemplate="%{text}",
+    textfont={"size":14, "color":"black"},
+    colorscale='RdBu',
+    zmin=-1,
+    zmax=1,
+    colorbar=dict(title="Pearson R")
+))
+
+fig_pearson.update_layout(
+    title="Korrelationsmatrix (Pearson)",
+    xaxis_title="Variablen",
+    yaxis_title="Variablen"
+)
+
+fig_pearson.show()
 ```
 
 **Ausgabe:**
@@ -95,6 +121,8 @@ Bewegungssensor    1.000000  0.787855         1.000000    0.988647
 Ausreisser         0.988647  0.792439         0.988647    1.000000
 ```
 
+
+![Korrelationsmatrix](./img/correlation_matrix.png)
 
 **Erwartete Ergebnisse:**
 
