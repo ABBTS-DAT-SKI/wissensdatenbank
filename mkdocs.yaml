@@ -25,9 +25,13 @@ nav:
           - Pivot/Melt: data-engineering/pivot_melt.md
       - Statistik:
           - Univariate Statistik: statistics/univariate_statistics.md
-      - Datenschutz: data_protection.md
       - Visualisierungen: visualization.md
       - Korrelation: correlation.md
+      - Machine Learning:
+          - Grundlagen: machine-learning/basics.md
+          - Lineare Regression: machine-learning/linear_regression.md
+          - Residuenanalyse: machine-learning/residual_analysis.md
+      - Datenschutz: data_protection.md
 
 plugins:
   - search
