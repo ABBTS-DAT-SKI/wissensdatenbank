@@ -25,8 +25,7 @@ nav:
           - Pivot/Melt: data-engineering/pivot_melt.md
       - Statistik:
           - Univariate Statistik: statistics/univariate_statistics.md
-      - Datenschutz:
-          - Datenschutz: data-protection/data_protection.md
+      - Datenschutz: data_protection.md
       - Visualisierungen: visualization.md
       - Korrelation: correlation.md
 
