@@ -25,10 +25,10 @@ nav:
           - Pivot/Melt: data-engineering/pivot_melt.md
       - Statistik:
           - Univariate Statistik: statistics/univariate_statistics.md
+          - Visualisierungen: visualization.md
+          - Korrelation: correlation.md
       - Datenschutz:
           - Datenschutz: data-protection/data_protection.md
-      - Visualisierungen: visualization.md
-      - Korrelation: correlation.md
 
 plugins:
   - search
