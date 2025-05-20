@@ -27,8 +27,11 @@ nav:
           - Univariate Statistik: statistics/univariate_statistics.md
           - Visualisierungen: visualization.md
           - Korrelation: correlation.md
-      - Datenschutz:
-          - Datenschutz: data-protection/data_protection.md
+      - Machine Learning:
+          - Grundlagen: machine-learning/basics.md
+          - Lineare Regression: machine-learning/linear_regression.md
+          - Residuenanalyse: machine-learning/residual_analysis.md
+      - Datenschutz: data_protection.md
 
 plugins:
   - search
