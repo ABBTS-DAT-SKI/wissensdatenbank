@@ -31,6 +31,8 @@ nav:
           - Grundlagen: machine-learning/basics.md
           - Lineare Regression: machine-learning/linear_regression.md
           - Residuenanalyse: machine-learning/residual_analysis.md
+          - Weitere Regressionen: machine-learning/other_regression_models.md
+          - Modellevaluation: machine-learning/model_evaluation.md
       - Datenschutz: data_protection.md
 
 plugins:
@@ -81,6 +83,10 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - github-callouts
+  - pymdownx.blocks.caption
+  - attr_list
+  - md_in_html
+
 
 extra_javascript:
   - javascripts/katex.js
