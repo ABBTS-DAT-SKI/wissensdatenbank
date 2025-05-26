@@ -25,15 +25,15 @@ nav:
           - Pivot/Melt: data-engineering/pivot_melt.md
       - Statistik:
           - Univariate Statistik: statistics/univariate_statistics.md
-          - Visualisierungen: visualization.md
-          - Korrelation: correlation.md
+          - Visualisierungen: statistics/visualization.md
+          - Korrelation: statistics/correlation.md
       - Machine Learning:
           - Grundlagen: machine-learning/basics.md
           - Lineare Regression: machine-learning/linear_regression.md
           - Residuenanalyse: machine-learning/residual_analysis.md
           - Weitere Regressionen: machine-learning/other_regression_models.md
           - Modellevaluation: machine-learning/model_evaluation.md
-      - Datenschutz: data_protection.md
+      - Datenschutz: data-protection/data_protection.md
 
 plugins:
   - search
@@ -86,7 +86,6 @@ markdown_extensions:
   - pymdownx.blocks.caption
   - attr_list
   - md_in_html
-
 
 extra_javascript:
   - javascripts/katex.js
