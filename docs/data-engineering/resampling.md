@@ -17,7 +17,7 @@ Resampling ist die Transformation einer Zeitreihe von einer zeitlichen Auflösun
 - **Upsampling**: Erhöhung der Frequenz durch Generierung neuer Datenpunkte
   ```python
   # Beispiel: Von Tagen zu Stunden
-  df.resample('H').ffill()  # Füllt fehlende Stunden mit letztem Tageswert
+  df.resample('h').ffill()  # Füllt fehlende Stunden mit letztem Tageswert
   ```
 
 ### Grundlegende Methoden-Übersicht
@@ -30,11 +30,12 @@ Resampling ist die Transformation einer Zeitreihe von einer zeitlichen Auflösun
 **Typischer Workflow:**
 ```python
 # 1. Resampling-Objekt erstellen
-resampler = df.resample('D')
+downsampler = df.resample('D')
+upsampler = df.resample('h')
 
 # 2. Aggregation oder Interpolation anwenden
-daily_avg = resampler.mean()  # Für Downsampling
-daily_filled = resampler.ffill()  # Für Upsampling
+daily_avg = downsampler.mean()  # Für Downsampling
+hourly_filled = upsampler.ffill()  # Für Upsampling
 ```
 
 ## `resample()` - Die Basis-Methode
@@ -115,7 +116,7 @@ Downsampling kombiniert mehrere Datenpunkte zu einem, basierend auf der gewählt
 **Beispiel-Szenario:**
 ```python
 # Temperaturmessungen im Minutentakt zu Stundenwerten
-temp_hourly = temp_minute.resample('H').mean()
+temp_hourly = temp_minute.resample('h').mean()
 
 # Verkaufstransaktionen zu Tagesumsätzen
 daily_sales = transactions.resample('D').sum()
@@ -222,7 +223,7 @@ daily_sales = transactions.resample('D').sum()
 **Mit `agg()` für spaltenweise Aggregation:**
 ```python
 # Verschiedene Aggregationen pro Spalte
-df.resample('H').agg({
+df.resample('h').agg({
     'temperatur': 'mean',      # Durchschnitt für Temperatur
     'luftfeuchtigkeit': 'mean',# Durchschnitt für Luftfeuchtigkeit
     'niederschlag': 'sum',     # Summe für Niederschlag
@@ -252,13 +253,13 @@ Upsampling generiert neue Zeitindizes zwischen existierenden Datenpunkten. Die W
 **Anwendung:**
 ```python
 # Grundlegendes Upsampling (alle neuen Werte = NaN)
-hourly_empty = daily_data.resample('H').asfreq()
+hourly_empty = daily_data.resample('h').asfreq()
 
 # Mit Forward Fill - letzte Werte werden vorwärts gefüllt
-hourly_filled = daily_data.resample('H').asfreq(method='ffill')
+hourly_filled = daily_data.resample('h').ffill()
 
-# Downsampling mit asfreq (nimmt letzten Wert)
-daily_end = hourly_data.resample('D').asfreq(how='end')
+# Downsampling mit letztem Wert des Tages
+daily_end = hourly_data.resample('D').last()
 ```
 
 ### Fill-Methoden
@@ -290,12 +291,12 @@ daily_end = hourly_data.resample('D').asfreq(how='end')
 **`fillna()` mit Konstanten:**
 ```python
 # Alle neuen Werte mit 0 füllen
-hourly_data = daily_data.resample('H').asfreq().fillna(0)
+hourly_data = daily_data.resample('h').asfreq().fillna(0)
 
 # Verschiedene Füllwerte pro Spalte
-hourly_data = daily_data.resample('H').asfreq()
-hourly_data['temperature'].fillna(20)  # Standardtemperatur
-hourly_data['humidity'].fillna(method='ffill')  # Forward Fill für Feuchtigkeit
+hourly_data = daily_data.resample('h').asfreq()
+hourly_data['temperature'] = hourly_data['temperature'].fillna(20)  # Standardtemperatur
+hourly_data['humidity'] = hourly_data['humidity'].ffill()  # Forward Fill für Feuchtigkeit
 ```
 
 ### Interpolationsmethoden
@@ -309,7 +310,7 @@ hourly_data['humidity'].fillna(method='ffill')  # Forward Fill für Feuchtigkeit
     
     ```python
     # Gleichmässige Verteilung zwischen Messpunkten
-    hourly_linear = daily_temp.resample('H').interpolate(method='linear')
+    hourly_linear = daily_temp.resample('h').interpolate(method='linear')
     ```
 
 - **Zeitbasierte Interpolation (`time`)**
@@ -319,7 +320,7 @@ hourly_data['humidity'].fillna(method='ffill')  # Forward Fill für Feuchtigkeit
     
     ```python
     # Berücksichtigt tatsächliche Zeitabstände
-    interpolated = irregular_data.resample('H').interpolate(method='time')
+    interpolated = irregular_data.resample('h').interpolate(method='time')
     ```
 
 - **Nächster Nachbar (`nearest`)**
@@ -329,7 +330,7 @@ hourly_data['humidity'].fillna(method='ffill')  # Forward Fill für Feuchtigkeit
     
     ```python
     # Diskrete Werte wie Kategorien
-    category_hourly = daily_category.resample('H').interpolate(method='nearest')
+    category_hourly = daily_category.resample('h').interpolate(method='nearest')
     ```
 
 - **Polynomische Interpolation (`polynomial`)**
@@ -339,5 +340,5 @@ hourly_data['humidity'].fillna(method='ffill')  # Forward Fill für Feuchtigkeit
     
     ```python
     # Glatte Kurven für natürliche Phänomene
-    smooth_curve = daily_data.resample('H').interpolate(method='polynomial', order=3)
+    smooth_curve = daily_data.resample('h').interpolate(method='polynomial', order=3)
     ```

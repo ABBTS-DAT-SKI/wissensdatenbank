@@ -45,6 +45,7 @@ Die lineare Regression würde eine Gerade $y = mx + b$ berechnen, bei der:
 Um eine lineare Regression in Python durchzuführen, können wir die Bibliothek `scikit-learn` verwenden. Hier ist ein einfaches Beispiel:
 
 ```python
+import pandas as pd
 from sklearn.linear_model import LinearRegression
 
 model = LinearRegression()
@@ -61,18 +62,18 @@ In diesem Beispiel wird ein `LinearRegression`-Modell erstellt und mit den Daten
 predictions = model.predict(X) # Vorhersagen für die Trainingsdaten
 ```
 
-Um eine Vorhersage für einen neuen Wert zu treffen, können wir die Methode `predict()` mit dem neuen Wert aufrufen:
+Um eine Vorhersage für einen neuen Wert zu treffen, können wir die Methode `predict()` mit Daten im gleichen Format wie die Trainingsdaten aufrufen:
 
 ```python
 # Vorhersage für eine Fläche von 150 m²
-print(model.predict([[150]]))
+print(model.predict(pd.DataFrame({'x': [150]})))
 ```
 
 Oder für mehrere Werte:
 
 ```python
 # Vorhersage für mehrere Flächen
-print(model.predict([[150], [200], [250]]))
+print(model.predict(pd.DataFrame({'x': [150, 200, 250]})))
 ```
 
 ### Achsenabschnitt und Steigung

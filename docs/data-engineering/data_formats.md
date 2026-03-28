@@ -17,6 +17,8 @@ Falsche Encodings führen zu Problemen wie `UnicodeDecodeError` oder unlesbaren 
 Pandas bietet einheitliche Funktionen zum Einlesen verschiedener Dateiformate:
 
 ```python
+import pandas as pd
+
 # CSV-Dateien einlesen
 df = pd.read_csv("daten.csv", encoding="utf-8")
 
@@ -29,6 +31,9 @@ df = pd.read_json("daten.json", encoding="utf-8")
 # Parquet-Dateien einlesen
 df = pd.read_parquet("daten.parquet")
 ```
+
+> [!NOTE]
+> Je nach Installation sind Zusatzpakete notwendig, z. B. `openpyxl` für Excel-Dateien und `pyarrow` für Parquet-Dateien.
 
 Bei Encoding-Problemen kann ein alternatives Encoding verwendet werden:
 ```python

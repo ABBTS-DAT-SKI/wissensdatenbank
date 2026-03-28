@@ -6,9 +6,9 @@ In diesem Guide zeigen wir dir, wie du Python auf deinem Computer installierst u
 
 ## Installation auf Windows
 
-Lade die Python Version 3.12 vom Microsoft Store herunter:
+Lade die Python Version 3.13 vom Microsoft Store herunter:
 
-- [Python 3.12](https://www.microsoft.com/store/productId/9NCVDN91XZQP)
+- [Python 3.13](https://apps.microsoft.com/detail/9pnrbtzxmb4z)
 
 ## Packages
 > [!NOTE]
@@ -18,15 +18,10 @@ Um neue Packages zu installieren, nutze pip. Pip ist ein Paketmanager für Pytho
 
 Um ein Package zu installieren, öffne das Terminal (auf Windows heisst es "Eingabeaufforderung") und führe folgenden Befehl aus:
 ```sh
-pip install <PACKAGE1> <PACKAGE2> <PACKAGE3> ...
+py -m pip install <PACKAGE1> <PACKAGE2> <PACKAGE3> ...
 ```
 
 Beispiel: Um das pandas-Package zu installieren, führe folgende Befehle aus:
 ```sh
-pip install pandas
-```
-
-Es könnte sein, dass bei neueren Python-Versionen diese Befehle zu einem Fehler führen. Probiere in diesem Fall dies aus:
-```sh
-pip install pandas --break-system-packages
+py -m pip install pandas
 ```

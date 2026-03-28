@@ -41,7 +41,7 @@ fig.update_layout(
 fig.show()
 ```
 
-![Tägliche Temperaturwerte](./img/daily_temp.png)
+![Tägliche Temperaturwerte](../img/daily_temp.png)
 
 
 #### Zwei Linien
@@ -81,7 +81,7 @@ fig.update_layout(
 fig.show()
 ```
 
-![2 Linien](./img/2_lines.png)
+![2 Linien](../img/2_lines.png)
 
 
 ---
@@ -113,7 +113,7 @@ fig.update_layout(
 
 fig.show()
 ```
-![Histogramm der Luftfeuchtigkeiten](./img/hist_humidity.png)
+![Histogramm der Luftfeuchtigkeiten](../img/hist_humidity.png)
 
 ---
 
@@ -150,7 +150,7 @@ fig.update_layout(
 
 fig.show()
 ```
-![Barplot: Temperatur pro Raum](./img/bar_temp.png)
+![Barplot: Temperatur pro Raum](../img/bar_temp.png)
 
 ---
 
@@ -188,7 +188,7 @@ fig.update_layout(
 fig.show()
 ```
 
-![Scatterplot: Temperatur vs. Luftfeuchtigkeit](./img/scatter.png)
+![Scatterplot: Temperatur vs. Luftfeuchtigkeit](../img/scatter.png)
 
 ---
 
@@ -200,4 +200,3 @@ fig.show()
 | Histogramm   | Verteilung einer einzelnen Variable      |
 | Bar Plot     | Vergleich zwischen Gruppen               |
 | Scatter Plot | Beziehung/Korrelation zwischen Merkmalen |
-

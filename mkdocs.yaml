@@ -9,6 +9,7 @@ nav:
   - Startseite: index.md
   - Mini Challenge: mini_challenge.md
   - Python Installation: python_installation.md
+  - Material Downloads: material_downloads.md
   - Wissensdatenbank:
       - Datenverarbeitung:
           - Einführung Pandas: data-engineering/introduction.md

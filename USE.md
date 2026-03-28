@@ -11,7 +11,7 @@ astral-sh/uv kann hier heruntergeladen werden: https://docs.astral.sh/uv/#instal
 ### Mit pip
 
 ```bash
-pip install -e .
+py -m pip install -e .
 ```
 
 ## Lokales starten der WissensDB

@@ -20,7 +20,7 @@ Korrelationen messen den **Zusammenhang** zwischen zwei numerischen Variablen un
 
 In der unterstehenden Grafik sind verschiedene Korrelationskoeffizienten (Pearson) und die dazugehörigen Daten zu sehen. Es ist gut ersichtlich, dass die Steigung der Daten keinen Einfluss auf die Korrelationskoeffizienten hat (Reihe 2).
 
-![Korrelationskoeffizienten](./img/Korrelationskoeffizienten.png)
+![Korrelationskoeffizienten](../img/Korrelationskoeffizienten.png)
 
 ---
 
@@ -46,7 +46,7 @@ In der nachfolgenden Grafik ist noch einmal klar dargestellt, was mit einer line
 
 Hier sind die Daten nicht linear abhängig, haben jedoch eine monotone Beziehung (Y erhöht sich IMMER wenn sich X erhöht und umgekehrt). 
 
-![pearson vs spearman](./img/pearson_spearman.png)
+![pearson vs spearman](../img/pearson_spearman.png)
 
 ---
 
@@ -55,6 +55,8 @@ Hier sind die Daten nicht linear abhängig, haben jedoch eine monotone Beziehung
 ```python
 import numpy as np
 import pandas as pd
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 
 # Pseudodaten erzeugen
 np.random.seed(42)
@@ -122,7 +124,7 @@ Ausreisser         0.988647  0.792439         0.988647    1.000000
 ```
 
 
-![Korrelationsmatrix](./img/correlation_matrix.png)
+![Korrelationsmatrix](../img/correlation_matrix.png)
 
 **Erwartete Ergebnisse:**
 
@@ -151,7 +153,7 @@ fig.update_layout(title_text='Scatterplots von Temperatur vs. Anderen Merkmalen'
 fig.show()
 ```
 
-![Korrelationen im Scatterplot](./img/corr_plot.png)
+![Korrelationen im Scatterplot](../img/corr_plot.png)
 
 ---
 

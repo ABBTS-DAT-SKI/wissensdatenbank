@@ -1,6 +1,6 @@
 # Befüllen von fehlenden Werten
 
-In der Arbeit mit Sensordaten treten oft Lücken in den Datensätzen auf, da Sensoren gelegentlich keine Messwerte liefern können. Diese fehlenden Werte (`NaN`) müssen häufig bereinigt werden, um eine korrekte Analyse und Modellierung zu ermöglichen. Die Methode `fillna` von pandas bietet eine effektive Möglichkeit, solche Lücken zu schliessen, indem fehlende Werte durch feste Werte, statistische Kennzahlen (z. B. Mittelwert) oder eine Füllstrategie wie Vorwärts- oder Rückwärtsfüllung ersetzt werden.
+In der Arbeit mit Sensordaten treten oft Lücken in den Datensätzen auf, da Sensoren gelegentlich keine Messwerte liefern können. Diese fehlenden Werte (`NaN`) müssen häufig bereinigt werden, um eine korrekte Analyse und Modellierung zu ermöglichen. Die Methode `fillna` von pandas bietet eine effektive Möglichkeit, solche Lücken mit festen Werten oder statistischen Kennzahlen (z. B. Mittelwert) zu schliessen. Für Vorwärts- oder Rückwärtsfüllung werden heute meist `ffill()` bzw. `bfill()` verwendet.
 
 Für Sensordaten ist diese Methode besonders nützlich, um:
 
@@ -11,7 +11,7 @@ Für Sensordaten ist diese Methode besonders nützlich, um:
 **Hauptparameter für Sensordaten:**
 
 - **value**: Feste Werte, z. B. `0`, falls ein Sensorfehler oder ein erwartetes physikalisches Verhalten dies nahelegt.
-- **method**: Vorwärtsfüllung (`method='ffill'`) oder Rückwärtsfüllung (`method='bfill'`), um Messlücken basierend auf benachbarten Werten zu schliessen.
+- **`ffill()` / `bfill()`**: Vorwärts- oder Rückwärtsfüllung, um Messlücken basierend auf benachbarten Werten zu schliessen.
 
 ## Beispiel 1: Vorwärtsfüllung bei kontinuierlichen Sensordaten  
 Ein Anwendungsfall, bei dem Vorwärtsfüllung sinnvoll ist, ist die Messung von Temperatur- oder Feuchtigkeitswerten, bei denen der letzte gemessene Wert bis zur nächsten Messung gültig bleibt.
@@ -31,7 +31,7 @@ print("Originale Sensordaten:")
 print(df)
 
 # Fehlende Werte durch Vorwärtsfüllung schliessen
-df_filled = df.fillna(method='ffill')
+df_filled = df.ffill()
 
 print("\nNach Vorwärtsfüllung der fehlenden Werte:")
 print(df_filled)

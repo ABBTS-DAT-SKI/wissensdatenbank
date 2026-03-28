@@ -11,7 +11,7 @@ Der Inner Join kombiniert nur die Zeilen, die in beiden DataFrames übereinstimm
 ```python
 import pandas as pd
 
-# Erstellen von Beispiel-DataFrames mit Zeitreihendaten
+# Erstellen von Beispiel-DataFrames mit täglichen Zeitreihendaten
 dates_temp = pd.date_range('2025-01-01', '2025-01-07') # freq = 15min
 temp_values = [22.0, 20.7, 19.7, 20.5, 19.5, 20.7, 19.0]
 df_temp = pd.DataFrame({'Temperature': temp_values}, index=dates_temp)

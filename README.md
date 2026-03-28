@@ -25,7 +25,7 @@ Die visuelle Darstellung von Daten ist entscheidend für deren Interpretation. S
 Der verantwortungsvolle Umgang mit Daten ist essenziell. Sie verstehen die Grundlagen des Datenschutzes und können Datenschutzpraktiken anwenden. Sie kennen den Zweck und Aufbau einer Datenschutzerklärung und können ethische Fragestellungen im Zusammenhang mit Datenwissenschaft erkennen und diskutieren, insbesondere in den Bereichen Gebäudeautomation und Umwelttechnik.
 
 ## Aufgaben
-Alle Aufgaben sind ebenfalls auf GitHub verfügbar: [https://github.com/ABBTS-DAT-SKI/aufgaben](https://github.com/ABBTS-DAT-SKI/aufgaben)
+Die Kursmaterialien stehen in der Wissensdatenbank als Download-Pakete zur Verfügung. Eine Übersicht findest du [hier](material_downloads.md).
 
 ## Leistungsnachweise
 Der Kompetenznachweis erfolgt durch:

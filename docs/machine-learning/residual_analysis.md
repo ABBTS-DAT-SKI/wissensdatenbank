@@ -26,9 +26,11 @@ Die Residuen sollten **unabhängig** voneinander sein, d. h. der Fehler eines Da
 
 ## Beispiel eines Residuenplots
 
-Hier ist ein einfaches Beispiel, ein Residuenplot zu erstellen, um die oben genannten Annahmen zu überprüfen.
+Hier ist ein einfaches Beispiel, ein Residuenplot zu erstellen, um die oben genannten Annahmen zu überprüfen. Das Beispiel geht von einem bereits trainierten Modell `model` und einem DataFrame `data` mit den Spalten `x` und `y` aus.
 
 ```python
+import matplotlib.pyplot as plt
+
 data['residuals'] = data['y'] - model.predict(data[['x']])
 plt.scatter(data['x'], data['residuals'])
 plt.axhline(0, color='red', linestyle='--')
