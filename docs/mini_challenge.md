@@ -47,7 +47,7 @@ Wenn Sie bereits früher beginnen wollen, können Sie selbstverständlich uns au
 
 | Punktebereich   | Beschreibung                                                                                                                            |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **5–10 Punkte** | Der Datensatz ist gut gewählt und passt hervorragend zur Zielsetzung der Aufgabe. Das Ziel der Analyse ist klar formuliert.             |
+| **5–10 Punkte** | Der Datensatz ist gut gewählt und passt hervorragend zur Zielsetzung der Aufgabe. Er setzt sich aus mindestens 2 Dateien zusammen. Das Ziel der Analyse ist klar formuliert.             |
 | **3–4 Punkte**  | Der Datensatz ist grösstenteils geeignet, aber es gibt kleinere Unsicherheiten bei der Zieldefinition oder der Auswahl des Datensatzes. |
 | **1–2 Punkte**  | Der Datensatz passt nicht gut zur Aufgabe oder das Ziel ist unklar formuliert.                                                          |
 | **0 Punkte**    | Kein geeigneter Datensatz ausgewählt oder das Ziel ist nicht definiert.                                                                 |
@@ -56,7 +56,7 @@ Wenn Sie bereits früher beginnen wollen, können Sie selbstverständlich uns au
 
 | Punktebereich    | Beschreibung                                                                                                                                                               |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **20–30 Punkte** | Die Daten wurden zusammengeführt und gründlich/systematisch bereinigt. Alle relevanten Probleme (fehlende Werte, Inkonsistenzen, Ausreisser) wurden angemessen adressiert. |
+| **20–30 Punkte** | Die Daten wurden zu einem DataFrame zusammengeführt und gründlich/systematisch bereinigt. Alle relevanten Probleme (fehlende Werte, Inkonsistenzen, Ausreisser) wurden angemessen adressiert. |
 | **10–19 Punkte** | Die Datenbereinigung wurde grösstenteils durchgeführt, jedoch gibt es kleinere Mängel.                                                                                     |
 | **5–9 Punkte**   | Die Datenbereinigung ist oberflächlich und viele Probleme wurden nicht adressiert.                                                                                         |
 | **0 Punkte**     | Es wurde keine oder eine unzureichende Datenbereinigung durchgeführt.                                                                                                      |
@@ -65,7 +65,7 @@ Wenn Sie bereits früher beginnen wollen, können Sie selbstverständlich uns au
 
 | Punktebereich    | Beschreibung                                                                                                                                                     |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **15–20 Punkte** | Die explorative Datenanalyse ist fundiert und umfassend. Alle wichtigen Aspekte des Datensatzes wurden untersucht und aussagekräftige Visualisierungen erstellt. |
+| **15–20 Punkte** | Die explorative Datenanalyse ist fundiert und umfassend. Alle wichtigen Aspekte (Muster, Anomalien) des Datensatzes wurden untersucht und aussagekräftige Visualisierungen erstellt. |
 | **10–14 Punkte** | Die Datenanalyse ist grösstenteils fundiert, aber einige Aspekte oder Muster wurden möglicherweise übersehen.                                                    |
 | **5–9 Punkte**   | Die Analyse ist oberflächlich, und die Visualisierungen sind nicht sehr aussagekräftig.                                                                          |
 | **0–4 Punkte**   | Es wurden keine aussagekräftigen Visualisierungen oder Analysen durchgeführt.                                                                                    |
@@ -74,8 +74,8 @@ Wenn Sie bereits früher beginnen wollen, können Sie selbstverständlich uns au
 
 | Punktebereich    | Beschreibung                                                                                                                                                            |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **15–20 Punkte** | Ein geeignetes Modell wurde ausgewählt, und die Ergebnisse sind klar interpretiert. Die Wahl des Modells ist gut begründet, und die Interpretation ist nachvollziehbar. |
-| **10–14 Punkte** | Ein angemessenes Modell wurde verwendet, aber die Interpretation der Ergebnisse ist unklar oder nicht vollständig.                                                      |
+| **15–20 Punkte** | Ein geeignetes Modell mit mindestens 2 Variablen wurde ausgewählt, und die Ergebnisse sind klar interpretiert. Die Wahl des Modells ist gut begründet, und die Interpretation ist nachvollziehbar. |
+| **10–14 Punkte** | Ein angemessenes Modell mit mindestens 2 Variablen wurde verwendet, aber die Interpretation der Ergebnisse ist unklar oder nicht vollständig.                           |
 | **5–9 Punkte**   | Das Modell ist unpassend oder es fehlt eine klare Begründung. Die Ergebnisse sind schwer zu interpretieren.                                                             |
 | **0–4 Punkte**   | Es wurde kein Modell angewendet oder die Interpretation der Ergebnisse ist unverständlich.                                                                              |
 
@@ -83,7 +83,7 @@ Wenn Sie bereits früher beginnen wollen, können Sie selbstverständlich uns au
 
 | Punktebereich    | Beschreibung                                                                                                                                                           |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **15–20 Punkte** | Der Bericht ist klar strukturiert, übersichtlich und gut dokumentiert. Alle Schritte der Analyse sind nachvollziehbar. Die Dokumentation ist verständlich und präzise. |
+| **15–20 Punkte** | Der Bericht ist klar strukturiert, übersichtlich und gut dokumentiert. Alle Schritte der Analyse und Bereinigung sind nachvollziehbar und begründet. Die Dokumentation ist verständlich und präzise. |
 | **10–14 Punkte** | Der Bericht ist grösstenteils strukturiert, aber es fehlen teilweise Details oder er könnte klarer formuliert werden.                                                  |
 | **5–9 Punkte**   | Der Bericht hat strukturelle Mängel und wichtige Aspekte sind unzureichend dokumentiert.                                                                               |
 | **0–4 Punkte**   | Der Bericht ist unstrukturiert oder unvollständig. Wichtige Informationen fehlen.                                                                                      |
