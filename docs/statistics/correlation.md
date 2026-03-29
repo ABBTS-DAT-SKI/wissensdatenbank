@@ -1,6 +1,6 @@
 ## Korrelationen
 
-Korrelationen messen den **Zusammenhang** zwischen zwei numerischen Variablen und drücken ihn als **Korrelationskoeffizient** $R$ aus. Wenn Sie ein intuitives Gefühl dafür entwickeln möchten, wie Korrelationskoeffizienten mit den Daten zusammenhängen, dann spielen Sie [Guess the Correlation](https://www.guessthecorrelation.com/) (gratis). 
+Korrelationen messen den **Zusammenhang** zwischen zwei numerischen Variablen und drücken ihn als **Korrelationskoeffizient** $R$ aus. Wenn du ein intuitives Gefühl dafür entwickeln möchtest, wie Korrelationskoeffizienten mit den Daten zusammenhängen, dann spiele [Guess the Correlation](https://www.guessthecorrelation.com/) (gratis). 
 
 ### 1. Korrelationskoeffizient $R$
 

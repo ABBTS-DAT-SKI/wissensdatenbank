@@ -1,10 +1,10 @@
 # Mini-Challenge  
-In dieser Mini-Challenge können Sie Ihr Wissen anwenden, um reale Sensordaten zu untersuchen und wichtige Zusammenhänge zwischen Variablen zu modellieren.
+In dieser Mini-Challenge kannst du dein Wissen anwenden, um reale Sensordaten zu untersuchen und wichtige Zusammenhänge zwischen Variablen zu modellieren.
 
 Ziel ist es, einen Datensatz auszuwählen, diesen gründlich zu bereinigen, die Datenanalyse durchzuführen und anschliessend mithilfe eines ML-Modells eine Vorhersage oder Beziehung zwischen zwei Variablen zu quantifizieren und zu visualisieren. Der Fokus liegt auf der praktischen Umsetzung des gelernten Stoffes und der kritischen Auseinandersetzung mit den Daten.
 
 ## Vorgehen  
-Wählen Sie einen Sensordatensatz aus, der in mehreren Dateien vorliegt. Sie können Daten aus einem früheren Modul oder aus öffentlich zugänglichen Quellen wie Kaggle nutzen. Klären Sie Ihre Auswahl mit den Dozenten ab, um sicherzustellen, dass der Datensatz geeignet ist.
+Wähle einen Sensordatensatz aus, der in mehreren Dateien vorliegt. Du kannst Daten aus einem früheren Modul oder aus öffentlich zugänglichen Quellen wie Kaggle nutzen. Kläre deine Auswahl mit den Dozenten ab, damit der Datensatz wirklich geeignet ist.
 
 Hier einige Beispielsdatensätze:
 
@@ -12,34 +12,34 @@ Hier einige Beispielsdatensätze:
 - [CU-BEMS, smart building energy and IAQ data](https://www.kaggle.com/datasets/claytonmiller/cubems-smart-building-energy-and-iaq-data)
 - [ASHRAE Global Occupant Behavior Database](https://ashraeobdatabase.com/)
 
-Bereinigen Sie die Daten gründlich, indem Sie unvollständige, fehlerhafte oder inkonsistente Daten behandeln. Vor der Analyse müssen alle Dateien in eine einzige Datei zusammengeführt werden, um eine einheitliche und umfassende Datengrundlage zu erhalten.
+Bereinige die Daten gründlich, indem du unvollständige, fehlerhafte oder inkonsistente Daten behandelst. Vor der Analyse müssen alle Dateien in eine einzige Datei zusammengeführt werden, damit du eine einheitliche und umfassende Datengrundlage hast.
 
-Untersuchen Sie den Datensatz explorativ und beschreiben Sie auffällige Muster, Anomalien oder fehlende Werte. Erstellen Sie Visualisierungen, die Ihnen helfen, die Daten besser zu verstehen.
+Untersuche den Datensatz explorativ und beschreibe auffällige Muster, Anomalien oder fehlende Werte. Erstelle Visualisierungen, die dir helfen, die Daten besser zu verstehen.
 
-Identifizieren Sie zwei Variablen, deren Zusammenspiel Sie analysieren möchten, und wählen Sie ein geeignetes ML-Modell, um eine Korrelation zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Fassen Sie die Ergebnisse zusammen und interpretieren Sie, was die Modellierung über die Beziehung der Variablen aussagt.
+Identifiziere zwei Variablen, deren Zusammenspiel du analysieren möchtest, und wähle ein geeignetes ML-Modell, um eine Korrelation zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Fasse die Ergebnisse zusammen und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
 
 > [!WARNING]  
-> Dies ist eine Einzelarbeit. Besprechen Sie jedoch die genauen Auftragsdetails mit den Dozenten, um sicherzustellen, dass Ihre Herangehensweise sinnvoll ist. Wählen Sie eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
+> Dies ist eine Einzelarbeit. Besprich die genauen Auftragsdetails jedoch mit den Dozenten, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
 
 > [!TIP]  
-> Die Nutzung von ChatGPT oder anderen KI-Tools ist erlaubt und für Wissensfragen sogar deutlich empfohlen. Jedoch sollte die Nutzung in einem Mass stattfinden, dass Sie verstehen, was gemacht wird und warum gewisse Entscheidungen getroffen werden. In der Abschlussprüfung können Fragen zur Mini-Challenge gestellt werden, die dies testen.
+> Die Nutzung von ChatGPT oder anderen KI-Tools ist erlaubt und für Wissensfragen sogar ausdrücklich empfohlen. Achte aber darauf, dass du verstehst, was gemacht wird und warum bestimmte Entscheidungen getroffen werden. In der Abschlussprüfung können dazu Fragen gestellt werden.
 
 ## Abgabe  
-Die Ergebnisse dokumentieren Sie in einem Bericht (als PDF), der maximal 8 Seiten umfasst (ohne Titelblatt, Inhaltsverzeichnis oder Ähnliches). Der Bericht sollte eine klare Struktur haben und die folgenden Punkte abdecken:  
+Die Ergebnisse dokumentierst du in einem Bericht (als PDF), der maximal 8 Seiten umfasst (ohne Titelblatt, Inhaltsverzeichnis oder Ähnliches). Der Bericht sollte eine klare Struktur haben und die folgenden Punkte abdecken:  
 
 - Beschreibung des Datensatzes und der Zielsetzung  
 - Vorgehen bei der Datenanalyse und -bereinigung  
 - Beschreibung der Modellierung und Interpretation der Ergebnisse  
 
-Geben Sie des Weiteren den Code als ZIP oder Notebook ab.
+Gib zusätzlich den Code als ZIP oder Notebook ab.
 
-Die Abgabe des Berichts und Code erfolgt bis spätestens 01.06.2025.
+Die Abgabe des Berichts und Code erfolgt bis spätestens am Sonntag nach der Prüfung am 07.06.2026.
 
 ### Check-In
 
-Um sich zu stellen, dass Sie auf dem richtigen Weg sind ist es wichtig, dass Sie bis Ende Semesterwoche 5 auf Teams das Check-In dieser Mini-Challenge abgeben. Dort sollen Sie in zwei bis drei Sätzen kurz beschreiben welchen Datensatz Sie verwenden und welches Analyseziel das Sie verfolgen. Damit können wir sicherstellen, dass Sie sich nicht zu viel Aufwand machen und sich der Datensatz auch eignet für diese Mini-Challenge.
+Um sicherzustellen, dass du auf dem richtigen Weg bist, gib bis Ende Semesterwoche 5 auf Teams das Check-in dieser Mini-Challenge ab. Beschreibe dort in zwei bis drei Sätzen kurz, welchen Datensatz du verwenden willst und welches Analyseziel du verfolgst. So können wir früh prüfen, ob der Aufwand passt und ob sich der Datensatz für die Mini-Challenge eignet.
 
-Wenn Sie bereits früher beginnen wollen, können Sie selbstverständlich uns auch eine E-Mail schreiben. 
+Wenn du schon früher beginnen willst, kannst du uns selbstverständlich auch eine E-Mail schreiben. 
 
 ## Bewertungsraster
 

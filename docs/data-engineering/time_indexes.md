@@ -64,7 +64,7 @@ Datum
 
 ## Fehlende Daten finden
 
-Fehlende Werte sind häufig in Zeitreihen und können durch verschiedene Faktoren wie Sensorfehler oder Datenlücken entstehen. In Pandas können Sie fehlende Werte leicht erkennen, indem Sie `isnull()` verwenden.
+Fehlende Werte sind häufig in Zeitreihen und können durch verschiedene Faktoren wie Sensorfehler oder Datenlücken entstehen. In Pandas kannst du fehlende Werte leicht erkennen, indem du `isnull()` verwenden.
 
 ### Beispiel: Fehlende Daten finden
 
@@ -84,7 +84,7 @@ Datum
 
 ## Zeitzonen und Sommerzeit
 
-Es ist wichtig, sicherzustellen, dass Zeitstempel mit der richtigen Zeitzone und unter Berücksichtigung der Sommerzeit (Daylight Saving Time) behandelt werden. Um dies zu erreichen, können Sie die `tz_localize()` und `tz_convert()` Funktionen in Pandas verwenden.
+Es ist wichtig, sicherzustellen, dass Zeitstempel mit der richtigen Zeitzone und unter Berücksichtigung der Sommerzeit (Daylight Saving Time) behandelt werden. Um dies zu erreichen, kannst du die `tz_localize()` und `tz_convert()` Funktionen in Pandas verwenden.
 
 ### Beispiel: Umgang mit Zeitzonen und Sommerzeit
 

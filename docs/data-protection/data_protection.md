@@ -8,7 +8,7 @@ Datenschutz bezieht sich auf den Schutz personenbezogener Daten und die Regelung
 
 Die DSGVO (Datenschutz-Grundverordnung) ist die umfassende Datenschutzregelung der Europäischen Union. Sie trat am 25. Mai 2018 in Kraft und gilt für alle Unternehmen und Organisationen, die personenbezogene Daten von EU-Bürgern verarbeiten, unabhängig vom Standort des Unternehmens.
 
-Weitere Informationen finden Sie unter: [https://dsgvo-gesetz.de/](https://dsgvo-gesetz.de/)
+Weitere Informationen findest du unter: [https://dsgvo-gesetz.de/](https://dsgvo-gesetz.de/)
 
 ## Grundsätze für die Verarbeitung personenbezogener Daten (DSGVO Art. 5)
 

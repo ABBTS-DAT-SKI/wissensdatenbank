@@ -1,40 +1,40 @@
 # Material Downloads
 
-Laden Sie fuer jede Woche immer zwei ZIP-Dateien herunter:
+Lade für jeden Unterrichtsblock immer zwei ZIP-Dateien herunter:
 
 1. `data.zip`
-2. das Wochenpaket, zum Beispiel `SW2.zip`
+2. das Blockpaket, zum Beispiel `Unterrichtsblock-2.zip`
 
 ## Downloads
 
 - [data.zip](downloads/data.zip)
-- [SW2.zip](downloads/SW2.zip)
-- [SW3.zip](downloads/SW3.zip)
-- [SW4.zip](downloads/SW4.zip)
-- [SW5.zip](downloads/SW5.zip)
-- [SW6.zip](downloads/SW6.zip)
-- [SW7.zip](downloads/SW7.zip)
-- [SW8.zip](downloads/SW8.zip)
-- [SW9.zip](downloads/SW9.zip)
+- [Unterrichtsblock-2.zip](downloads/Unterrichtsblock-2.zip)
+- [Unterrichtsblock-3.zip](downloads/Unterrichtsblock-3.zip)
+- [Unterrichtsblock-4.zip](downloads/Unterrichtsblock-4.zip)
+- [Unterrichtsblock-5.zip](downloads/Unterrichtsblock-5.zip)
+- [Unterrichtsblock-6.zip](downloads/Unterrichtsblock-6.zip)
+- [Unterrichtsblock-7.zip](downloads/Unterrichtsblock-7.zip)
+- [Unterrichtsblock-8.zip](downloads/Unterrichtsblock-8.zip)
+- [Unterrichtsblock-9.zip](downloads/Unterrichtsblock-9.zip)
 
 ## Zielstruktur nach dem Entpacken
 
-Entpacken Sie beide ZIP-Dateien in denselben Oberordner, zum Beispiel so:
+Entpacke beide ZIP-Dateien in denselben Oberordner, zum Beispiel so:
 
 ```text
 DAT-SKI/
 |- data/
-`- SW2/
+`- Unterrichtsblock-2/
 ```
 
-Wenn Sie mehrere Wochen herunterladen, liegen die Wochenordner alle neben `data/`:
+Wenn du mehrere Unterrichtsblöcke herunterlädst, liegen die Blockordner alle neben `data/`:
 
 ```text
 DAT-SKI/
 |- data/
-|- SW2/
-|- SW3/
-`- SW4/
+|- Unterrichtsblock-2/
+|- Unterrichtsblock-3/
+`- Unterrichtsblock-4/
 ```
 
-Die Notebooks erwarten die Daten immer relativ zum Wochenordner unter `../data/`.
+Die Notebooks erwarten die Daten immer relativ zum Blockordner unter `../data/`.

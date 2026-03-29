@@ -1,5 +1,5 @@
 # Univariate Statistiken
-Die Funktion `df.describe()` in Pandas berechnet automatisch eine Reihe von statistischen Kennzahlen für numerische Spalten in einem DataFrame. Diese Kennzahlen geben Ihnen einen ersten Überblick über die Verteilung Ihrer Daten.
+Die Funktion `df.describe()` in Pandas berechnet automatisch eine Reihe von statistischen Kennzahlen für numerische Spalten in einem DataFrame. Diese Kennzahlen geben dir einen ersten Überblick über die Verteilung deiner Daten.
 
 ## Welche Kennzahlen liefert `describe()`?
 Standardmässig berechnet `describe()` acht statistische Masse für jede numerische Spalte:
