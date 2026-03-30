@@ -17,7 +17,6 @@ Diese Übersicht zeigt pro Unterrichtsblock die zentralen Themen, die Lernziele 
 | 9 | SW8 | Weitere Regressionsmodelle, Train-Test-Split, Modellevaluation |
 | 10 | SW10 | Schriftliche Prüfung, Abgabe Mini-Challenge |
 | 11 | SW12 | Besprechung schriftliche Prüfung, Mini-Challenge, ev. Crash-Kurs generative/agentische KI |
-## Lernziele und Materialien
 
 ### Unterrichtsblock 1 - Modulstart
 
