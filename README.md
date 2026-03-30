@@ -24,6 +24,9 @@ Die visuelle Darstellung von Daten ist entscheidend für deren Interpretation. D
 ### LE5: Ethik und Datenschutz  
 Der verantwortungsvolle Umgang mit Daten ist essenziell. Du verstehst die Grundlagen des Datenschutzes und kannst Datenschutzpraktiken anwenden. Du kennst den Zweck und Aufbau einer Datenschutzerklärung und kannst ethische Fragestellungen im Zusammenhang mit Datenwissenschaft erkennen und diskutieren, insbesondere in den Bereichen Gebäudeautomation und Umwelttechnik.
 
+## Semesterübersicht
+Eine Übersicht über alle Unterrichtsblöcke mit Daten, Themen und Lernzielen findest du [hier](semesteruebersicht.md).
+
 ## Aufgaben
 Die Kursmaterialien stehen in der Wissensdatenbank als Download-Pakete zur Verfügung. Eine Übersicht findest du [hier](material_downloads.md).
 

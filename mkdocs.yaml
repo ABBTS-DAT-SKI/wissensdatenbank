@@ -7,6 +7,7 @@ repo_name: ABBTS-DAT-SKI/wissensdatenbank
 
 nav:
   - Startseite: index.md
+  - Semesterübersicht: semesteruebersicht.md
   - Mini Challenge: mini_challenge.md
   - Python Installation: python_installation.md
   - Material Downloads: material_downloads.md
