@@ -6,7 +6,7 @@ Pandas ist eine leistungsstarke Bibliothek für die Datenanalyse in Python. Sie 
 
 Falls Pandas noch nicht installiert ist, kann es mit folgendem Befehl installiert werden:
 ```bash
-py -m pip install pandas
+python -m pip install pandas
 ```
 
 Der Import erfolgt standardmässig so:

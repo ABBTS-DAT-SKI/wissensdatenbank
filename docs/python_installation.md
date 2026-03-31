@@ -2,7 +2,7 @@
 
 Python ist eine der beliebtesten Programmiersprachen der Welt. Sie wird in vielen Bereichen eingesetzt, darunter Webentwicklung, Datenanalyse, künstliche Intelligenz und vieles mehr. Python ist bekannt für seine einfache Syntax und seine Vielseitigkeit, was es zu einer grossartigen Sprache für Anfänger und Fortgeschrittene macht.
 
-In diesem Guide zeigen wir dir, wie du Python auf deinem Computer installierst und einrichtest, um mit dem Programmieren zu beginnen.
+Dieser Guide zeigt dir, wie du Python auf deinem Computer installierst und einrichtest, um mit dem Programmieren zu beginnen.
 
 ## Installation auf Windows
 
@@ -18,10 +18,10 @@ Um neue Packages zu installieren, nutze pip. Pip ist ein Paketmanager für Pytho
 
 Um ein Package zu installieren, öffne das Terminal (auf Windows heisst es "Eingabeaufforderung") und führe folgenden Befehl aus:
 ```sh
-py -m pip install <PACKAGE1> <PACKAGE2> <PACKAGE3> ...
+python -m pip install <PACKAGE1> <PACKAGE2> <PACKAGE3> ...
 ```
 
 Beispiel: Um das pandas-Package zu installieren, führe folgende Befehle aus:
 ```sh
-py -m pip install pandas
+python -m pip install pandas
 ```

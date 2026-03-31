@@ -37,4 +37,4 @@ Der Kompetenznachweis erfolgt durch:
 - Eine schriftliche Prüfung in der 10. Semesterwoche. Zur schriftlichen Prüfung darf ein Spick mitgebracht werden. Dieser muss physisch sein (auf Papier), darf aber auf dem Computer erstellt und ausgedruckt werden.
 
 ## Wissensdatenbank
-Die Wissensdatenbank ist eine zentrale Sammlung aller Lerninhalte, Beispiele und Erklärungen. Diese Sammlung hilft dir dabei, das Gelernte zu vertiefen und direkt in Aufgaben anzuwenden. Wenn Material fehlt oder etwas unklar ist, gib den Dozenten bitte Bescheid, damit es zeitnah ergänzt werden kann.
+Die Wissensdatenbank ist eine zentrale Sammlung aller Lerninhalte, Beispiele und Erklärungen. Diese Sammlung hilft dir dabei, das Gelernte zu vertiefen und direkt in Aufgaben anzuwenden. Wenn Material fehlt oder etwas unklar ist, gib bitte Bescheid, damit es zeitnah ergänzt werden kann.

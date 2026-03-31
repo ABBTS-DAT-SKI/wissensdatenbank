@@ -215,7 +215,7 @@ Diese Übersicht zeigt pro Unterrichtsblock die zentralen Themen, die Lernziele 
 **Datum:** Semesterwoche 12 (SW12)
 **Themen:** Besprechung schriftliche Prüfung, Mini-Challenge, ev. Crash-Kurs generative/agentische KI
 
-Wir besprechen die schriftliche Prüfung und Mini-Challenge und je nach verfügbarer Zeit gibt es einen Crash-Kurs zu generativer und agentischer KI.
+In diesem Unterrichtsblock werden die schriftliche Prüfung und die Mini-Challenge besprochen. Je nach verfügbarer Zeit gibt es zusätzlich einen Crash-Kurs zu generativer und agentischer KI.
 
 ## Wichtige Termine
 

@@ -4,7 +4,7 @@ In dieser Mini-Challenge kannst du dein Wissen anwenden, um reale Sensordaten zu
 Ziel ist es, einen Datensatz auszuwählen, diesen gründlich zu bereinigen, die Datenanalyse durchzuführen und anschliessend mithilfe eines ML-Modells eine Vorhersage oder Beziehung zwischen zwei Variablen zu quantifizieren und zu visualisieren. Der Fokus liegt auf der praktischen Umsetzung des gelernten Stoffes und der kritischen Auseinandersetzung mit den Daten.
 
 ## Vorgehen  
-Wähle einen Sensordatensatz aus, der in mehreren Dateien vorliegt. Du kannst Daten aus einem früheren Modul oder aus öffentlich zugänglichen Quellen wie Kaggle nutzen. Kläre deine Auswahl mit den Dozenten ab, damit der Datensatz wirklich geeignet ist.
+Wähle einen Sensordatensatz aus, der in mehreren Dateien vorliegt. Du kannst Daten aus einem früheren Modul oder aus öffentlich zugänglichen Quellen wie Kaggle nutzen. Kläre deine Auswahl mit dem Dozenten ab, damit der Datensatz wirklich geeignet ist.
 
 Hier einige Beispielsdatensätze:
 
@@ -19,7 +19,7 @@ Untersuche den Datensatz explorativ und beschreibe auffällige Muster, Anomalien
 Identifiziere zwei Variablen, deren Zusammenspiel du analysieren möchtest, und wähle ein geeignetes ML-Modell, um eine Korrelation zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Fasse die Ergebnisse zusammen und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
 
 > [!WARNING]  
-> Dies ist eine Einzelarbeit. Besprich die genauen Auftragsdetails jedoch mit den Dozenten, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
+> Dies ist eine Einzelarbeit. Besprich die genauen Auftragsdetails jedoch im Unterricht, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
 
 > [!TIP]  
 > Die Nutzung von ChatGPT oder anderen KI-Tools ist erlaubt und für Wissensfragen sogar ausdrücklich empfohlen. Achte aber darauf, dass du verstehst, was gemacht wird und warum bestimmte Entscheidungen getroffen werden. In der Abschlussprüfung können dazu Fragen gestellt werden.
@@ -37,9 +37,9 @@ Die Abgabe des Berichts und Code erfolgt bis spätestens am Sonntag nach der Pr�
 
 ### Check-In
 
-Um sicherzustellen, dass du auf dem richtigen Weg bist, gib bis Ende Semesterwoche 5 auf Teams das Check-in dieser Mini-Challenge ab. Beschreibe dort in zwei bis drei Sätzen kurz, welchen Datensatz du verwenden willst und welches Analyseziel du verfolgst. So können wir früh prüfen, ob der Aufwand passt und ob sich der Datensatz für die Mini-Challenge eignet.
+Um sicherzustellen, dass du auf dem richtigen Weg bist, gib bis Ende Semesterwoche 5 auf Teams das Check-in dieser Mini-Challenge ab. Beschreibe dort in zwei bis drei Sätzen kurz, welchen Datensatz du verwenden willst und welches Analyseziel du verfolgst. So lässt sich früh prüfen, ob der Aufwand passt und ob sich der Datensatz für die Mini-Challenge eignet.
 
-Wenn du schon früher beginnen willst, kannst du uns selbstverständlich auch eine E-Mail schreiben. 
+Wenn du schon früher beginnen willst, kannst du selbstverständlich auch eine E-Mail schreiben. 
 
 ## Bewertungsraster
 

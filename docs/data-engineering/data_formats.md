@@ -1,6 +1,6 @@
 # Einführung in Datenformate und deren Einlesen in Pandas
 
-Pandas unterstützt eine Vielzahl von Datenformaten. In diesem Abschnitt zeigen wir, wie man verschiedene Formate einliest, welche Encoding-Probleme auftreten können und wie man sie handhabt.
+Pandas unterstützt eine Vielzahl von Datenformaten. Dieser Abschnitt zeigt, wie man verschiedene Formate einliest, welche Encoding-Probleme auftreten können und wie man sie handhabt.
 
 ## Was ist Encoding?
 

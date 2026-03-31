@@ -1,6 +1,6 @@
 # Arbeiten mit Time-Indexes in Pandas
 
-In diesem Dokument gehen wir auf die Grundlagen der Arbeit mit Zeitstempeln und Zeitindizes in Pandas ein. Dabei behandeln wir wichtige Themen wie das Finden fehlender Daten, das Sortieren von Indizes, das Arbeiten mit Zeitstempeln (z. B. Umwandlung in `datetime`), Zeitzonen und die Zeitumstellung (Sommerzeit).
+Dieses Dokument führt in die Grundlagen der Arbeit mit Zeitstempeln und Zeitindizes in Pandas ein. Dabei werden wichtige Themen wie das Finden fehlender Daten, das Sortieren von Indizes, das Arbeiten mit Zeitstempeln (z. B. Umwandlung in `datetime`), Zeitzonen und die Zeitumstellung (Sommerzeit) behandelt.
 
 ## Erstellen eines DataFrames mit Zeitstempeln und fehlenden Daten
 
