@@ -8,6 +8,16 @@ Data Science ist in der heutigen Zeit unerlässlich, da es Unternehmen und Organ
 
 Anstelle von reinem Frontalunterricht wird ein "Learning by Doing"-Ansatz verfolgt: Die Studierenden arbeiten aktiv mit echten Daten, lösen praxisorientierte Aufgaben und wenden das erlernte Wissen direkt an. Dabei sorgt die Mini-Challenge dafür, dass nicht nur theoretische Kenntnisse, sondern auch praktische Fähigkeiten aufgebaut werden.
 
+## Empfohlener Start
+
+Wenn du zum ersten Mal mit dem Kursmaterial arbeitest, gehe in dieser Reihenfolge vor:
+
+1. Richte Python, VS Code und Jupyter ein: [Python Installation](python_installation.md)
+2. Lade `data.zip` und den passenden Unterrichtsblock herunter und entpacke beides in denselben Oberordner: [Material Downloads](material_downloads.md)
+3. Öffne den Oberordner, zum Beispiel `DAT-SKI/`, in VS Code. Öffne danach das gewünschte Notebook im Unterrichtsblock und führe die Zellen schrittweise aus.
+
+Die Notebooks arbeiten mit relativen Pfaden wie `../data/...`. Darum müssen der Ordner `data/` und die Unterrichtsblock-Ordner nebeneinander liegen.
+
 ## Lernergebnisse
 ### LE1: Grundlagen der Datenanalyse  
 Daten enthalten oft Unsauberkeiten, die eine genaue Analyse erschweren. Du kennst verschiedene Techniken der Datenbereinigung, einschliesslich der Behandlung fehlender Werte, Duplikate und Ausreisser. Du kannst Daten aus verschiedenen Quellen homogenisieren und explorative Datenanalysen durchführen, um Muster, Trends und Anomalien zu identifizieren. Du wendest Resampling-Methoden an, um zeitabhängige Daten sinnvoll zu interpolieren und zu glätten.

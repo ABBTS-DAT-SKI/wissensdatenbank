@@ -2,6 +2,8 @@
 
 Diese Übersicht zeigt pro Unterrichtsblock die zentralen Themen, die Lernziele und die wichtigsten Materialien.
 
+Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Installation](python_installation.md) ein, lade danach die Dateien über [Material Downloads](material_downloads.md) herunter und öffne erst dann das erste Notebook.
+
 ## Unterrichtsblöcke im Überblick
 
 | Unterrichtsblock | Datum | Schwerpunkt |

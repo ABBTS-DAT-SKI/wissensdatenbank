@@ -1,4 +1,4 @@
-# Material Downloads
+# Daten und Aufgaben herunterladen
 
 Lade für jeden Unterrichtsblock immer zwei ZIP-Dateien herunter:
 
@@ -38,3 +38,16 @@ DAT-SKI/
 ```
 
 Die Notebooks erwarten die Daten immer relativ zum Blockordner unter `../data/`.
+
+## Nach dem Entpacken
+
+1. Öffne die Notebook-Datei nicht direkt aus dem ZIP, sondern entpacke immer zuerst beide ZIP-Dateien vollständig.
+2. Öffne danach den Oberordner, zum Beispiel `DAT-SKI/`, in VS Code.
+3. Öffne im gewünschten Unterrichtsblock das passende Notebook (`.ipynb`).
+4. Wähle oben rechts den Python-Kernel aus und führe die Zellen mit dem Play-Button oder mit `Shift+Enter` aus.
+
+## Häufige Fehler
+
+- `data/` liegt im falschen Ordner, zum Beispiel innerhalb von `Unterrichtsblock-2/`.
+- Der Blockordner wurde doppelt entpackt, zum Beispiel `DAT-SKI/Unterrichtsblock-2/Unterrichtsblock-2/`.
+- Beim Einlesen erscheint ein Fehler mit `../data/...`. In diesem Fall stimmt die Ordnerstruktur fast immer nicht.
