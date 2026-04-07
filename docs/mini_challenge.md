@@ -4,19 +4,24 @@ In dieser Mini-Challenge kannst du dein Wissen anwenden, um reale Sensordaten zu
 Ziel ist es, einen Datensatz auszuwählen, diesen gründlich zu bereinigen, die Datenanalyse durchzuführen und anschliessend mithilfe eines ML-Modells eine Vorhersage oder Beziehung zwischen zwei Variablen zu quantifizieren und zu visualisieren. Der Fokus liegt auf der praktischen Umsetzung des gelernten Stoffes und der kritischen Auseinandersetzung mit den Daten.
 
 ## Vorgehen  
-Wähle einen realen Sensordatensatz aus, der aus mindestens zwei zusammengehörigen Dateien (z.B. Zeitachse) besteht. Die Dateien müssen sich zu einem gemeinsamen DataFrame zusammenführen lassen. Der Datensatz soll einen klaren Zeitreihencharakter haben, also mindestens eine Zeitvariable wie einen Timestamp, ein Datum oder eine Uhrzeit enthalten, und genügend Beobachtungen sowie mehrere sinnvolle Variablen umfassen. Für die Modellierung sollte er aus einer kontinuierlichen Messvariable in einer Spalte, die zusammen mit einer Zeitvariable oder einer weiteren passenden Variable analysiert werden kann. Der Datensatz ist geeignet, wenn sich daraus eine klare Fragestellung und ein nachvollziehbares Analyseziel ableiten lassen. Du kannst Daten aus einem früheren Modul, einem Projekt oder aus öffentlich zugänglichen Quellen wie Kaggle nutzen. Kläre deine Auswahl mit dem Dozenten ab, damit der Datensatz wirklich geeignet ist.
+Wähle einen geeigneten Datensatz aus und stimme ihn spätestens im Check-in kurz mit dem Dozenten ab. Siehe auch den [Abschnitt "Schnellcheck vor dem Check-in"](mini_challenge_datensatzbeispiele.md#schnellcheck-vor-dem-check-in) im Datensatzbeispiel-Dokument.
 
-Hier einige Beispielsdatensätze:
+Die ausführlichen Hinweise zur Datenauswahl findest du hier:
 
-- [Smart Building System](https://www.kaggle.com/datasets/ranakrc/smart-building-system)
-- [CU-BEMS, smart building energy and IAQ data](https://www.kaggle.com/datasets/claytonmiller/cubems-smart-building-energy-and-iaq-data)
-- [ASHRAE Global Occupant Behavior Database](https://ashraeobdatabase.com/)
+- [Datensatzbeispiele für die Mini-Challenge](mini_challenge_datensatzbeispiele.md)
 
-Bereinige die Daten gründlich, indem du unvollständige, fehlerhafte oder inkonsistente Daten behandelst. Vor der Analyse müssen alle Dateien in eine einzige Datei zusammengeführt werden, damit du eine einheitliche und umfassende Datengrundlage hast.
+Kurz zusammengefasst sollte dein Datensatz:
+
+- aus realen Sensor- oder Gebäudeleitsystemdaten bestehen
+- aus mindestens zwei zusammengehörigen Dateien bestehen, die du selbst zu einem gemeinsamen DataFrame zusammenführst
+- eine Zeitvariable, genügend Beobachtungen, mehrere sinnvolle Variablen und mindestens eine kontinuierliche Messvariable enthalten
+- eine klare Fragestellung und ein nachvollziehbares Analyseziel ermöglichen
+
+Führe die ausgewählten Dateien zuerst zu einem gemeinsamen DataFrame zusammen. Bereinige die Daten danach gründlich, indem du unvollständige, fehlerhafte oder inkonsistente Werte behandelst. Dokumentiere nachvollziehbar, wie du fehlende Werte, Inkonsistenzen und Ausreisser bearbeitet hast.
 
 Untersuche den Datensatz explorativ und beschreibe auffällige Muster, Anomalien oder fehlende Werte. Erstelle Visualisierungen, die dir helfen, die Daten besser zu verstehen.
 
-Identifiziere zwei Variablen, deren Zusammenspiel du analysieren möchtest, und wähle ein geeignetes ML-Modell, um ihre Beziehung zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Bei einem Datensatz mit Zeitreihencharakter kann auch die Zeitvariable zusammen mit einer kontinuierlichen Messvariable sinnvoll modelliert werden. Fasse die Ergebnisse zusammen und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
+Identifiziere für die Modellierung mindestens zwei Variablen, davon mindestens eine kontinuierliche Messvariable. Wähle ein geeignetes ML-Modell, um ihre Beziehung zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Bei einem Datensatz mit Zeitreihencharakter kann auch die Zeitvariable zusammen mit einer Messvariable sinnvoll modelliert werden. Begründe die Wahl deines Modells und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
 
 > [!WARNING]  
 > Dies ist eine Einzelarbeit. Besprich die genauen Auftragsdetails jedoch im Unterricht, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
@@ -47,9 +52,9 @@ Wenn du schon früher beginnen willst, kannst du selbstverständlich auch eine E
 
 | Punktebereich   | Beschreibung                                                                                                                            |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **5–10 Punkte** | Der Datensatz ist gut gewählt und passt hervorragend zur Zielsetzung der Aufgabe. Er setzt sich aus mindestens 2 Dateien zusammen. Das Ziel der Analyse ist klar formuliert.             |
-| **3–4 Punkte**  | Der Datensatz ist grösstenteils geeignet, aber es gibt kleinere Unsicherheiten bei der Zieldefinition oder der Auswahl des Datensatzes. |
-| **1–2 Punkte**  | Der Datensatz passt nicht gut zur Aufgabe oder das Ziel ist unklar formuliert.                                                          |
+| **5–10 Punkte** | Der Datensatz ist gut gewählt und passt hervorragend zur Zielsetzung der Aufgabe. Er besteht aus realen Sensor- oder Gebäudeleitsystemdaten, setzt sich aus mindestens 2 zusammengehörigen Dateien zusammen und hat eine klare Zeitvariable. Das Ziel der Analyse ist klar formuliert. |
+| **3–4 Punkte**  | Der Datensatz ist grösstenteils geeignet, aber mindestens eine Anforderung ist nur teilweise erfüllt oder es gibt kleinere Unsicherheiten bei der Zieldefinition. |
+| **1–2 Punkte**  | Der Datensatz passt nur teilweise zur Aufgabe, zum Beispiel wegen fehlendem Sensorbezug, fehlender Zeitvariable, zu wenig Struktur oder unklarer Zieldefinition. |
 | **0 Punkte**    | Kein geeigneter Datensatz ausgewählt oder das Ziel ist nicht definiert.                                                                 |
 
 ### 2. **Datenbereinigung (30%)**
