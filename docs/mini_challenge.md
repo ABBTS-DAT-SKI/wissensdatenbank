@@ -4,7 +4,7 @@ In dieser Mini-Challenge kannst du dein Wissen anwenden, um reale Sensordaten zu
 Ziel ist es, einen Datensatz auszuwählen, diesen gründlich zu bereinigen, die Datenanalyse durchzuführen und anschliessend mithilfe eines ML-Modells eine Vorhersage oder Beziehung zwischen zwei Variablen zu quantifizieren und zu visualisieren. Der Fokus liegt auf der praktischen Umsetzung des gelernten Stoffes und der kritischen Auseinandersetzung mit den Daten.
 
 ## Vorgehen  
-Wähle einen Sensordatensatz aus, der in mehreren Dateien vorliegt. Du kannst Daten aus einem früheren Modul oder aus öffentlich zugänglichen Quellen wie Kaggle nutzen. Kläre deine Auswahl mit dem Dozenten ab, damit der Datensatz wirklich geeignet ist.
+Wähle einen realen Sensordatensatz aus, der aus mindestens zwei zusammengehörigen Dateien (z.B. Zeitachse) besteht. Die Dateien müssen sich zu einem gemeinsamen DataFrame zusammenführen lassen. Der Datensatz soll einen klaren Zeitreihencharakter haben, also mindestens eine Zeitvariable wie einen Timestamp, ein Datum oder eine Uhrzeit enthalten, und genügend Beobachtungen sowie mehrere sinnvolle Variablen umfassen. Für die Modellierung sollte er aus einer kontinuierlichen Messvariable in einer Spalte, die zusammen mit einer Zeitvariable oder einer weiteren passenden Variable analysiert werden kann. Der Datensatz ist geeignet, wenn sich daraus eine klare Fragestellung und ein nachvollziehbares Analyseziel ableiten lassen. Du kannst Daten aus einem früheren Modul, einem Projekt oder aus öffentlich zugänglichen Quellen wie Kaggle nutzen. Kläre deine Auswahl mit dem Dozenten ab, damit der Datensatz wirklich geeignet ist.
 
 Hier einige Beispielsdatensätze:
 
@@ -16,7 +16,7 @@ Bereinige die Daten gründlich, indem du unvollständige, fehlerhafte oder inkon
 
 Untersuche den Datensatz explorativ und beschreibe auffällige Muster, Anomalien oder fehlende Werte. Erstelle Visualisierungen, die dir helfen, die Daten besser zu verstehen.
 
-Identifiziere zwei Variablen, deren Zusammenspiel du analysieren möchtest, und wähle ein geeignetes ML-Modell, um eine Korrelation zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Fasse die Ergebnisse zusammen und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
+Identifiziere zwei Variablen, deren Zusammenspiel du analysieren möchtest, und wähle ein geeignetes ML-Modell, um ihre Beziehung zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Bei einem Datensatz mit Zeitreihencharakter kann auch die Zeitvariable zusammen mit einer kontinuierlichen Messvariable sinnvoll modelliert werden. Fasse die Ergebnisse zusammen und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
 
 > [!WARNING]  
 > Dies ist eine Einzelarbeit. Besprich die genauen Auftragsdetails jedoch im Unterricht, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
