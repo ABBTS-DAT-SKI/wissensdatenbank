@@ -88,7 +88,6 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 - Doppelte Einträge in einem DataFrame erkennen und bereinigen.
 - Fehlende Werte identifizieren und behandeln.
-- Ausreisser mithilfe des z-Score erkennen und die Auswirkungen des Entfernens bewerten.
 - Fehlende Werte in Zeitreihen identifizieren.
 - Zeitzonen und Zeitumstellung verstehen.
 - Zeitstempel in UTC umwandeln.
