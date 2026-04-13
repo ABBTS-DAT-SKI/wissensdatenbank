@@ -82,13 +82,12 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 **Datum:** Semesterwoche 3 (SW3)
 
-**Themen:** Duplikate, fehlende Werte, Ausreisser, Time-Indexes, Zeitzonen, UTC
+**Themen:** Duplikate, fehlende Werte, Time-Indexes, Zeitzonen, UTC
 
 **Lernziele**
 
 - Doppelte Einträge in einem DataFrame erkennen und bereinigen.
 - Fehlende Werte identifizieren und behandeln.
-- Fehlende Werte in Zeitreihen identifizieren.
 - Zeitzonen und Zeitumstellung verstehen.
 - Zeitstempel in UTC umwandeln.
 
@@ -96,7 +95,6 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 - [Entfernen von Duplikaten](data-engineering/drop_duplicates.md)
 - [Befüllen von fehlenden Werten](data-engineering/fillna.md)
-- [Entfernen von Ausreissern](data-engineering/outliers.md)
 - [Arbeiten mit Time-Indexes in Pandas](data-engineering/time_indexes.md)
 - [Material Downloads](material_downloads.md)
 

@@ -17,7 +17,7 @@ Kurz zusammengefasst sollte dein Datensatz:
 - eine Zeitvariable, genügend Beobachtungen, mehrere sinnvolle Variablen und mindestens eine kontinuierliche Messvariable enthalten
 - eine klare Fragestellung und ein nachvollziehbares Analyseziel ermöglichen
 
-Führe die ausgewählten Dateien zuerst zu einem gemeinsamen DataFrame zusammen. Bereinige die Daten danach gründlich, indem du unvollständige, fehlerhafte oder inkonsistente Werte behandelst. Dokumentiere nachvollziehbar, wie du fehlende Werte, Inkonsistenzen und Ausreisser bearbeitet hast.
+Führe die ausgewählten Dateien zuerst zu einem gemeinsamen DataFrame zusammen. Bereinige die Daten danach gründlich, indem du unvollständige, fehlerhafte oder inkonsistente Werte behandelst. Dokumentiere nachvollziehbar, wie du fehlende Werte und Inkonsistenzen bearbeitet hast.
 
 Untersuche den Datensatz explorativ und beschreibe auffällige Muster, Anomalien oder fehlende Werte. Erstelle Visualisierungen, die dir helfen, die Daten besser zu verstehen.
 
@@ -61,7 +61,7 @@ Wenn du schon früher beginnen willst, kannst du selbstverständlich auch eine E
 
 | Punktebereich    | Beschreibung                                                                                                                                                               |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **20–30 Punkte** | Die Daten wurden zu einem DataFrame zusammengeführt und gründlich/systematisch bereinigt. Alle relevanten Probleme (fehlende Werte, Inkonsistenzen, Ausreisser) wurden angemessen adressiert. |
+| **20–30 Punkte** | Die Daten wurden zu einem DataFrame zusammengeführt und gründlich/systematisch bereinigt. Alle relevanten Probleme (fehlende Werte, Inkonsistenzen) wurden angemessen adressiert. |
 | **10–19 Punkte** | Die Datenbereinigung wurde grösstenteils durchgeführt, jedoch gibt es kleinere Mängel.                                                                                     |
 | **5–9 Punkte**   | Die Datenbereinigung ist oberflächlich und viele Probleme wurden nicht adressiert.                                                                                         |
 | **0 Punkte**     | Es wurde keine oder eine unzureichende Datenbereinigung durchgeführt.                                                                                                      |
