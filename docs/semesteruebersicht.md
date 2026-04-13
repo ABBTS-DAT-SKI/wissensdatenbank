@@ -62,13 +62,13 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 **Datum:** Semesterwoche 2 (SW2)
 
-**Themen:** Spaltenauswahl, Aggregationen, `row-slicing`, `iloc`, Umbenennen, Feature Engineering
+**Themen:** Spaltenauswahl, Aggregationen, `row-slicing`, Umbenennen, Feature Engineering
 
 **Lernziele**
 
 - Spalten aus einem DataFrame gezielt auswählen.
 - Grundlegende statistische Methoden auf Spalten anwenden.
-- Mit `row-slicing` und `iloc` Zeilen selektieren.
+- Mit `row-slicing` Zeilen selektieren.
 - Spalten umbenennen.
 - Neue Features durch Berechnungen erstellen.
 - Einheiten innerhalb einer Spalte umwandeln.
