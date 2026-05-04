@@ -24,7 +24,7 @@ Untersuche den Datensatz explorativ und beschreibe auffällige Muster, Anomalien
 Identifiziere für die Modellierung mindestens zwei Variablen, davon mindestens eine kontinuierliche Messvariable. Wähle ein geeignetes ML-Modell, um ihre Beziehung zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Bei einem Datensatz mit Zeitreihencharakter kann auch die Zeitvariable zusammen mit einer Messvariable sinnvoll modelliert werden. Begründe die Wahl deines Modells und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
 
 > [!WARNING]  
-> Dies ist eine Einzelarbeit. Besprich die genauen Auftragsdetails jedoch im Unterricht, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
+> Dies ist eine Einzelarbeit. Der Austausch von Ideen auf konzeptioneller Ebene ist erlaubt. Besprich die genauen Auftragsdetails jedoch im Unterricht, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
 
 > [!TIP]  
 > Die Nutzung von ChatGPT oder anderen KI-Tools ist erlaubt und für Wissensfragen sogar ausdrücklich empfohlen. Achte aber darauf, dass du verstehst, was gemacht wird und warum bestimmte Entscheidungen getroffen werden. In der Abschlussprüfung können dazu Fragen gestellt werden.
