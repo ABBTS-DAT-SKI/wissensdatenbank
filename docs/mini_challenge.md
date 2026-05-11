@@ -89,6 +89,6 @@ Wenn du schon früher beginnen willst, kannst du selbstverständlich auch eine E
 | Punktebereich    | Beschreibung                                                                                                                                                           |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **15–20 Punkte** | Der Bericht ist klar strukturiert, übersichtlich und gut dokumentiert. Alle Schritte der Analyse und Bereinigung sind nachvollziehbar und begründet. Die Dokumentation ist verständlich und präzise. |
-| **10–14 Punkte** | Der Bericht ist grösstenteils strukturiert, aber es fehlen teilweise Details oder er könnte klarer formuliert werden.                                                  |
+| **10–14 Punkte** | Der Bericht ist grösstenteils strukturiert, aber es fehlen teilweise Details oder er könnte klarer formuliert werden. Die Limite von 8 Seiten (ohne Titelblatt, Inhaltsverzeichnis, Anhang, o.Ä.) ist eingehalten worden.  |
 | **5–9 Punkte**   | Der Bericht hat strukturelle Mängel und wichtige Aspekte sind unzureichend dokumentiert.                                                                               |
 | **0–4 Punkte**   | Der Bericht ist unstrukturiert oder unvollständig. Wichtige Informationen fehlen.                                                                                      |
