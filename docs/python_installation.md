@@ -65,7 +65,7 @@ Installiere Visual Studio Code:
 Öffne in VS Code über das Menü `Terminal` → `New Terminal` ein Terminal. Es erscheint unten im Fenster. Gib dort diesen Befehl ein und bestätige mit `Enter`:
 
 ```sh
-python -m pip install jupyter pandas openpyxl plotly nbformat matplotlib scikit-learn
+python -m pip install jupyter pandas plotly nbformat matplotlib scikit-learn
 ```
 
 Dieser Befehl ist robuster als ein direkter `pip`-Aufruf, weil er genau die Python-Version verwendet, die du mit `python` startest.
@@ -88,7 +88,7 @@ Die Installation kann einige Minuten dauern, besonders wenn der Virenscanner jed
 1. Lade `data.zip` und das Paket des aktuellen Unterrichtsblocks über [Material Downloads](material_downloads.md) herunter.
 2. Entpacke beide ZIP-Dateien vollständig nach `C:\DAT-SKI\`.
 3. Öffne `C:\DAT-SKI\` in VS Code.
-4. Öffne links im Explorer das gewünschte Notebook, zum Beispiel `Unterrichtsblock-2/01_Einführung_Pandas.ipynb`.
+4. Öffne links im Explorer das gewünschte Notebook, zum Beispiel `Unterrichtsblock-2/01-Einführung_Pandas.ipynb`.
 5. Wenn beim ersten Öffnen ein Popup erscheint, installiere die vorgeschlagenen Erweiterungen und Abhängigkeiten wie `Python`, `Jupyter` und `ipykernel`.
 6. Wähle oben rechts den Kernel aus, der zu deiner installierten Python-Version gehört. Falls mehrere Optionen erscheinen, nimm diejenige mit `Python 3.13` oder mit der Version, die du installiert hast.
 7. Führe die erste Zelle mit dem Play-Button oder mit `Shift+Enter` aus.
@@ -101,20 +101,20 @@ Wenn im Notebook trotz korrektem Kernel ein Fehler wie `ModuleNotFoundError: No 
 %pip install pandas
 ```
 
-Für Excel-Dateien ist zum Beispiel oft zusätzlich `openpyxl` nötig:
+Für interaktive Plots ist zum Beispiel zusätzlich `nbformat` nötig:
 
 ```python
-%pip install openpyxl
+%pip install nbformat
 ```
 
 Starte nach der Installation den Kernel neu und führe die Zelle erneut aus.
 
 ## 7. Setup prüfen
 
-Im Paket [Unterrichtsblock-1.zip](downloads/Unterrichtsblock-1.zip) liegt das Notebook `01_Setup_Check.ipynb`. Es installiert alle Packages für das Semester und prüft deine Python-Version, die Packages und die Ordnerstruktur.
+Im Paket [Unterrichtsblock-1.zip](downloads/Unterrichtsblock-1.zip) liegt das Notebook `01-Setup_Check.ipynb`. Es installiert alle Packages für das Semester und prüft deine Python-Version, die Packages und die Ordnerstruktur.
 
 1. Lade `data.zip` und `Unterrichtsblock-1.zip` herunter und entpacke beide nach `C:\DAT-SKI\`.
-2. Öffne `Unterrichtsblock-1/01_Setup_Check.ipynb` in VS Code.
+2. Öffne `Unterrichtsblock-1/01-Setup_Check.ipynb` in VS Code.
 3. Wähle oben rechts den Kernel mit deiner Python-Version aus.
 4. Klicke oben auf `Run All`.
 5. Ganz unten muss **Alles bereit** stehen. Sonst zeigt das Notebook für jedes Problem eine Lösung an.

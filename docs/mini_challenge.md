@@ -80,6 +80,23 @@ Beantwortet die folgenden Fragen in eurem Notebook.
   Anlagenfehler.
 
 
+## Redlichkeit
+
+Jede Gruppe erarbeitet ihr Notebook selbstständig.
+
+**Erlaubt** ist der Austausch mit anderen Gruppen nur auf konzeptioneller Ebene, also mündlich und ohne Unterlagen. Beispiel: «Wir haben die Absenkphasen über einen Vergleich mit der Vorlauftemperatur der Vortage erkannt.»
+
+**Nicht erlaubt** ist es,
+
+- Code, Notebooks, Plots oder Textpassagen einer anderen Gruppe zu übernehmen,
+- eigenen Code, eigene Plots, Notebooks oder Textpassagen einer anderen Gruppe zu zeigen oder weiterzugeben, auch nicht auf dem Bildschirm, per Foto oder per Chat.
+
+Ein Verstoss gilt als Unredlichkeit gemäss Punkt 1.3 und wird mit der Note 1 bewertet. Das gilt für jede Gruppe, die gegen diese Regeln verstösst: Wer Code oder Plots zeigt oder weitergibt, verstösst bereits damit gegen die Regeln, unabhängig davon, ob die andere Gruppe etwas übernimmt.
+
+Das Notebook enthält am Ende eine Eigenständigkeitserklärung, die alle Gruppenmitglieder mit Namen bestätigen:
+
+> Wir bestätigen, dass wir dieses Notebook selbstständig erarbeitet haben. Wir haben keinen Code, keine Plots und keine Textpassagen anderer Gruppen übernommen und keine eigenen Arbeitsergebnisse an andere Gruppen gezeigt oder weitergegeben.
+
 ## Abgabe
 
 Gebt bis zum im Unterricht kommunizierten Termin ein ausführbares Notebook pro
@@ -117,7 +134,7 @@ und kurze schriftliche Schlussfolgerungen zu allen drei Fragen enthalten.
 
 | Punkte | Beschreibung |
 | --- | --- |
-| **15-20** | Das Notebook ist strukturiert, ausführbar und prägnant. Entscheidungen, Analyse und die abschliessende Empfehlung für das Facility Management sind nachvollziehbar und präzise. |
+| **15-20** | Das Notebook ist strukturiert, ausführbar und prägnant. Entscheidungen, Analyse und die abschliessende Empfehlung für das Facility Management sind nachvollziehbar und präzise. Die Redlichkeitserklärung ist beigefügt. |
 | **10-14** | Das Notebook ist grösstenteils verständlich, aber wichtige Erklärungen oder Struktur fehlen. |
 | **5-9** | Das Notebook weist erhebliche strukturelle oder dokumentarische Lücken auf. |
-| **0-4** | Das Notebook ist unvollständig oder nicht nachvollziehbar. |
+| **0-4** | Das Notebook ist unvollständig oder nicht nachvollziehbar. Die Redlichkeitserklärung fehlt. |
