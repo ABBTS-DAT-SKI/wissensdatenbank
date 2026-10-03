@@ -1,94 +1,123 @@
-# Mini-Challenge  
-In dieser Mini-Challenge kannst du dein Wissen anwenden, um reale Sensordaten zu untersuchen und wichtige Zusammenhänge zwischen Variablen zu modellieren.
+# Mini-Challenge
 
-Ziel ist es, einen Datensatz auszuwählen, diesen gründlich zu bereinigen, die Datenanalyse durchzuführen und anschliessend mithilfe eines ML-Modells eine Vorhersage oder Beziehung zwischen zwei Variablen zu quantifizieren und zu visualisieren. Der Fokus liegt auf der praktischen Umsetzung des gelernten Stoffes und der kritischen Auseinandersetzung mit den Daten.
+## Auftrag
 
-## Vorgehen  
-Wähle einen geeigneten Datensatz aus und stimme ihn spätestens im Check-in kurz mit dem Dozenten ab. Siehe auch den [Abschnitt "Schnellcheck vor dem Check-in"](mini_challenge_datensatzbeispiele.md#schnellcheck-vor-dem-check-in) im Datensatzbeispiel-Dokument.
+Arbeitet in einer Gruppe von drei Personen. Jede Gruppe erhält ein Datenpaket einer Heizgruppe. Ihr untersucht 
+unterschiedliche Heizgruppen, beantwortet aber dieselbe betriebliche Frage:
 
-Die ausführlichen Hinweise zur Datenauswahl findest du hier:
+> **Zeigt diese Heizgruppe eine konsistente Nachtabsenkung und gibt es
+> Zeiträume, die das Facility Management prüfen sollte?**
 
-- [Datensatzbeispiele für die Mini-Challenge](mini_challenge_datensatzbeispiele.md)
+Gebt pro Gruppe ein ausführbares Jupyter Notebook ab. Das Notebook ist zugleich
+der Bericht; ein separates PDF oder eine Präsentation sind nicht erforderlich.
 
-Kurz zusammengefasst sollte dein Datensatz:
+Ihr erhaltet drei zusammengehörende Rohdatenexporte:
 
-- aus realen Sensor- oder Gebäudeleitsystemdaten bestehen
-- aus mindestens zwei zusammengehörigen Dateien bestehen, die du selbst zu einem gemeinsamen DataFrame zusammenführst
-- eine Zeitvariable, genügend Beobachtungen, mehrere sinnvolle Variablen und mindestens eine kontinuierliche Messvariable enthalten
-- eine klare Fragestellung und ein nachvollziehbares Analyseziel ermöglichen
+- `supply_temperature.csv`: Vorlauftemperatur in °C
+- `return_temperature.csv`: Rücklauftemperatur in °C
+- `outside_temperature.csv`: Aussentemperatur in °C
 
-Führe die ausgewählten Dateien zuerst zu einem gemeinsamen DataFrame zusammen. Bereinige die Daten danach gründlich, indem du unvollständige, fehlerhafte oder inkonsistente Werte behandelst. Dokumentiere nachvollziehbar, wie du fehlende Werte und Inkonsistenzen bearbeitet hast.
+### Datenpaket
 
-Untersuche den Datensatz explorativ und beschreibe auffällige Muster, Anomalien oder fehlende Werte. Erstelle Visualisierungen, die dir helfen, die Daten besser zu verstehen.
+- Zeitraum: 1. Oktober 2025 bis 30. September 2026.
+- `_time` enthält die Zeitstempel in UTC, `_value` den Messwert. Vorlauf und
+  Rücklauf werden ungefähr jede Minute erfasst, die Aussentemperatur alle zehn
+  Minuten.
+- Die Heizung läuft nach Schweizer Ortszeit. 
+- Vorlauf- und Rücklauftemperatur sind synthetisch. Sie stammen aus einer
+  Simulation, die mit realen Betriebsmustern und realem Sensorverhalten
+  gemessener Heizgruppen kalibriert wurde.
+- Die Aussentemperatur besteht aus realen Messungen einer
+  SwissMetNet-Station (Quelle: MeteoSwiss, CC BY 4.0). Einzelne Werte können fehlen.
+- Sensorlücken sind enthalten und müssen in der Analyse sichtbar bleiben.
 
-Identifiziere für die Modellierung mindestens zwei Variablen, davon mindestens eine kontinuierliche Messvariable. Wähle ein geeignetes ML-Modell, um ihre Beziehung zu beschreiben. Eine lineare Regression eignet sich beispielsweise gut, um Zusammenhänge zwischen zwei kontinuierlichen Variablen zu visualisieren. Bei einem Datensatz mit Zeitreihencharakter kann auch die Zeitvariable zusammen mit einer Messvariable sinnvoll modelliert werden. Begründe die Wahl deines Modells und interpretiere, was die Modellierung über die Beziehung der Variablen aussagt.
+| Datenpaket | Gebäude | Wetterstation |
+| --- | --- | --- |
+| [heating_group_01.zip](downloads/mini_challenge/heating_group_01.zip) | Wohngebäude | Basel / Binningen |
+| [heating_group_02.zip](downloads/mini_challenge/heating_group_02.zip) | Schulhaus | Bern / Zollikofen |
+| [heating_group_03.zip](downloads/mini_challenge/heating_group_03.zip) | Bürogebäude | Buchs / Aarau |
+| [heating_group_04.zip](downloads/mini_challenge/heating_group_04.zip) | Wohngebäude | Chur |
+| [heating_group_05.zip](downloads/mini_challenge/heating_group_05.zip) | Wohngebäude | Genève / Cointrin |
+| [heating_group_06.zip](downloads/mini_challenge/heating_group_06.zip) | Pflegeheim | Luzern |
+| [heating_group_07.zip](downloads/mini_challenge/heating_group_07.zip) | Schulhaus | St. Gallen |
 
-> [!WARNING]  
-> Dies ist eine Einzelarbeit. Der Austausch von Ideen auf konzeptioneller Ebene ist erlaubt. Besprich die genauen Auftragsdetails jedoch im Unterricht, damit deine Herangehensweise sinnvoll bleibt. Wähle eine Fragestellung, die eine ausgewogene Balance zwischen Herausforderung und Machbarkeit bietet.
+## Untersuchung
 
-> [!TIP]  
-> Die Nutzung von ChatGPT oder anderen KI-Tools ist erlaubt und für Wissensfragen sogar ausdrücklich empfohlen. Achte aber darauf, dass du verstehst, was gemacht wird und warum bestimmte Entscheidungen getroffen werden. In der Abschlussprüfung können dazu Fragen gestellt werden.
+Beantwortet die folgenden Fragen in eurem Notebook.
 
-## Abgabe  
-Die Ergebnisse dokumentierst du in einem Bericht (als PDF), der maximal 8 Seiten umfasst (ohne Titelblatt, Inhaltsverzeichnis oder Ähnliches). Der Bericht sollte eine klare Struktur haben und die folgenden Punkte abdecken:  
+### 1. Welches Betriebsmuster zeigen die Messungen?
 
-- Beschreibung des Datensatzes und der Zielsetzung  
-- Vorgehen bei der Datenanalyse und -bereinigung  
-- Beschreibung der Modellierung und Interpretation der Ergebnisse  
+- Führt die Rohdateien selbst in einem Analyse-DataFrame zusammen.
+- Prüft Zeitstempel, Duplikate, fehlende Werte, Messintervalle, Lücken und
+  unplausible Werte.
+- Begründet eure Bereinigungsentscheidungen. Füllt eine echte Sensorlücke nicht
+  unbemerkt auf.
+- Erstellt einen Plot einer repräsentativen Woche mit Vorlauf, Rücklauf und
+  Aussentemperatur.
+- Definiert eine nachvollziehbare Regel für mögliche Nachtabsenkungsphasen.
+- Beschreibt deren Zeitpunkt, Dauer und Konsistenz.
 
-Gib zusätzlich den Code als ZIP oder Notebook ab.
+### 2. Wie gut erklärt die Aussentemperatur die Vorlauftemperatur?
 
-Die Abgabe des Berichts und Code erfolgt bis spätestens am Sonntag nach der Prüfung am 07.06.2026.
+- Verwendet `outside_temperature` als Merkmal und `supply_temperature` als
+  Zielvariable.
+- Trainiert eine lineare Regression mit einem 80/20-Train-Test-Split.
+- Visualisiert die Testmessungen und die Regressionsgerade.
+- Gebt Test-MAE und Test-MSE an.
+- Erstellt und interpretiert den Residuenplot.
+- Erklärt, was das Modell über die Heizkurve aussagt, sowie mindestens eine
+  Einschränkung. Eine Heizgruppe kann mehrere Betriebszustände haben; ein
+  lineares Modell beschreibt deshalb möglicherweise nicht jede Messung genau.
 
-### Check-In
+### 3. Welche Zeiträume sollte das Facility Management prüfen?
 
-Um sicherzustellen, dass du auf dem richtigen Weg bist, gib bis Ende Semesterwoche 5 auf Teams das Check-in dieser Mini-Challenge ab. Beschreibe dort in zwei bis drei Sätzen kurz, welchen Datensatz du verwenden willst und welches Analyseziel du verfolgst. So lässt sich früh prüfen, ob der Aufwand passt und ob sich der Datensatz für die Mini-Challenge eignet.
+- Untersucht drei Zeiträume, die vom üblichen Absenkmuster abweichen.
+- Belegt jeden Kandidaten mit einem detaillierten Zeitreihenplot.
+- Formuliert einen nächsten Schritt für das Facility Management,
+  beispielsweise die Prüfung eines Zeitprogramms, Sollwerts, manuellen
+  Eingriffs, Ventils, Sensors oder BMS-Trends. Gibt es keine nächsten Schritte, muss dies gut begründet werden.
+- Eine Sensorlücke ist ein Befund zur Datenqualität und kein Beweis für einen
+  Anlagenfehler.
 
-Wenn du schon früher beginnen willst, kannst du selbstverständlich auch eine E-Mail schreiben. 
 
-## Bewertungsraster
+## Abgabe
 
-### 1. **Datenauswahl und Zieldefinition (10%)**
+Gebt bis zum im Unterricht kommunizierten Termin ein ausführbares Notebook pro
+Gruppe ab. Es muss mit eurem zugeteilten Datenpaket von oben nach unten laufen
+und kurze schriftliche Schlussfolgerungen zu allen drei Fragen enthalten.
 
-| Punktebereich   | Beschreibung                                                                                                                            |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **5–10 Punkte** | Der Datensatz ist gut gewählt und passt hervorragend zur Zielsetzung der Aufgabe. Er besteht aus realen Sensor- oder Gebäudeleitsystemdaten, setzt sich aus mindestens 2 zusammengehörigen Dateien zusammen und hat eine klare Zeitvariable. Das Ziel der Analyse ist klar formuliert. |
-| **3–4 Punkte**  | Der Datensatz ist grösstenteils geeignet, aber mindestens eine Anforderung ist nur teilweise erfüllt oder es gibt kleinere Unsicherheiten bei der Zieldefinition. |
-| **1–2 Punkte**  | Der Datensatz passt nur teilweise zur Aufgabe, zum Beispiel wegen fehlendem Sensorbezug, fehlender Zeitvariable, zu wenig Struktur oder unklarer Zieldefinition. |
-| **0 Punkte**    | Kein geeigneter Datensatz ausgewählt oder das Ziel ist nicht definiert.                                                                 |
+### 1. Datenbereinigung (40 %)
 
-### 2. **Datenbereinigung (30%)**
+| Punkte | Beschreibung |
+| --- | --- |
+| **25-40** | Die Rohdateien werden in einem Analyse-DataFrame zusammengeführt. Die Bereinigung ist systematisch und begründet; sie berücksichtigt relevante fehlende Werte, Lücken, Duplikate und Inkonsistenzen. |
+| **15-24** | Die Bereinigung ist grösstenteils vollständig, enthält aber kleinere Lücken oder schwache Begründungen. |
+| **5-14** | Die Bereinigung bleibt oberflächlich, wichtige Probleme werden nicht behandelt. |
+| **0** | Es wird keine ausreichende Bereinigung gezeigt. |
 
-| Punktebereich    | Beschreibung                                                                                                                                                               |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **20–30 Punkte** | Die Daten wurden zu einem DataFrame zusammengeführt und gründlich/systematisch bereinigt. Alle relevanten Probleme (fehlende Werte, Inkonsistenzen) wurden angemessen adressiert. |
-| **10–19 Punkte** | Die Datenbereinigung wurde grösstenteils durchgeführt, jedoch gibt es kleinere Mängel.                                                                                     |
-| **5–9 Punkte**   | Die Datenbereinigung ist oberflächlich und viele Probleme wurden nicht adressiert.                                                                                         |
-| **0 Punkte**     | Es wurde keine oder eine unzureichende Datenbereinigung durchgeführt.                                                                                                      |
+### 2. Datenanalyse und Visualisierung (20 %)
 
-### 3. **Datenanalyse und Visualisierung (20%)**
+| Punkte | Beschreibung |
+| --- | --- |
+| **15-20** | Die Analyse verwendet klare, aussagekräftige Visualisierungen für Betriebsmuster, mögliche Absenkphasen und auffällige Zeiträume. Die Schlussfolgerungen sind durch Belege gestützt. |
+| **10-14** | Die Analyse ist grösstenteils schlüssig, aber ein wichtiges Muster, eine Auffälligkeit oder eine stützende Visualisierung fehlt. |
+| **5-9** | Die Analyse bleibt oberflächlich oder die Visualisierungen stützen die Schlussfolgerungen nicht. |
+| **0-4** | Es wird keine aussagekräftige Analyse oder Visualisierung gezeigt. |
 
-| Punktebereich    | Beschreibung                                                                                                                                                     |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **15–20 Punkte** | Die explorative Datenanalyse ist fundiert und umfassend. Alle wichtigen Aspekte (Muster, Anomalien) des Datensatzes wurden untersucht und aussagekräftige Visualisierungen erstellt. |
-| **10–14 Punkte** | Die Datenanalyse ist grösstenteils fundiert, aber einige Aspekte oder Muster wurden möglicherweise übersehen.                                                    |
-| **5–9 Punkte**   | Die Analyse ist oberflächlich, und die Visualisierungen sind nicht sehr aussagekräftig.                                                                          |
-| **0–4 Punkte**   | Es wurden keine aussagekräftigen Visualisierungen oder Analysen durchgeführt.                                                                                    |
+### 3. Modellierung und Interpretation (20 %)
 
-### 4. **Modellierung und Interpretation (20%)**
+| Punkte | Beschreibung |
+| --- | --- |
+| **15-20** | Eine lineare Regression zwischen Aussen- und Vorlauftemperatur wird korrekt trainiert und getestet. Die Gruppe zeigt Modell, Test-MAE/MSE, Residuen und eine klare gebäudephysikalische Interpretation mit Einschränkungen. |
+| **10-14** | Das Modell ist grösstenteils korrekt, aber die Bewertung oder Interpretation ist unvollständig. |
+| **5-9** | Das Modell ist ungeeignet, falsch bewertet oder schwach interpretiert. |
+| **0-4** | Es wird kein verwendbares Modell gezeigt. |
 
-| Punktebereich    | Beschreibung                                                                                                                                                            |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **15–20 Punkte** | Ein geeignetes Modell mit mindestens 2 Variablen wurde ausgewählt, und die Ergebnisse sind klar interpretiert. Die Wahl des Modells ist gut begründet, und die Interpretation ist nachvollziehbar. |
-| **10–14 Punkte** | Ein angemessenes Modell mit mindestens 2 Variablen wurde verwendet, aber die Interpretation der Ergebnisse ist unklar oder nicht vollständig.                           |
-| **5–9 Punkte**   | Das Modell ist unpassend oder es fehlt eine klare Begründung. Die Ergebnisse sind schwer zu interpretieren.                                                             |
-| **0–4 Punkte**   | Es wurde kein Modell angewendet oder die Interpretation der Ergebnisse ist unverständlich.                                                                              |
+### 4. Kommunikation und Reproduzierbarkeit des Notebooks (20 %)
 
-### 5. **Bericht (20%)**
-
-| Punktebereich    | Beschreibung                                                                                                                                                           |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **15–20 Punkte** | Der Bericht ist klar strukturiert, übersichtlich und gut dokumentiert. Alle Schritte der Analyse und Bereinigung sind nachvollziehbar und begründet. Die Dokumentation ist verständlich und präzise. |
-| **10–14 Punkte** | Der Bericht ist grösstenteils strukturiert, aber es fehlen teilweise Details oder er könnte klarer formuliert werden. Die Limite von 8 Seiten (ohne Titelblatt, Inhaltsverzeichnis, Anhang, o.Ä.) ist eingehalten worden.  |
-| **5–9 Punkte**   | Der Bericht hat strukturelle Mängel und wichtige Aspekte sind unzureichend dokumentiert.                                                                               |
-| **0–4 Punkte**   | Der Bericht ist unstrukturiert oder unvollständig. Wichtige Informationen fehlen.                                                                                      |
+| Punkte | Beschreibung |
+| --- | --- |
+| **15-20** | Das Notebook ist strukturiert, ausführbar und prägnant. Entscheidungen, Analyse und die abschliessende Empfehlung für das Facility Management sind nachvollziehbar und präzise. |
+| **10-14** | Das Notebook ist grösstenteils verständlich, aber wichtige Erklärungen oder Struktur fehlen. |
+| **5-9** | Das Notebook weist erhebliche strukturelle oder dokumentarische Lücken auf. |
+| **0-4** | Das Notebook ist unvollständig oder nicht nachvollziehbar. |
