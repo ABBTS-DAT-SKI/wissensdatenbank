@@ -191,9 +191,9 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
 - [Mini-Challenge](mini_challenge.md)
 - [Offizieller Spick](downloads/DAT-SKI_Spick.pdf)
-- [Prüfung FS2026](downloads/DAT-SKI_Pruefung_FS2026.pdf) als Referenz (ohne Lösungen)
+- [Prüfung SS2026](downloads/DAT-SKI_Pruefung_SS2026.pdf) als Referenz (ohne Lösungen)
 
-Die Prüfung FS2026 zeigt dir Aufgabentypen und Format. Es gibt keine Garantie, dass deine Prüfung gleich aufgebaut, gleich schwierig oder zu denselben Themen ist. Geprüft wird der ganze Stoff aus dem Unterricht.
+Die Prüfung SS2026 zeigt dir Aufgabentypen und Format. Es gibt keine Garantie, dass deine Prüfung gleich aufgebaut, gleich schwierig oder zu denselben Themen ist. Geprüft wird der ganze Stoff aus dem Unterricht.
 
 ### Unterrichtsblock 9 - Weitere Regressionsmodelle und Modellevaluation
 
@@ -222,4 +222,4 @@ Die Prüfung FS2026 zeigt dir Aufgabentypen und Format. Es gibt keine Garantie, 
 - Mini-Challenge: Abgabe in der Woche der schriftlichen Prüfung.
 - Schriftliche Prüfung: Mittwoch, 2. Dezember 2026.
 - Erlaubtes Hilfsmittel an der Prüfung: ein Spick, maximal ein A4-Blatt beidseitig. Den [offiziellen Spick](downloads/DAT-SKI_Spick.pdf) kannst du direkt ausdrucken oder als Vorlage für einen eigenen verwenden.
-- Zur Vorbereitung: [Prüfung FS2026](downloads/DAT-SKI_Pruefung_FS2026.pdf) als Referenz. Deine Prüfung kann anders aufgebaut und anders schwierig sein.
+- Zur Vorbereitung: [Prüfung SS2026](downloads/DAT-SKI_Pruefung_SS2026.pdf) als Referenz. Deine Prüfung kann anders aufgebaut und anders schwierig sein.
