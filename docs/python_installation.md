@@ -16,7 +16,11 @@ So vermeidest du die häufigsten Probleme mit Microsoft Store, falschen `pip`-In
 
 Installiere Python 3.13 von der offiziellen Webseite:
 
-- [Python Download auf python.org](https://www.python.org/downloads/windows/)
+- [Python 3.13.16 auf python.org](https://www.python.org/downloads/release/python-31316/)
+- Scrolle dort zu `Files` und lade `Windows installer (64-bit)` herunter.
+
+> [!NOTE]
+> Der grosse Download-Button auf der Startseite von python.org führt zur neusten Version mit dem `Python install manager`. Das funktioniert auch, sieht aber anders aus als in dieser Anleitung. Mit dem Link oben bekommst du genau den Installer, der hier beschrieben ist.
 
 Wichtig im Installer:
 
@@ -32,7 +36,7 @@ python --version
 Wenn eine Python-Version angezeigt wird, ist die Installation bereit.
 
 > [!TIP]
-> Für dieses Modul sind Python 3.12 und 3.13 geeignet. Empfohlen ist Python 3.13.
+> Für dieses Modul sind Python 3.12 bis 3.15 geeignet. Empfohlen ist Python 3.13. Wenn bereits eine dieser Versionen von python.org installiert ist, kannst du sie behalten.
 
 > [!NOTE]
 > Falls die Installation von `python.org` auf einem Arbeitslaptop blockiert wird, kannst du Microsoft Store als Fallback probieren:
@@ -58,13 +62,23 @@ Installiere Visual Studio Code:
 
 ## 4. Modul-Packages installieren
 
-Öffne in VS Code ein Terminal oder eine Eingabeaufforderung und installiere die wichtigsten Packages:
+Öffne in VS Code über das Menü `Terminal` → `New Terminal` ein Terminal. Es erscheint unten im Fenster. Gib dort diesen Befehl ein und bestätige mit `Enter`:
 
 ```sh
-python -m pip install jupyter pandas openpyxl plotly matplotlib scikit-learn
+python -m pip install jupyter pandas openpyxl plotly nbformat matplotlib scikit-learn
 ```
 
 Dieser Befehl ist robuster als ein direkter `pip`-Aufruf, weil er genau die Python-Version verwendet, die du mit `python` startest.
+
+Die Installation kann einige Minuten dauern, besonders wenn der Virenscanner jede Datei prüft. Warte, bis wieder eine leere Eingabezeile erscheint, und schliesse das Terminal vorher nicht.
+
+> [!IMPORTANT]
+> Es gibt zwei Orte für Installationsbefehle. Verwechsle sie nicht:
+>
+> - **Terminal** (unten in VS Code): `python -m pip install ...`
+> - **Notebook-Zelle** (im `.ipynb`): `%pip install ...` mit Prozentzeichen, als Codezelle ausführen
+>
+> Fehlt in einer Notebook-Zelle das Prozentzeichen vor `pip`, erscheint ein `SyntaxError`.
 
 > [!TIP]
 > Für Unterrichtsblock 2 reichen meist `jupyter` und `pandas`. Der obige Befehl deckt aber bereits die wichtigsten Packages für das Semester ab.
@@ -95,6 +109,18 @@ Für Excel-Dateien ist zum Beispiel oft zusätzlich `openpyxl` nötig:
 
 Starte nach der Installation den Kernel neu und führe die Zelle erneut aus.
 
+## 7. Setup prüfen
+
+Im Paket [Unterrichtsblock-1.zip](downloads/Unterrichtsblock-1.zip) liegt das Notebook `01_Setup_Check.ipynb`. Es installiert alle Packages für das Semester und prüft deine Python-Version, die Packages und die Ordnerstruktur.
+
+1. Lade `data.zip` und `Unterrichtsblock-1.zip` herunter und entpacke beide nach `C:\DAT-SKI\`.
+2. Öffne `Unterrichtsblock-1/01_Setup_Check.ipynb` in VS Code.
+3. Wähle oben rechts den Kernel mit deiner Python-Version aus.
+4. Klicke oben auf `Run All`.
+5. Ganz unten muss **Alles bereit** stehen. Sonst zeigt das Notebook für jedes Problem eine Lösung an.
+
+Wenn du nicht weiterkommst, mach einen Screenshot der Ausgabe und bring ihn in den Unterricht mit.
+
 ## Was ist ein Jupyter Notebook?
 
 Ein Jupyter Notebook ist eine Datei mit der Endung `.ipynb`. Sie enthält Text, Aufgaben, Python-Code und Ausgaben in einem Dokument. Du führst dabei nicht das ganze Dokument auf einmal aus, sondern immer einzelne Zellen nacheinander.
@@ -102,6 +128,8 @@ Ein Jupyter Notebook ist eine Datei mit der Endung `.ipynb`. Sie enthält Text, 
 ## Häufige Probleme
 
 - `python` wird nicht erkannt: Schliesse das Terminal und öffne es erneut. Falls es weiterhin nicht funktioniert, starte Windows neu oder prüfe, ob Python wirklich von `python.org` installiert wurde.
+- `pip` oder `py` wird nicht erkannt: Verwende immer `python -m pip install ...`. Den Befehl `py` brauchst du in diesem Modul nicht.
+- `SyntaxError` bei `pip install` in einer Notebook-Zelle: In Notebook-Zellen schreibst du `%pip install ...` mit Prozentzeichen.
 - `../data/...` wird nicht gefunden: `data/` und die Unterrichtsblock-Ordner müssen direkt nebeneinander in `C:\DAT-SKI\` liegen.
 - `import pandas` funktioniert trotz Installation nicht: Meist ist der falsche Kernel ausgewählt. Wähle oben rechts die installierte Python-Version aus und installiere das Package bei Bedarf mit `%pip install pandas` direkt im Notebook.
 - Eine PowerShell-Anleitung verlangt `Activate.ps1` oder eine Aktivierung der Umgebung: Für dieses Modul brauchst du das nicht. Installiere Packages mit `python -m pip install ...` und wähle in VS Code direkt den passenden Kernel aus.

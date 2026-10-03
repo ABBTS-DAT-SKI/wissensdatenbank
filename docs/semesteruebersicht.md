@@ -220,3 +220,4 @@ In diesem Unterrichtsblock werden die schriftliche Prüfung und die Mini-Challen
 
 - Mini-Challenge: Abgabe bis Ende Semesterwoche 10 (SW10).
 - Schriftliche Prüfung: 2. Juni 2025.
+- Erlaubtes Hilfsmittel an der Prüfung: ein Spick, maximal ein A4-Blatt beidseitig. Den [offiziellen Spick](downloads/DAT-SKI_Spick.pdf) kannst du direkt ausdrucken oder als Vorlage für einen eigenen verwenden.

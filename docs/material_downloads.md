@@ -8,6 +8,7 @@ Lade für jeden Unterrichtsblock immer zwei ZIP-Dateien herunter:
 ## Downloads
 
 - [data.zip](downloads/data.zip)
+- [Unterrichtsblock-1.zip](downloads/Unterrichtsblock-1.zip) (Setup-Check)
 - [Unterrichtsblock-2.zip](downloads/Unterrichtsblock-2.zip)
 - [Unterrichtsblock-3.zip](downloads/Unterrichtsblock-3.zip)
 - [Unterrichtsblock-4.zip](downloads/Unterrichtsblock-4.zip)
@@ -17,6 +18,8 @@ Lade für jeden Unterrichtsblock immer zwei ZIP-Dateien herunter:
 - [Unterrichtsblock-8.zip](downloads/Unterrichtsblock-8.zip)
 - [Unterrichtsblock-9.zip](downloads/Unterrichtsblock-9.zip)
 - [Unterrichtsblock-10.zip](downloads/Unterrichtsblock-10.zip)
+
+Spick für die Prüfung (ein A4-Blatt, beidseitig bedruckt): [DAT-SKI_Spick.pdf](downloads/DAT-SKI_Spick.pdf)
 
 ## Zielstruktur nach dem Entpacken
 
