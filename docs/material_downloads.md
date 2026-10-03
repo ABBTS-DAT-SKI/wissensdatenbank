@@ -21,6 +21,8 @@ Lade für jeden Unterrichtsblock immer zwei ZIP-Dateien herunter:
 
 Spick für die Prüfung (ein A4-Blatt, beidseitig bedruckt): [DAT-SKI_Spick.pdf](downloads/DAT-SKI_Spick.pdf)
 
+Prüfung FS2026 als Referenz (ohne Lösungen; keine Garantie, dass deine Prüfung gleich aufgebaut oder gleich schwierig ist): [DAT-SKI_Pruefung_FS2026.pdf](downloads/DAT-SKI_Pruefung_FS2026.pdf)
+
 ## Zielstruktur nach dem Entpacken
 
 Entpacke beide ZIP-Dateien in denselben Oberordner, am besten in einen kurzen Pfad wie `C:\DAT-SKI\`:

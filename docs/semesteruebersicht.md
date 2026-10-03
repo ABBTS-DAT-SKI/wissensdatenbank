@@ -8,21 +8,22 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 | Unterrichtsblock | Datum | Schwerpunkt |
 | --- | --- | --- |
-| 1 | SW1 | Modulstart, Organisation, Anwendungsfälle |
-| 2 | SW2 | Einführung in Pandas, Datentypen, Datenformate |
-| 3 | SW2 | Spaltenmanipulation und Feature Engineering |
-| 4 | SW3 | Duplikate, fehlende Werte, Ausreisser, Time-Indexes |
-| 5 | SW4 | Imputation, Joins, Pivot/Melt |
-| 6 | SW5 | Datenschutz, univariate Statistik, Resampling |
-| 7 | SW6 | Visualisierungen, bivariate Statistik, Korrelation |
-| 8 | SW7 | Machine Learning Grundlagen, lineare Regression |
-| 9 | SW8 | Weitere Regressionsmodelle, Train-Test-Split, Modellevaluation |
-| 10 | SW10 | Schriftliche Prüfung, Abgabe Mini-Challenge |
-| 11 | SW12 | Besprechung schriftliche Prüfung, Mini-Challenge, ev. Crash-Kurs generative/agentische KI |
+| 1 | 07.10.2026 | Modulstart, Organisation, Anwendungsfälle |
+| 2 | 14.10.2026 | Einführung in Pandas, Datentypen, Datenformate |
+| 3 | 21.10.2026 | Spaltenmanipulation und Feature Engineering |
+| 4 | 28.10.2026 | Duplikate, fehlende Werte, Ausreisser, Time-Indexes |
+| 5 | 04.11.2026 | Imputation, Joins, Pivot/Melt |
+| 6 | 11.11.2026 | Datenschutz, univariate Statistik, Resampling |
+| 7 | 18.11.2026 | Visualisierungen, bivariate Statistik, Korrelation |
+| 8 | 25.11.2026 | Machine Learning Grundlagen, lineare Regression |
+| – | 02.12.2026 | Schriftliche Prüfung, Abgabe Mini-Challenge |
+| 9 | 09.12.2026 | Weitere Regressionsmodelle, Train-Test-Split, Modellevaluation |
+
+Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
 ### Unterrichtsblock 1 - Modulstart
 
-**Datum:** Semesterwoche 1 (SW1)
+**Datum:** Mittwoch, 07.10.2026
 
 **Themen:** Modulaufbau, Prüfung, Mini-Challenge, Anwendungsfälle von Data Science
 
@@ -38,7 +39,7 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 ### Unterrichtsblock 2 - Einführung in Pandas
 
-**Datum:** Semesterwoche 2 (SW2)
+**Datum:** Mittwoch, 14.10.2026
 
 **Themen:** DataFrames, Datentypen, Datenformate, erste Datenanalyse mit Pandas
 
@@ -60,7 +61,7 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 ### Unterrichtsblock 3 - Spalten in Pandas manipulieren
 
-**Datum:** Semesterwoche 2 (SW2)
+**Datum:** Mittwoch, 21.10.2026
 
 **Themen:** Spaltenauswahl, Aggregationen, `row-slicing`, Umbenennen, Feature Engineering
 
@@ -80,7 +81,7 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 ### Unterrichtsblock 4 - Daten bereinigen und mit Zeitstempeln arbeiten
 
-**Datum:** Semesterwoche 3 (SW3)
+**Datum:** Mittwoch, 28.10.2026
 
 **Themen:** Duplikate, fehlende Werte, Time-Indexes, Zeitzonen, UTC
 
@@ -100,7 +101,7 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 ### Unterrichtsblock 5 - Imputationen, Joins und Pivot/Melt
 
-**Datum:** Semesterwoche 4 (SW4)
+**Datum:** Mittwoch, 04.11.2026
 
 **Themen:** Imputation, lineare Interpolation, horizontale Joins, Daten umformen
 
@@ -120,7 +121,7 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 ### Unterrichtsblock 6 - Datenschutz, univariate Statistik und Resampling
 
-**Datum:** Semesterwoche 5 (SW5)
+**Datum:** Mittwoch, 11.11.2026
 
 **Themen:** Datenschutz, DSGVO, explorative Datenanalyse, deskriptive Statistik, Upsampling, Downsampling
 
@@ -141,7 +142,7 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 ### Unterrichtsblock 7 - Visualisierungen und bivariate Statistik
 
-**Datum:** Semesterwoche 6 (SW6)
+**Datum:** Mittwoch, 18.11.2026
 
 **Themen:** Zeitreihenplots, Histogramme, Barplots, Scatterplots, Korrelation
 
@@ -161,7 +162,7 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 
 ### Unterrichtsblock 8 - Einführung in Machine Learning
 
-**Datum:** Semesterwoche 7 (SW7)
+**Datum:** Mittwoch, 25.11.2026
 
 **Themen:** Begriffe des Machine Learning, Modelle, Regression, lineare Regression, Residuen
 
@@ -182,9 +183,21 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 - [Residuenanalyse](machine-learning/residual_analysis.md)
 - [Material Downloads](material_downloads.md)
 
+### Schriftliche Prüfung
+
+**Datum:** Mittwoch, 02.12.2026
+
+**Materialien**
+
+- [Mini-Challenge](mini_challenge.md)
+- [Offizieller Spick](downloads/DAT-SKI_Spick.pdf)
+- [Prüfung FS2026](downloads/DAT-SKI_Pruefung_FS2026.pdf) als Referenz (ohne Lösungen)
+
+Die Prüfung FS2026 zeigt dir Aufgabentypen und Format. Es gibt keine Garantie, dass deine Prüfung gleich aufgebaut, gleich schwierig oder zu denselben Themen ist. Geprüft wird der ganze Stoff aus dem Unterricht.
+
 ### Unterrichtsblock 9 - Weitere Regressionsmodelle und Modellevaluation
 
-**Datum:** Semesterwoche 8 (SW8)
+**Datum:** Mittwoch, 09.12.2026
 
 **Themen:** Ausreisser, k-Nearest-Neighbors, Decision Trees, Underfitting, Overfitting, Train-Test-Split
 
@@ -204,20 +217,9 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 - [Modellevaluation](machine-learning/model_evaluation.md)
 - [Material Downloads](material_downloads.md)
 
-### Unterrichtsblock 10 - Schriftliche Prüfung, Abgabe Mini-Challenge
-**Datum:** Semesterwoche 10 (SW10)
-
-**Materialien**
-- [Mini-Challenge](mini_challenge.md)
-- [Startseite](index.md)
-### Unterrichtsblock 11 - Besprechung schriftliche Prüfung, Mini-Challenge, ev. Crash-Kurs generative/agentische KI
-**Datum:** Semesterwoche 12 (SW12)
-**Themen:** Besprechung schriftliche Prüfung, Mini-Challenge, ev. Crash-Kurs generative/agentische KI
-
-In diesem Unterrichtsblock werden die schriftliche Prüfung und die Mini-Challenge besprochen. Je nach verfügbarer Zeit gibt es zusätzlich einen Crash-Kurs zu generativer und agentischer KI.
-
 ## Wichtige Termine
 
-- Mini-Challenge: Abgabe bis Ende Semesterwoche 10 (SW10).
-- Schriftliche Prüfung: 2. Juni 2025.
+- Mini-Challenge: Abgabe in der Woche der schriftlichen Prüfung.
+- Schriftliche Prüfung: Mittwoch, 2. Dezember 2026.
 - Erlaubtes Hilfsmittel an der Prüfung: ein Spick, maximal ein A4-Blatt beidseitig. Den [offiziellen Spick](downloads/DAT-SKI_Spick.pdf) kannst du direkt ausdrucken oder als Vorlage für einen eigenen verwenden.
+- Zur Vorbereitung: [Prüfung FS2026](downloads/DAT-SKI_Pruefung_FS2026.pdf) als Referenz. Deine Prüfung kann anders aufgebaut und anders schwierig sein.

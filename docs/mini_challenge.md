@@ -88,14 +88,14 @@ Jede Gruppe erarbeitet ihr Notebook selbstständig.
 
 **Nicht erlaubt** ist es,
 
-- Code, Notebooks, Plots oder Textpassagen einer anderen Gruppe zu übernehmen,
+- Code, Notebooks, Plots oder Textpassagen einer anderen Gruppe anzuschauen (unbefugte Kommunikation) oder zu übernehmen,
 - eigenen Code, eigene Plots, Notebooks oder Textpassagen einer anderen Gruppe zu zeigen oder weiterzugeben, auch nicht auf dem Bildschirm, per Foto oder per Chat.
 
-Ein Verstoss gilt als Unredlichkeit gemäss Punkt 1.3 und wird mit der Note 1 bewertet. Das gilt für jede Gruppe, die gegen diese Regeln verstösst: Wer Code oder Plots zeigt oder weitergibt, verstösst bereits damit gegen die Regeln, unabhängig davon, ob die andere Gruppe etwas übernimmt.
+Ein Verstoss gilt als Unredlichkeit gemäss Punkt 1.3 des Promotionsreglements und wird mit der Note 1 bewertet. Das gilt für jede Gruppe, die gegen diese Regeln verstösst: Wer Code oder Plots einer anderen Gruppe anschaut, zeigt oder weitergibt, verstösst bereits damit gegen die Regeln, unabhängig davon, ob etwas übernommen wird.
 
 Das Notebook enthält am Ende eine Eigenständigkeitserklärung, die alle Gruppenmitglieder mit Namen bestätigen:
 
-> Wir bestätigen, dass wir dieses Notebook selbstständig erarbeitet haben. Wir haben keinen Code, keine Plots und keine Textpassagen anderer Gruppen übernommen und keine eigenen Arbeitsergebnisse an andere Gruppen gezeigt oder weitergegeben.
+> Wir bestätigen, dass wir dieses Notebook selbstständig erarbeitet haben. Wir haben keinen Code, keine Plots und keine Textpassagen anderer Gruppen angeschaut oder übernommen und keine eigenen Arbeitsergebnisse an andere Gruppen gezeigt oder weitergegeben.
 
 ## Abgabe
 
