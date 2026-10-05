@@ -1,11 +1,35 @@
 # Daten und Aufgaben herunterladen
 
+## Mit Git (empfohlen)
+
+Alle Aufgaben, Demos, Daten und nach jedem Unterricht auch die Lösungen liegen im Repository [ABBTS-DAT-SKI/material](https://github.com/ABBTS-DAT-SKI/material).
+
+Einmal einrichten (im Terminal von VS Code):
+
+```bash
+mkdir C:\DAT-SKI
+cd C:\DAT-SKI
+git clone https://github.com/ABBTS-DAT-SKI/material.git
+```
+
+Danach öffnest du den Ordner `C:\DAT-SKI\material` in VS Code. Vor jedem Unterricht holst du die neuen Dateien:
+
+```bash
+git pull
+```
+
+- Bearbeite die Notebooks direkt. Eine veröffentlichte Datei ändert sich nie mehr, deshalb überschreibt `git pull` deine Arbeit nicht.
+- Die Lösungen erscheinen nach dem Unterricht als neue Dateien in `Unterrichtsblock-N/Loesungen/`.
+- Gib eigenen Dateien einen eigenen Namen, zum Beispiel `meine_notizen.ipynb`.
+
+## Ohne Git: ZIP-Dateien
+
 Lade für jeden Unterrichtsblock immer zwei ZIP-Dateien herunter:
 
 1. `data.zip`
 2. das Blockpaket, zum Beispiel `Unterrichtsblock-2.zip`
 
-## Downloads
+### Downloads
 
 - [data.zip](downloads/data.zip)
 - [Unterrichtsblock-1.zip](downloads/Unterrichtsblock-1.zip) (Setup-Check)
@@ -23,7 +47,7 @@ Spick für die Prüfung (ein A4-Blatt, beidseitig bedruckt): [DAT-SKI_Spick.pdf]
 
 Prüfung SS2026 als Referenz (ohne Lösungen; keine Garantie, dass deine Prüfung gleich aufgebaut oder gleich schwierig ist): [DAT-SKI_Pruefung_SS2026.pdf](downloads/DAT-SKI_Pruefung_SS2026.pdf)
 
-## Zielstruktur nach dem Entpacken
+### Zielstruktur nach dem Entpacken
 
 Entpacke beide ZIP-Dateien in denselben Oberordner, am besten in einen kurzen Pfad wie `C:\DAT-SKI\`:
 
@@ -45,7 +69,7 @@ C:\DAT-SKI\
 
 Die Notebooks erwarten die Daten immer relativ zum Blockordner unter `../data/`.
 
-## Nach dem Entpacken
+### Nach dem Entpacken
 
 1. Öffne die Notebook-Datei nicht direkt aus dem ZIP, sondern entpacke immer zuerst beide ZIP-Dateien vollständig.
 2. Öffne danach den Oberordner, zum Beispiel `C:\DAT-SKI\`, in VS Code.
