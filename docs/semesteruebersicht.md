@@ -31,11 +31,11 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
 - Anwendungsfälle von Data Science nennen.
 - Den Ablauf des Moduls, der Prüfung und der Mini-Challenge kennen.
-- Den Vorbereitungsauftrag für die nächste Woche selbständig erarbeiten.
+- Die eigene Python-Umgebung einrichten und mit dem Setup-Check prüfen.
 
 **Materialien**
 
-- Einführung im Unterricht; für diesen Termin gibt es kein separates Blockpaket.
+- [Python Installation](python_installation.md) und `Unterrichtsblock-1/01-Setup_Check.ipynb`. Bis zum zweiten Unterricht muss der Setup-Check «Alles bereit» melden.
 
 ### Unterrichtsblock 2 - Einführung in Pandas
 
