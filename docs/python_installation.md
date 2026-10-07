@@ -5,7 +5,7 @@ Dieser Guide zeigt einen einfachen und stabilen Windows-Workflow für das ganze 
 ## Empfohlener Semester-Standard
 
 - Installiere Python von `python.org`.
-- Lege einen kurzen Arbeitsordner an, zum Beispiel `C:\DAT-SKI\`.
+- Hol das Material mit Git nach `C:\DAT-SKI\` (oder als ZIP-Dateien in denselben Ordner).
 - Installiere die Modul-Packages mit `python -m pip install ...`.
 - Wähle in VS Code immer die installierte Python-Version als Kernel aus.
 - Falls ein Package im Notebook fehlt, installiere es direkt dort mit `%pip install ...`.
@@ -42,15 +42,48 @@ Wenn eine Python-Version angezeigt wird, ist die Installation bereit.
 > Falls die Installation von `python.org` auf einem Arbeitslaptop blockiert wird, kannst du Microsoft Store als Fallback probieren:
 > [Python im Microsoft Store](https://apps.microsoft.com/detail/9pnrbtzxmb4z)
 
-## 2. Arbeitsordner vorbereiten
+## 2. Material holen
 
-Lege einen kurzen Oberordner an, zum Beispiel:
+Dein Arbeitsordner ist `C:\DAT-SKI\`. Darin liegen `data/` und die Unterrichtsblock-Ordner direkt nebeneinander:
 
 ```text
 C:\DAT-SKI\
+|- data/
+|- Unterrichtsblock-1/
+`- Unterrichtsblock-2/
 ```
 
-Entpacke `data.zip` und die Unterrichtsblock-ZIP-Dateien vollständig in diesen Ordner. Vermeide unnötig tiefe Ordnerstrukturen wie `Desktop`, `Downloads` in OneDrive oder mehrfach verschachtelte ZIP-Ordner.
+Vermeide tiefe Ordner wie `Desktop`, `Downloads` oder OneDrive. Wähle **eine** der beiden Varianten und bleib das ganze Semester dabei.
+
+### Variante A: mit Git (empfohlen)
+
+Öffne PowerShell (Startmenü → `PowerShell`) und prüfe, ob Git installiert ist:
+
+```sh
+git --version
+```
+
+Erscheint eine Fehlermeldung, installiere [Git for Windows](https://git-scm.com/downloads/win) mit den Standardeinstellungen und öffne danach PowerShell neu. Hole dann das Material:
+
+```sh
+git clone https://github.com/ABBTS-DAT-SKI/material.git C:\DAT-SKI
+```
+
+Neue Aufgaben und Lösungen holst du vor jedem Unterricht mit:
+
+```sh
+cd C:\DAT-SKI
+git pull
+```
+
+Mehr dazu unter [Material Downloads](material_downloads.md).
+
+### Variante B: ZIP-Dateien
+
+Lade `data.zip` und die Unterrichtsblock-ZIP-Dateien über [Material Downloads](material_downloads.md) herunter und entpacke sie vollständig nach `C:\DAT-SKI\`.
+
+> [!WARNING]
+> Mische die Varianten nicht. Entpackst du ZIP-Dateien in einen Git-Ordner, bricht `git pull` später ab.
 
 ## 3. VS Code installieren
 
@@ -85,13 +118,12 @@ Die Installation kann einige Minuten dauern, besonders wenn der Virenscanner jed
 
 ## 5. Erstes Notebook in VS Code öffnen
 
-1. Lade `data.zip` und das Paket des aktuellen Unterrichtsblocks über [Material Downloads](material_downloads.md) herunter.
-2. Entpacke beide ZIP-Dateien vollständig nach `C:\DAT-SKI\`.
-3. Öffne `C:\DAT-SKI\` in VS Code.
-4. Öffne links im Explorer das gewünschte Notebook, zum Beispiel `Unterrichtsblock-2/01-Einführung_Pandas.ipynb`.
-5. Wenn beim ersten Öffnen ein Popup erscheint, installiere die vorgeschlagenen Erweiterungen und Abhängigkeiten wie `Python`, `Jupyter` und `ipykernel`.
-6. Wähle oben rechts den Kernel aus, der zu deiner installierten Python-Version gehört. Falls mehrere Optionen erscheinen, nimm diejenige mit `Python 3.13` oder mit der Version, die du installiert hast.
-7. Führe die erste Zelle mit dem Play-Button oder mit `Shift+Enter` aus.
+1. Hol das Material des aktuellen Unterrichtsblocks (Abschnitt 2): `git pull` oder die ZIP-Dateien.
+2. Öffne `C:\DAT-SKI\` in VS Code.
+3. Öffne links im Explorer das gewünschte Notebook, zum Beispiel `Unterrichtsblock-2/01-Einführung_Pandas.ipynb`.
+4. Wenn beim ersten Öffnen ein Popup erscheint, installiere die vorgeschlagenen Erweiterungen und Abhängigkeiten wie `Python`, `Jupyter` und `ipykernel`.
+5. Wähle oben rechts den Kernel aus, der zu deiner installierten Python-Version gehört. Falls mehrere Optionen erscheinen, nimm diejenige mit `Python 3.13` oder mit der Version, die du installiert hast.
+6. Führe die erste Zelle mit dem Play-Button oder mit `Shift+Enter` aus.
 
 ## 6. Packages direkt im Notebook nachinstallieren
 
@@ -111,9 +143,9 @@ Starte nach der Installation den Kernel neu und führe die Zelle erneut aus.
 
 ## 7. Setup prüfen
 
-Im Paket [Unterrichtsblock-1.zip](downloads/Unterrichtsblock-1.zip) liegt das Notebook `01-Setup_Check.ipynb`. Es installiert alle Packages für das Semester und prüft deine Python-Version, die Packages und die Ordnerstruktur.
+Im Ordner `Unterrichtsblock-1` liegt das Notebook `01-Setup_Check.ipynb`. Es installiert alle Packages für das Semester und prüft deine Python-Version, die Packages und die Ordnerstruktur.
 
-1. Lade `data.zip` und `Unterrichtsblock-1.zip` herunter und entpacke beide nach `C:\DAT-SKI\`.
+1. Hol das Material wie in Abschnitt 2 beschrieben (Git oder `data.zip` und `Unterrichtsblock-1.zip`).
 2. Öffne `Unterrichtsblock-1/01-Setup_Check.ipynb` in VS Code.
 3. Wähle oben rechts den Kernel mit deiner Python-Version aus.
 4. Klicke oben auf `Run All`.
@@ -136,6 +168,9 @@ Ein Jupyter Notebook ist eine Datei mit der Endung `.ipynb`. Sie enthält Text, 
 - Microsoft Store startet statt der installierten Python-Version: Installiere Python von `python.org` und öffne danach ein neues Terminal.
 - Die Installation wird durch Berechtigungen, Antivirus oder Defender blockiert: Arbeite in einem einfachen Ordner wie `C:\DAT-SKI\` und nicht in geschützten oder stark verschachtelten Ordnern.
 - Windows meldet sehr lange Pfade oder entpackt ZIP-Dateien nicht sauber: Verwende einen kurzen Pfad wie `C:\DAT-SKI\`.
+- `git` wird nicht erkannt: Installiere [Git for Windows](https://git-scm.com/downloads/win) und öffne das Terminal neu.
+- `git clone` meldet `destination path 'C:\DAT-SKI' already exists and is not an empty directory`: Benenne den alten Ordner um, zum Beispiel in `C:\DAT-SKI-alt`, und klone erneut.
+- `git pull` bricht ab mit `untracked working tree files would be overwritten`: Eine eigene Datei hat denselben Namen wie eine neue Datei aus dem Repository, oft nach dem Entpacken einer ZIP-Datei in den Git-Ordner. Benenne deine Datei um und führe `git pull` erneut aus.
 
 ## Weiterführende Anleitungen
 

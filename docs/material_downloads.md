@@ -4,23 +4,25 @@
 
 Alle Aufgaben, Demos, Daten und nach jedem Unterricht auch die Lösungen liegen im Repository [ABBTS-DAT-SKI/material](https://github.com/ABBTS-DAT-SKI/material).
 
-Einmal einrichten (im Terminal von VS Code):
+Einmal einrichten (in PowerShell oder im Terminal von VS Code):
 
 ```bash
-mkdir C:\DAT-SKI
-cd C:\DAT-SKI
-git clone https://github.com/ABBTS-DAT-SKI/material.git
+git clone https://github.com/ABBTS-DAT-SKI/material.git C:\DAT-SKI
 ```
 
-Danach öffnest du den Ordner `C:\DAT-SKI\material` in VS Code. Vor jedem Unterricht holst du die neuen Dateien:
+Danach öffnest du den Ordner `C:\DAT-SKI` in VS Code. Vor jedem Unterricht holst du die neuen Dateien:
 
 ```bash
+cd C:\DAT-SKI
 git pull
 ```
+
+Fehlt Git oder bricht `git pull` ab, hilft [Python Installation → Material holen](python_installation.md#2-material-holen) weiter.
 
 - Bearbeite die Notebooks direkt. Eine veröffentlichte Datei ändert sich nie mehr, deshalb überschreibt `git pull` deine Arbeit nicht.
 - Die Lösungen erscheinen nach dem Unterricht als neue Dateien in `Unterrichtsblock-N/Loesungen/`.
 - Gib eigenen Dateien einen eigenen Namen, zum Beispiel `meine_notizen.ipynb`.
+- Entpacke keine ZIP-Dateien in diesen Ordner, sonst bricht `git pull` ab.
 
 ## Ohne Git: ZIP-Dateien
 
