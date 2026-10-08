@@ -9,7 +9,7 @@ nav:
   - Startseite: index.md
   - Semesterübersicht: semesteruebersicht.md
   - Mini Challenge: mini_challenge.md
-  - Python Installation: python_installation.md
+  - Setup (Python, Git, PyCharm): python_installation.md
   - Daten und Aufgaben: material_downloads.md
   - Wissensdatenbank:
       - Datenverarbeitung:

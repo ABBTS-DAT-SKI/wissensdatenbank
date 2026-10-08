@@ -12,9 +12,9 @@ Anstelle von reinem Frontalunterricht wird ein "Learning by Doing"-Ansatz verfol
 
 Wenn du zum ersten Mal mit dem Kursmaterial arbeitest, gehe in dieser Reihenfolge vor:
 
-1. Richte Python, VS Code und Jupyter ein: [Python Installation](python_installation.md)
+1. Richte Python, Git und PyCharm ein: [Setup](python_installation.md)
 2. Lade `data.zip` und den passenden Unterrichtsblock herunter und entpacke beides in denselben Oberordner: [Material Downloads](material_downloads.md)
-3. Öffne den Oberordner, zum Beispiel `DAT-SKI/`, in VS Code. Öffne danach das gewünschte Notebook im Unterrichtsblock und führe die Zellen schrittweise aus.
+3. Öffne den Oberordner, zum Beispiel `DAT-SKI/`, in PyCharm (oder VS Code). Öffne danach das gewünschte Notebook im Unterrichtsblock und führe die Zellen schrittweise aus.
 
 Die Notebooks arbeiten mit relativen Pfaden wie `../data/...`. Darum müssen der Ordner `data/` und die Unterrichtsblock-Ordner nebeneinander liegen.
 

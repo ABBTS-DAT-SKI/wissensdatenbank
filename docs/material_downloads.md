@@ -2,25 +2,18 @@
 
 ## Mit Git (empfohlen)
 
-Alle Aufgaben, Demos, Daten und nach jedem Unterricht auch die Lösungen liegen im Repository [ABBTS-DAT-SKI/material](https://github.com/ABBTS-DAT-SKI/material).
+Alle Aufgaben, Demos, Folien, Daten und nach jedem Unterricht auch die Lösungen liegen im Repository [ABBTS-DAT-SKI/material](https://github.com/ABBTS-DAT-SKI/material).
 
-Einmal einrichten (in PowerShell oder im Terminal von VS Code):
+Einmal einrichten: in PyCharm **Clone Repository** mit der URL `https://github.com/ABBTS-DAT-SKI/material.git` (Ordner: Vorschlag von PyCharm, nicht in OneDrive). Die Schritte mit Screenshots stehen unter [Setup → Material in PyCharm holen](python_installation.md#4-material-in-pycharm-holen).
 
-```bash
-git clone https://github.com/ABBTS-DAT-SKI/material.git C:\DAT-SKI
-```
-
-Danach öffnest du den Ordner `C:\DAT-SKI` in VS Code. Vor jedem Unterricht holst du die neuen Dateien:
+Vor jedem Unterricht holst du die neuen Dateien im Terminal von PyCharm:
 
 ```bash
-cd C:\DAT-SKI
 git pull
 ```
 
-Fehlt Git oder bricht `git pull` ab, hilft [Python Installation → Material holen](python_installation.md#2-material-holen) weiter.
-
 - Bearbeite die Notebooks direkt. Eine veröffentlichte Datei ändert sich nie mehr, deshalb überschreibt `git pull` deine Arbeit nicht.
-- Die Lösungen erscheinen nach dem Unterricht als neue Dateien in `Unterrichtsblock-N/Loesungen/`.
+- Die Folien liegen als PDF im Ordner des Unterrichtsblocks, die Lösungen erscheinen nach dem Unterricht in `Unterrichtsblock-N/Loesungen/`.
 - Gib eigenen Dateien einen eigenen Namen, zum Beispiel `meine_notizen.ipynb`.
 - Entpacke keine ZIP-Dateien in diesen Ordner, sonst bricht `git pull` ab.
 
@@ -74,9 +67,9 @@ Die Notebooks erwarten die Daten immer relativ zum Blockordner unter `../data/`.
 ### Nach dem Entpacken
 
 1. Öffne die Notebook-Datei nicht direkt aus dem ZIP, sondern entpacke immer zuerst beide ZIP-Dateien vollständig.
-2. Öffne danach den Oberordner, zum Beispiel `C:\DAT-SKI\`, in VS Code.
+2. Öffne danach den Oberordner, zum Beispiel `C:\DAT-SKI\`, in PyCharm (oder VS Code).
 3. Öffne im gewünschten Unterrichtsblock das passende Notebook (`.ipynb`).
-4. Wähle oben rechts den Python-Kernel aus. Falls mehrere Optionen erscheinen, nimm die installierte Python-Version, zum Beispiel `Python 3.13`.
+4. Wähle oben rechts den Python-Interpreter aus, wie unter [Setup → Setup-Check ausführen](python_installation.md#7-setup-prufen) beschrieben.
 5. Führe die Zellen mit dem Play-Button oder mit `Shift+Enter` aus.
 
 ## Häufige Fehler
