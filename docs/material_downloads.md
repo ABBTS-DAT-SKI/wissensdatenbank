@@ -6,7 +6,7 @@ Alle Aufgaben, Demos, Folien, Daten und nach jedem Unterricht auch die Lösungen
 
 Einmal einrichten: in PyCharm **Clone Repository** mit der URL `https://github.com/ABBTS-DAT-SKI/material.git` (Ordner: Vorschlag von PyCharm, nicht in OneDrive). Die Schritte mit Screenshots stehen unter [Setup → Material in PyCharm holen](python_installation.md#4-material-in-pycharm-holen).
 
-Vor jedem Unterricht holst du die neuen Dateien im Terminal von PyCharm:
+Vor jedem Unterricht holst du die neuen Dateien: in PyCharm oben links auf den Branch **main** klicken und **Update Project** wählen (`Ctrl+T`), siehe [Setup → Jede Woche](python_installation.md#jede-woche-neues-material-holen). Im Terminal geht es auch mit:
 
 ```bash
 git pull

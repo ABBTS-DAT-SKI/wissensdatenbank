@@ -90,11 +90,17 @@ Steht dort eine Liste mit Problemen, zeigt das Notebook zu jedem Problem eine L�
 
 ## Jede Woche: neues Material holen
 
-Neue Aufgaben, Folien und Lösungen holst du vor jedem Unterricht. Öffne in PyCharm unten links das **Terminal** und gib ein:
+Neue Aufgaben, Folien und Lösungen holst du vor jedem Unterricht:
 
-```sh
-git pull
-```
+1. Klicke oben links neben dem Projektnamen auf den Branch **main** und wähle **Update Project** (oder `Ctrl+T`).
+
+    ![Update Project im Branch-Menü](img/pycharm/09-update-project.jpg)
+
+2. PyCharm holt die neuen Dateien. Unten rechts erscheint eine Meldung: entweder die Anzahl aktualisierter Dateien oder **All files are up to date**, wenn es nichts Neues gibt.
+
+    ![Meldung All files are up to date](img/pycharm/10-up-to-date.jpg)
+
+Alternativ geht es im **Terminal** von PyCharm mit `git pull`.
 
 - Bearbeite die Notebooks direkt. Eine veröffentlichte Datei ändert sich nie mehr, deshalb überschreibt `git pull` deine Arbeit nicht.
 - Gib eigenen Dateien einen eigenen Namen, zum Beispiel `meine_notizen.ipynb`.
