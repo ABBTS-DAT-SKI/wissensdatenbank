@@ -99,7 +99,7 @@ Das Notebook enthält am Ende eine Eigenständigkeitserklärung, die alle Gruppe
 
 ## Abgabe
 
-Gebt bis zum im Unterricht kommunizierten Termin ein ausführbares Notebook pro
+Gebt bis **Sonntag, 13. Dezember 2026, 23:59** ein ausführbares Notebook pro
 Gruppe ab. Es muss mit eurem zugeteilten Datenpaket von oben nach unten laufen
 und kurze schriftliche Schlussfolgerungen zu allen drei Fragen enthalten.
 

@@ -2,7 +2,7 @@
 
 Diese Übersicht zeigt pro Unterrichtsblock die zentralen Themen, die Lernziele und die wichtigsten Materialien.
 
-Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Installation](python_installation.md) ein, lade danach die Dateien über [Material Downloads](material_downloads.md) herunter und öffne erst dann das erste Notebook.
+Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Setup](python_installation.md) ein, lade danach die Dateien über [Material Downloads](material_downloads.md) herunter und öffne erst dann das erste Notebook.
 
 ## Unterrichtsblöcke im Überblick
 
@@ -16,8 +16,9 @@ Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Python Inst
 | 6 | 11.11.2026 | Datenschutz, univariate Statistik, Resampling |
 | 7 | 18.11.2026 | Visualisierungen, bivariate Statistik, Korrelation |
 | 8 | 25.11.2026 | Machine Learning Grundlagen, lineare Regression |
-| – | 02.12.2026 | Schriftliche Prüfung, Abgabe Mini-Challenge |
+| – | 02.12.2026 | Schriftliche Prüfung |
 | 9 | 09.12.2026 | Weitere Regressionsmodelle, Train-Test-Split, Modellevaluation |
+| – | 13.12.2026 | Abgabe Mini-Challenge bis 23:59 |
 
 Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
@@ -35,7 +36,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
 **Materialien**
 
-- [Python Installation](python_installation.md) und `Unterrichtsblock-1/01-Setup_Check.ipynb`. Bis zum zweiten Unterricht muss der Setup-Check «Alles bereit» melden.
+- [Setup](python_installation.md) und `Unterrichtsblock-1/01-Setup_Check.ipynb`. Bis zum zweiten Unterricht muss der Setup-Check «Alles bereit» melden.
 
 ### Unterrichtsblock 2 - Einführung in Pandas
 
@@ -53,7 +54,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
 **Materialien**
 
-- [Python Installation](python_installation.md)
+- [Setup](python_installation.md)
 - [Einführung in Pandas](data-engineering/introduction.md)
 - [Überblick über Datentypen](data-engineering/data_types.md)
 - [Datenformate](data-engineering/data_formats.md)
@@ -219,7 +220,7 @@ Die Prüfung SS2026 zeigt dir Aufgabentypen und Format. Es gibt keine Garantie, 
 
 ## Wichtige Termine
 
-- Mini-Challenge: Abgabe in der Woche der schriftlichen Prüfung.
+- Mini-Challenge: Abgabe bis Sonntag, 13. Dezember 2026, 23:59.
 - Schriftliche Prüfung: Mittwoch, 2. Dezember 2026.
 - Erlaubtes Hilfsmittel an der Prüfung: ein Spick, maximal ein A4-Blatt beidseitig. Den [offiziellen Spick](downloads/DAT-SKI_Spick.pdf) kannst du direkt ausdrucken oder als Vorlage für einen eigenen verwenden.
 - Zur Vorbereitung: [Prüfung SS2026](downloads/DAT-SKI_Pruefung_SS2026.pdf) als Referenz. Deine Prüfung kann anders aufgebaut und anders schwierig sein.
