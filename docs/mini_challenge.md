@@ -19,8 +19,7 @@ Ihr erhaltet drei zusammengehörende Rohdatenexporte:
 
 ### Datenpaket
 
-- Reale Messdaten von Heizgruppen in Schweizer Mehrfamilienhäusern,
-  zur Verfügung gestellt von Plutinsus.
+- Reale Messdaten von Heizgruppen in Schweizer Mehrfamilienhäusern.
 - Zeitraum: 1. August 2025 bis 31. Juli 2026, also inklusive Sommer.
 - `_time` enthält die Zeitstempel in UTC, `_value` den Messwert in °C. Vorlauf
   und Rücklauf werden ungefähr jede Minute erfasst, die Aussentemperatur alle
