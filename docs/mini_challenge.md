@@ -19,27 +19,25 @@ Ihr erhaltet drei zusammengehörende Rohdatenexporte:
 
 ### Datenpaket
 
-- Zeitraum: 1. Oktober 2025 bis 30. September 2026.
-- `_time` enthält die Zeitstempel in UTC, `_value` den Messwert. Vorlauf und
-  Rücklauf werden ungefähr jede Minute erfasst, die Aussentemperatur alle zehn
-  Minuten.
-- Die Heizung läuft nach Schweizer Ortszeit. 
-- Vorlauf- und Rücklauftemperatur sind synthetisch. Sie stammen aus einer
-  Simulation, die mit realen Betriebsmustern und realem Sensorverhalten
-  gemessener Heizgruppen kalibriert wurde.
-- Die Aussentemperatur besteht aus realen Messungen einer
-  SwissMetNet-Station (Quelle: MeteoSwiss, CC BY 4.0). Einzelne Werte können fehlen.
-- Sensorlücken sind enthalten und müssen in der Analyse sichtbar bleiben.
+- Reale Messdaten von Heizgruppen in Schweizer Mehrfamilienhäusern,
+  zur Verfügung gestellt von Plutinsus.
+- Zeitraum: 1. August 2025 bis 31. Juli 2026, also inklusive Sommer.
+- `_time` enthält die Zeitstempel in UTC, `_value` den Messwert in °C. Vorlauf
+  und Rücklauf werden ungefähr jede Minute erfasst, die Aussentemperatur alle
+  zehn Minuten (nächstgelegene MeteoSchweiz-Station).
+- Die Heizung läuft nach Schweizer Ortszeit.
+- Die Daten sind unbearbeitet: Lücken, Ausreisser und Sensorprobleme sind
+  enthalten und müssen in der Analyse sichtbar bleiben.
 
-| Datenpaket | Gebäude | Wetterstation |
-| --- | --- | --- |
-| [heating_group_01.zip](downloads/mini_challenge/heating_group_01.zip) | Wohngebäude | Basel / Binningen |
-| [heating_group_02.zip](downloads/mini_challenge/heating_group_02.zip) | Schulhaus | Bern / Zollikofen |
-| [heating_group_03.zip](downloads/mini_challenge/heating_group_03.zip) | Bürogebäude | Buchs / Aarau |
-| [heating_group_04.zip](downloads/mini_challenge/heating_group_04.zip) | Wohngebäude | Chur |
-| [heating_group_05.zip](downloads/mini_challenge/heating_group_05.zip) | Wohngebäude | Genève / Cointrin |
-| [heating_group_06.zip](downloads/mini_challenge/heating_group_06.zip) | Pflegeheim | Luzern |
-| [heating_group_07.zip](downloads/mini_challenge/heating_group_07.zip) | Schulhaus | St. Gallen |
+| Datenpaket |
+| --- |
+| [heating_group_01.zip](downloads/mini_challenge/heating_group_01.zip) |
+| [heating_group_02.zip](downloads/mini_challenge/heating_group_02.zip) |
+| [heating_group_03.zip](downloads/mini_challenge/heating_group_03.zip) |
+| [heating_group_04.zip](downloads/mini_challenge/heating_group_04.zip) |
+| [heating_group_05.zip](downloads/mini_challenge/heating_group_05.zip) |
+| [heating_group_06.zip](downloads/mini_challenge/heating_group_06.zip) |
+| [heating_group_07.zip](downloads/mini_challenge/heating_group_07.zip) |
 
 ## Untersuchung
 
@@ -71,11 +69,16 @@ Beantwortet die folgenden Fragen in eurem Notebook.
 
 ### 3. Welche Zeiträume sollte das Facility Management prüfen?
 
-- Untersucht drei Zeiträume, die vom üblichen Absenkmuster abweichen.
-- Belegt jeden Kandidaten mit einem detaillierten Zeitreihenplot.
-- Formuliert einen nächsten Schritt für das Facility Management,
-  beispielsweise die Prüfung eines Zeitprogramms, Sollwerts, manuellen
-  Eingriffs, Ventils, Sensors oder BMS-Trends. Gibt es keine nächsten Schritte, muss dies gut begründet werden.
+- Definiert eine tägliche Kennzahl, die auf Veränderungen der Heizgruppe
+  reagiert.
+- Plottet die Kennzahl über das ganze Jahr und legt eine nachvollziehbare
+  Alarmregel fest für:
+    - schlagartige Veränderungen: grosser Sprung von einem Tag zum nächsten
+    - graduelle Veränderungen: langsame Drift über Wochen
+- Untersucht die drei auffälligsten Zeiträume mit einem detaillierten
+  Zeitreihenplot und formuliert je einen nächsten Schritt für das Facility
+  Management, beispielsweise die Prüfung eines Zeitprogramms, Sollwerts,
+  manuellen Eingriffs, Ventils oder Sensors.
 - Eine Sensorlücke ist ein Befund zur Datenqualität und kein Beweis für einen
   Anlagenfehler.
 
