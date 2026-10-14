@@ -2,7 +2,7 @@
 
 Diese Übersicht zeigt pro Unterrichtsblock die zentralen Themen, die Lernziele und die wichtigsten Materialien.
 
-Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Setup](python_installation.md) ein, lade danach die Dateien über [Material Downloads](material_downloads.md) herunter und öffne erst dann das erste Notebook.
+Wenn du zum ersten Mal startest, richte zuerst deine Umgebung über [Setup](python_installation.md) ein, hole danach das Material mit Git ([Daten und Aufgaben](material_downloads.md)) und öffne erst dann das erste Notebook.
 
 ## Unterrichtsblöcke im Überblick
 
@@ -58,7 +58,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 - [Einführung in Pandas](data-engineering/introduction.md)
 - [Überblick über Datentypen](data-engineering/data_types.md)
 - [Datenformate](data-engineering/data_formats.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ### Unterrichtsblock 3 - Spalten in Pandas manipulieren
 
@@ -78,7 +78,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 **Materialien**
 
 - [Spaltenmanipulation](data-engineering/column_manipulations.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ### Unterrichtsblock 4 - Daten bereinigen und mit Zeitstempeln arbeiten
 
@@ -98,7 +98,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 - [Entfernen von Duplikaten](data-engineering/drop_duplicates.md)
 - [Befüllen von fehlenden Werten](data-engineering/fillna.md)
 - [Arbeiten mit Time-Indexes in Pandas](data-engineering/time_indexes.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ### Unterrichtsblock 5 - Imputationen, Joins und Pivot/Melt
 
@@ -118,7 +118,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 - [Imputation in Pandas](data-engineering/imputation.md)
 - [Joins in Pandas](data-engineering/joins.md)
 - [Pivot und Melt in Pandas](data-engineering/pivot_melt.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ### Unterrichtsblock 6 - Datenschutz, univariate Statistik und Resampling
 
@@ -139,7 +139,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 - [Univariate Statistiken](statistics/univariate_statistics.md)
 - [Resampling von Zeitreihen](data-engineering/resampling.md)
 - [Entfernen von Ausreissern](data-engineering/outliers.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ### Unterrichtsblock 7 - Visualisierungen und bivariate Statistik
 
@@ -159,7 +159,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
 - [Visualisierungen](statistics/visualization.md)
 - [Korrelation](statistics/correlation.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ### Unterrichtsblock 8 - Einführung in Machine Learning
 
@@ -182,7 +182,7 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 - [Grundlagen des Machine Learning](machine-learning/basics.md)
 - [Lineare Regression](machine-learning/linear_regression.md)
 - [Residuenanalyse](machine-learning/residual_analysis.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ### Schriftliche Prüfung
 
@@ -216,7 +216,7 @@ Die Prüfung SS2026 zeigt dir Aufgabentypen und Format. Es gibt keine Garantie, 
 - [Lineare Regression](machine-learning/linear_regression.md)
 - [Weitere Regressionen](machine-learning/other_regression_models.md)
 - [Modellevaluation](machine-learning/model_evaluation.md)
-- [Material Downloads](material_downloads.md)
+- [Daten und Aufgaben](material_downloads.md)
 
 ## Wichtige Termine
 

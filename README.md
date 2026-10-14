@@ -13,8 +13,8 @@ Anstelle von reinem Frontalunterricht wird ein "Learning by Doing"-Ansatz verfol
 Wenn du zum ersten Mal mit dem Kursmaterial arbeitest, gehe in dieser Reihenfolge vor:
 
 1. Richte Python, Git und PyCharm ein: [Setup](python_installation.md)
-2. Lade `data.zip` und den passenden Unterrichtsblock herunter und entpacke beides in denselben Oberordner: [Material Downloads](material_downloads.md)
-3. Öffne den Oberordner, zum Beispiel `DAT-SKI/`, in PyCharm (oder VS Code). Öffne danach das gewünschte Notebook im Unterrichtsblock und führe die Zellen schrittweise aus.
+2. Klone das Material-Repository in PyCharm: [Daten und Aufgaben](material_downloads.md)
+3. Öffne das gewünschte Notebook im Unterrichtsblock und führe die Zellen schrittweise aus.
 
 Die Notebooks arbeiten mit relativen Pfaden wie `../data/...`. Darum müssen der Ordner `data/` und die Unterrichtsblock-Ordner nebeneinander liegen.
 
@@ -38,7 +38,7 @@ Der verantwortungsvolle Umgang mit Daten ist essenziell. Du verstehst die Grundl
 Eine Übersicht über alle Unterrichtsblöcke mit Daten, Themen und Lernzielen findest du [hier](semesteruebersicht.md).
 
 ## Aufgaben
-Die Kursmaterialien stehen in der Wissensdatenbank als Download-Pakete zur Verfügung. Eine Übersicht findest du [hier](material_downloads.md).
+Die Kursmaterialien liegen im Repository [ABBTS-DAT-SKI/material](https://github.com/ABBTS-DAT-SKI/material). Wie du sie holst, steht [hier](material_downloads.md).
 
 ## Leistungsnachweise
 Der Kompetenznachweis erfolgt durch:

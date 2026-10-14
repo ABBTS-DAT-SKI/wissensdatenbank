@@ -109,8 +109,6 @@ Alternativ geht es im **Terminal** von PyCharm mit `git pull`.
 
 VS Code funktioniert genauso gut. Klone das Material in PowerShell mit `git clone https://github.com/ABBTS-DAT-SKI/material.git C:\DAT-SKI`, öffne `C:\DAT-SKI` in VS Code, installiere beim ersten Notebook die vorgeschlagenen Erweiterungen `Python` und `Jupyter` und wähle oben rechts den Kernel mit deiner Python-Version. Danach wie oben: `Run All` im Setup-Check.
 
-Ohne Git geht es mit ZIP-Dateien, siehe [Material Downloads](material_downloads.md).
-
 ## Häufige Probleme
 
 - **`%pip install` in der ersten Zelle schlägt in PyCharm fehl oder dauert sehr lange:** Lösche in der Zeile das Wort `jupyter` und führe **Run All** erneut aus. PyCharm bringt den Jupyter-Teil selbst mit, deshalb reicht:
@@ -132,5 +130,5 @@ Ohne Git geht es mit ZIP-Dateien, siehe [Material Downloads](material_downloads.
 - **`SyntaxError` bei `pip install` in einer Notebook-Zelle:** In Notebook-Zellen schreibst du `%pip install ...` mit Prozentzeichen, im Terminal ohne.
 - **`import pandas` funktioniert trotz Installation nicht:** Meist ist ein anderer Interpreter ausgewählt. Prüfe oben rechts im Notebook, ob der Interpreter aus Abschnitt 5 aktiv ist.
 - **`../data/...` wird nicht gefunden:** Klone das ganze Repository, nicht nur einzelne Ordner. `data/` und die Unterrichtsblock-Ordner müssen direkt nebeneinander liegen.
-- **`git pull` bricht ab mit `untracked working tree files would be overwritten`:** Eine eigene Datei hat denselben Namen wie eine neue Datei aus dem Repository, oft nach dem Entpacken einer ZIP-Datei in den Git-Ordner. Benenne deine Datei um und führe `git pull` erneut aus.
+- **`git pull` bricht ab mit `untracked working tree files would be overwritten`:** Eine eigene Datei hat denselben Namen wie eine neue Datei aus dem Repository. Benenne deine Datei um und führe `git pull` erneut aus.
 - **Microsoft-Store-Python:** Funktioniert meistens. Bei Problemen mit Pfaden oder Berechtigungen installiere Python von python.org und erstelle den Interpreter neu.
