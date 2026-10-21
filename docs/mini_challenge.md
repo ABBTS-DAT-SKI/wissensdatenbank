@@ -20,6 +20,8 @@ Ihr erhaltet drei zusammengehörende Rohdatenexporte:
 ### Datenpaket
 
 - Reale Messdaten von Heizgruppen in Schweizer Mehrfamilienhäusern.
+- Ältere, nicht modernisierte Mehrfamilienhäuser mit Öl- oder Gasheizung; die
+  Wärme wird vermutlich überwiegend über Heizkörper abgegeben.
 - Zeitraum: 1. August 2025 bis 31. Juli 2026, also inklusive Sommer.
 - `_time` enthält die Zeitstempel in UTC, `_value` den Messwert in °C. Vorlauf
   und Rücklauf werden ungefähr jede Minute erfasst, die Aussentemperatur alle
@@ -28,15 +30,15 @@ Ihr erhaltet drei zusammengehörende Rohdatenexporte:
 - Die Daten sind unbearbeitet: Lücken, Ausreisser und Sensorprobleme sind
   enthalten und müssen in der Analyse sichtbar bleiben.
 
-| Datenpaket |
-| --- |
-| [heating_group_01.zip](downloads/mini_challenge/heating_group_01.zip) |
-| [heating_group_02.zip](downloads/mini_challenge/heating_group_02.zip) |
-| [heating_group_03.zip](downloads/mini_challenge/heating_group_03.zip) |
-| [heating_group_04.zip](downloads/mini_challenge/heating_group_04.zip) |
-| [heating_group_05.zip](downloads/mini_challenge/heating_group_05.zip) |
-| [heating_group_06.zip](downloads/mini_challenge/heating_group_06.zip) |
-| [heating_group_07.zip](downloads/mini_challenge/heating_group_07.zip) |
+| Datenpaket | Wärmeerzeuger |
+| --- | --- |
+| [heating_group_01.zip](downloads/mini_challenge/heating_group_01.zip) | Öl |
+| [heating_group_02.zip](downloads/mini_challenge/heating_group_02.zip) | Gas |
+| [heating_group_03.zip](downloads/mini_challenge/heating_group_03.zip) | Öl |
+| [heating_group_04.zip](downloads/mini_challenge/heating_group_04.zip) | Gas |
+| [heating_group_05.zip](downloads/mini_challenge/heating_group_05.zip) | ?? |
+| [heating_group_06.zip](downloads/mini_challenge/heating_group_06.zip) | Gas |
+| [heating_group_07.zip](downloads/mini_challenge/heating_group_07.zip) | Gas |
 
 ## Untersuchung
 
