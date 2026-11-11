@@ -124,12 +124,12 @@ Der Unterricht findet jeweils am Mittwoch von 13:00 bis 15:20 statt.
 
 **Datum:** Mittwoch, 11.11.2026
 
-**Themen:** Datenschutz, DSGVO, explorative Datenanalyse, deskriptive Statistik, Upsampling, Downsampling
+**Themen:** Datenschutz, Datenschutzgesetz (DSG), explorative Datenanalyse, deskriptive Statistik, Upsampling, Downsampling
 
 **Lernziele**
 
 - Den Sinn von Datenschutz erklären.
-- Zentrale Grundlagen der DSGVO einordnen.
+- Die Grundsätze des Schweizer Datenschutzgesetzes (DSG) einordnen.
 - Explorative Datenanalysen mit deskriptiven Statistiken durchführen.
 - Zeitreihen mit Upsampling und Downsampling resamplen.
 
