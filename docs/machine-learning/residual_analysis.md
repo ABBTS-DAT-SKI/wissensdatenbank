@@ -43,3 +43,12 @@ plt.show()
 ![Residuenplot](../img/residual_plot.png)
 
 In diesem Beispiel sehen wir, dass die meisten Residuen um die Null-Achse verteilt sind und keine klaren Muster aufweisen. Dies deutet darauf hin, dass die Annahmen der Normalverteilung, des Mittelwerts von 0 und der Unabhängigkeit der Residuen erfüllt sind.
+
+## Übung: Draw the line
+
+Im Lernspiel [Draw the line](../spiele/draw-the-line.html) übst du, Residuen und Residuenplots zu lesen. Es läuft im Browser, auch auf dem Handy. Es gilt: Residuum = tatsächlicher Wert − vorhergesagter Wert. Im Residuenplot steht auf der x-Achse die Eingangsgrösse und auf der y-Achse das Residuum, mit einer gestrichelten Linie bei 0.
+
+- **Level 1: Residuum finden.** Streudiagramm mit 30 bis 40 Punkten und der berechneten Geraden. 10 Punkte sind wählbar. Klicke den Punkt mit dem gesuchten Residuum, z. B. −6 kW, +1 kW oder ≈ 0 kW. Punkte über der Geraden haben ein positives Residuum, Punkte unter der Geraden ein negatives, Punkte auf der Geraden ≈ 0.
+- **Level 2: Diagnose.** Residuenplot eines berechneten Modells: Ist das Modell brauchbar? Muster wie Kurve, Trichter oder Ausreisser zeigen, was am Modell fehlt.
+
+Mit `?level=2` am Ende der Adresse startet direkt Level 2 (ebenso `1` oder `alle`).

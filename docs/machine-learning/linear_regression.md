@@ -106,3 +106,5 @@ plt.plot(data['x'], model.predict(X), color='red')
 
 plt.show()
 ```
+
+Zum Üben: Im Lernspiel [Draw the line](../spiele/draw-the-line.html) findest du Residuen im Streudiagramm und deutest Muster im Residuenplot. Mehr dazu unter [Residuenanalyse](residual_analysis.md#ubung-draw-the-line).
