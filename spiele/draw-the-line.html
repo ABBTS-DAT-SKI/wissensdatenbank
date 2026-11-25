@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draw the line</title>
+<meta name="description" content="Lernspiel zu Residuen und Residuenplots in der linearen Regression (DAT-SKI, Unterrichtsblock 8).">
+<style>
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #444444;
+  --panel: #f1f1f1;
+  --border: #8a8a8a;
+  --grid: #dcdcdc;
+  --point: #1f1f1f;
+  --line: #1452a8;
+  --you: #d84315;
+  --best: #1452a8;
+  --zero: #c62828;
+  --good: #1b7a2c;
+  --bad: #c62828;
+  --btn: #ffffff;
+  --btn-hover: #ffe9e1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121212; --fg: #f2f2f2; --muted: #c4c4c4; --panel: #1f1f1f; --border: #777777;
+    --grid: #333333; --point: #f0f0f0; --line: #6fa8ff; --you: #ff7a45; --best: #6fa8ff; --zero: #ff6b6b;
+    --good: #5fd17a; --bad: #ff6b6b; --btn: #1b1b1b; --btn-hover: #3a2219;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121212; --fg: #f2f2f2; --muted: #c4c4c4; --panel: #1f1f1f; --border: #777777;
+  --grid: #333333; --point: #f0f0f0; --line: #6fa8ff; --you: #ff7a45; --best: #6fa8ff; --zero: #ff6b6b;
+  --good: #5fd17a; --bad: #ff6b6b; --btn: #1b1b1b; --btn-hover: #3a2219;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(17px, 1vw + 8px, 24px);
+  line-height: 1.35;
+  overflow-x: hidden;
+}
+a { color: var(--best); }
+header {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 1em;
+  padding: 0.5em 16px; border-bottom: 3px solid var(--you);
+}
+header h1 { margin: 0; font-size: 1.5em; }
+header p { margin: 0; color: var(--muted); flex: 1 1 18em; }
+header nav { display: flex; gap: 0.8em; align-items: center; }
+main { max-width: 1400px; margin: 0 auto; padding: 0.5em 16px 1em; }
+h2 { font-size: 1.3em; margin: 0.3em 0; }
+h3 { font-size: 1.1em; margin: 0.2em 0; }
+button, input { font: inherit; color: inherit; }
+button {
+  background: var(--btn); border: 2px solid var(--border); border-radius: 8px;
+  padding: 0.35em 0.9em; cursor: pointer; min-height: 2.4em;
+}
+button:hover { background: var(--btn-hover); }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--you); outline-offset: 2px; }
+button.primary { background: var(--you); border-color: var(--you); color: #ffffff; font-weight: 700; }
+button.primary:hover { filter: brightness(1.08); }
+.card { background: var(--panel); border-radius: 10px; padding: 0.8em 1em; margin: 0.6em 0; }
+.row { display: flex; flex-wrap: wrap; gap: 0.6em; align-items: center; }
+.muted { color: var(--muted); }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1em; align-items: start; }
+@media (max-width: 820px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+ul { margin: 0.3em 0; padding-left: 1.2em; }
+li { margin: 0.25em 0; }
+.def { font-size: 1.1em; }
+.def b { white-space: nowrap; }
+.mini { width: 100%; max-width: 420px; height: auto; display: block; margin: 0.4em 0; }
+.levels { display: grid; gap: 0.6em; }
+.levels button { text-align: left; display: block; width: 100%; padding: 0.6em 0.9em; }
+.levels button .t { font-weight: 700; }
+.levels button .d { display: block; color: var(--muted); font-size: 0.9em; }
+.levels button.primary .d { color: #ffffff; }
+.status { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.3em 1em; align-items: baseline; }
+.status .what { font-size: 1.1em; }
+.chip { border: 2px solid var(--border); border-radius: 999px; padding: 0.1em 0.7em; white-space: nowrap; }
+.task { margin: 0.3em 0; font-size: 1.1em; }
+.task .goal { color: var(--you); font-weight: 700; white-space: nowrap; }
+.plot { width: 100%; height: clamp(250px, calc(100vh - 290px), 110vw); height: clamp(250px, calc(100dvh - 290px), 110vw); }
+.plot.diag { height: clamp(230px, calc(100vh - 430px), 100vw); height: clamp(230px, calc(100dvh - 430px), 100vw); }
+@media (max-width: 700px) {
+  header p { display: none; }
+  .plot.diag { height: clamp(220px, 70vw, 360px); }
+}
+.plot svg { width: 100%; height: 100%; display: block; user-select: none; -webkit-user-select: none; }
+.plot svg.pick { cursor: pointer; touch-action: manipulation; }
+.bottom { display: flex; flex-wrap: wrap; gap: 0.5em 1em; align-items: center; justify-content: space-between; margin-top: 0.4em; }
+.bottom .info { flex: 1 1 22em; min-height: 2.4em; }
+.answers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5em; width: 100%; }
+@media (max-width: 700px) { .answers { grid-template-columns: minmax(0, 1fr); } }
+.answers button { font-weight: 600; text-align: left; }
+.answers button:disabled { opacity: 1; cursor: default; }
+.answers button:disabled:not(.correct):not(.wrong) { opacity: 0.55; }
+.answers button .key { color: var(--muted); font-weight: 400; margin-right: 0.4em; }
+.answers button.correct { border-color: var(--good); background: var(--good); color: #ffffff; }
+.answers button.wrong { border-color: var(--bad); background: var(--bad); color: #ffffff; }
+.answers button.correct .key, .answers button.wrong .key { color: #ffffff; }
+.ok { color: var(--good); font-weight: 700; }
+.no { color: var(--bad); font-weight: 700; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 0.3em 0.5em; border-bottom: 1px solid var(--grid); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.rounds { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.85em; }
+kbd { border: 1px solid var(--border); border-radius: 4px; padding: 0 0.3em; font-family: inherit; font-size: 0.9em; }
+footer { padding: 0.5em 16px; color: var(--muted); font-size: 0.8em; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Draw the line</h1>
+  <p>Residuen verstehen: Residuum im Streudiagramm finden und Muster im Residuenplot deuten.</p>
+  <nav>
+    <a href="https://abbts-dat-ski.github.io/wissensdatenbank/machine-learning/residual_analysis/">Wissensdatenbank</a>
+    <button id="home" type="button">Startseite</button>
+  </nav>
+</header>
+<main id="app"></main>
+<footer id="footer"></footer>
+
+<script>
+"use strict";
+
+// ---------- Settings and texts ----------
+
+const STORE_KEY = "dat-ski-draw-the-line-v3";
+const ROUNDS = 5;            // rounds per level
+const MAX_PER_LEVEL = 100 * ROUNDS;
+const ALL_LEVELS = [1, 2];
+
+// Building and sensor contexts: f is the true linear relation, sd the noise level.
+const CONTEXTS = [
+  { title: "Heizleistung aus Aussentemperatur", x: "Aussentemperatur", xu: "°C", y: "Heizleistung", yu: "kW",
+    xr: [-8, 18], f: (t) => 62 - 2.4 * t, sd: 4 },
+  { title: "CO2 aus Belegung", x: "Belegung", xu: "Personen", y: "CO2", yu: "ppm",
+    xr: [0, 30], integer: true, f: (n) => 430 + 28 * n, sd: 70 },
+  { title: "PV-Leistung aus Einstrahlung", x: "Einstrahlung", xu: "W/m²", y: "PV-Leistung", yu: "kW",
+    xr: [150, 950], f: (g) => 0.042 * g - 0.5, sd: 2.5 },
+  { title: "Kühlleistung aus Aussentemperatur", x: "Aussentemperatur", xu: "°C", y: "Kühlleistung", yu: "kW",
+    xr: [18, 34], f: (t) => 5 + 3.1 * (t - 16), sd: 5 },
+  { title: "Vorlauftemperatur aus Aussentemperatur", x: "Aussentemperatur", xu: "°C", y: "Vorlauftemperatur", yu: "°C",
+    xr: [-10, 15], f: (t) => 48 - 0.9 * t, sd: 2 },
+  { title: "Elektrische Leistung aus Belegung", x: "Belegung", xu: "Personen", y: "Elektrische Leistung", yu: "kW",
+    xr: [0, 120], integer: true, f: (n) => 8 + 0.12 * n, sd: 1.5 },
+];
+
+const LEVELS = {
+  1: {
+    title: "Residuum finden",
+    short: "Streudiagramm mit Regressionsgerade: Klicke den Punkt mit dem gesuchten Residuum.",
+    howto: [
+      "Die Regressionsgerade ist schon berechnet. Gesucht ist ein Punkt mit einem bestimmten Residuum, z. B. <b>−6 kW</b> oder <b>≈ 0 kW</b>.",
+      "Residuum = tatsächlicher Wert − vorhergesagter Wert: Punkt <b>über</b> der Geraden → positiv, <b>unter</b> der Geraden → negativ, <b>auf</b> der Geraden → 0.",
+      "Nur die 10 dunklen Punkte sind wählbar, die grauen nicht. Genau einer der dunklen Punkte passt am besten.",
+      "Klicke oder tippe ihn an. Richtig: 100 Punkte, knapp daneben mit dem richtigen Vorzeichen: Teilpunkte.",
+    ],
+  },
+  2: {
+    title: "Diagnose",
+    short: "Residuenplot eines berechneten Modells: Was bedeutet das Muster für das Modell?",
+    howto: [
+      "Du siehst den Residuenplot einer berechneten Regressionsgeraden (kleinster MSE).",
+      "Wähle die Folge für das Modell: ist es brauchbar, und wenn nicht, warum?",
+      "Danach kannst du das Streudiagramm mit der Geraden aufdecken. Richtig: 100 Punkte.",
+      "Tastatur: <kbd>1</kbd> bis <kbd>4</kbd> = Antwort, <kbd>S</kbd> = Streudiagramm, <kbd>Enter</kbd> = Weiter.",
+    ],
+  },
+};
+
+const DIAGNOSES = [
+  { id: "ok", label: "Modell ist ok – kann so verwendet werden" },
+  { id: "kurve", label: "Linearer Zusammenhang passt nicht – Kurve fehlt im Modell" },
+  { id: "trichter", label: "Fehler werden in einem x-Bereich grösser – Vorhersage dort unsicherer" },
+  { id: "ausreisser", label: "Einzelner Messwert verzerrt die Gerade – prüfen, ob Messfehler" },
+];
+
+// ---------- Random numbers (seeded) ----------
+
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function makeRng(seed) {
+  const next = mulberry32(seed);
+  const rng = {
+    next,
+    uniform: (a, b) => a + (b - a) * next(),
+    int: (a, b) => Math.floor(a + (b - a + 1) * next()),
+    sign: () => (next() < 0.5 ? -1 : 1),
+    normal() {
+      let u = 0;
+      while (u === 0) u = next();
+      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * next());
+    },
+    // normal value cut at ±lim, so no accidental outliers
+    z: (lim) => clamp(rng.normal(), -lim, lim),
+    shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(next() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    },
+  };
+  return rng;
+}
+
+const lerp = (a, b, t) => a + (b - a) * t;
+const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+
+// ---------- Statistics ----------
+
+function mean(values) {
+  return values.reduce((s, v) => s + v, 0) / values.length;
+}
+
+// Least-squares line ŷ = a + b · x (what LinearRegression finds): minimises the MSE.
+function fitLine(xs, ys) {
+  const mx = mean(xs), my = mean(ys);
+  let sxy = 0, sxx = 0;
+  for (let i = 0; i < xs.length; i++) {
+    sxy += (xs[i] - mx) * (ys[i] - my);
+    sxx += (xs[i] - mx) ** 2;
+  }
+  const b = sxy / sxx;
+  return { a: my - b * mx, b };
+}
+
+const predict = (line, x) => line.a + line.b * x;
+
+// Residuum = tatsächlicher Wert − vorhergesagter Wert
+function residuals(xs, ys, line) {
+  return xs.map((x, i) => ys[i] - predict(line, x));
+}
+
+// Largest "nice" step (1, 2, 2.5, 5 · 10^k) that is not bigger than v.
+function niceStep(v) {
+  const p = 10 ** Math.floor(Math.log10(v));
+  const f = v / p;
+  const m = f >= 5 ? 5 : f >= 2.5 ? 2.5 : f >= 2 ? 2 : 1;
+  return Number((m * p).toPrecision(6));
+}
+
+function decimalsOf(step) {
+  for (let d = 0; d < 10; d++) if (Math.abs(Math.round(step * 10 ** d) - step * 10 ** d) < 1e-9) return d;
+  return 10;
+}
+
+const roundTo = (v, step) => Number((Math.round(v / step) * step).toFixed(decimalsOf(step)));
+
+// ---------- Task generation ----------
+
+function sampleX(rng, ctx, n) {
+  const xs = [];
+  for (let i = 0; i < n; i++) {
+    const x = rng.uniform(ctx.xr[0], ctx.xr[1]);
+    xs.push(ctx.integer ? Math.round(x) : x);
+  }
+  return xs;
+}
+
+function linearData(rng, ctx, n, lim) {
+  const xs = sampleX(rng, ctx, n);
+  const ys = xs.map((x) => ctx.f(x) + ctx.sd * rng.z(lim));
+  return { xs, ys };
+}
+
+// Level 1: 30 to 40 points with their fitted line. 10 of them are clickable; among those,
+// exactly one is clearly closest to the target residual.
+// kind: "far" (large residual), "near" (small, close to the line) or "zero" (≈ 0).
+const FIND_KINDS = {
+  far: (r, sd) => Math.abs(r) >= 1.3 * sd,
+  near: (r, sd) => Math.abs(r) >= 0.3 * sd && Math.abs(r) <= 0.9 * sd,
+  zero: (r, sd) => Math.abs(r) <= 0.12 * sd,
+};
+const CHOICES = 10;
+
+function makeFindTask(rng, ctx, kind, sign, level) {
+  const step = niceStep(ctx.sd / 3);
+  const minGap = ctx.sd * lerp(0.45, 0.3, level);
+  let fallback = null;
+  for (let attempt = 0; attempt < 80; attempt++) {
+    const { xs, ys } = linearData(rng, ctx, rng.int(30, 40), 2.3);
+    const line = fitLine(xs, ys);
+    const res = residuals(xs, ys, line);
+    const cands = rng.shuffle(res.map((_, i) => i).filter((i) =>
+      FIND_KINDS[kind](res[i], ctx.sd) && (kind === "zero" || Math.sign(res[i]) === sign)));
+    for (const i of cands) {
+      const target = kind === "zero" ? 0 : roundTo(res[i], step);
+      if (kind !== "zero" && target === 0) continue;
+      const dist = res.map((r) => Math.abs(r - target));
+      const own = dist[i];
+      // distractors: clearly further away from the target than the answer
+      const others = rng.shuffle(res.map((_, j) => j).filter((j) => j !== i && dist[j] - own >= minGap));
+      if (others.length < CHOICES - 1) continue;
+      // at least two distractors on the same side as the answer, so the sign alone is not enough
+      const same = others.filter((j) => Math.sign(res[j]) === Math.sign(res[i]));
+      const picked = same.slice(0, 2);
+      for (const j of others) if (picked.length < CHOICES - 1 && !picked.includes(j)) picked.push(j);
+      const clickable = picked.concat([i]).sort((a, b) => a - b);
+      const task = { type: "find", ctx, kind, xs, ys, line, res, target, answer: i, step, clickable };
+      if (same.length >= 2) return task;
+      if (!fallback) fallback = task;
+    }
+  }
+  return fallback;
+}
+
+// Level 2 (Diagnose): fitted line on data with a pattern in the residuals.
+function makeDiagTask(rng, ctx, level, pattern) {
+  const n = Math.round(lerp(45, 30, level));
+  const sd = ctx.sd;
+  const [lo, hi] = ctx.xr;
+  const xs = sampleX(rng, ctx, n);
+  const fLo = Math.min(ctx.f(lo), ctx.f(hi)), fHi = Math.max(ctx.f(lo), ctx.f(hi));
+  const info = {};
+  let ys;
+  if (pattern === "kurve") {
+    // bend downwards only where the values stay well above 0
+    const sign = fLo < 6 * sd ? 1 : rng.sign();
+    const amp = sign * lerp(5, 2.2, level) * sd;
+    info.up = sign > 0;
+    ys = xs.map((x) => {
+      const u = (2 * (x - lo)) / (hi - lo) - 1;
+      return ctx.f(x) + amp * (u * u - 1 / 3) + sd * rng.z(2.3);
+    });
+  } else if (pattern === "trichter") {
+    // spread grows with the value, as in many real measurements
+    const k = lerp(3.5, 1.6, level);
+    ys = xs.map((x) => ctx.f(x) + sd * (0.5 + k * (ctx.f(x) - fLo) / (fHi - fLo)) * rng.z(2.2));
+    info.growsRight = ctx.f(hi) > ctx.f(lo);
+  } else {
+    ys = xs.map((x) => ctx.f(x) + sd * rng.z(2.3));
+    if (pattern === "ausreisser") {
+      const i = rng.int(0, n - 1);
+      const sign = ctx.f(xs[i]) < 9 * sd ? 1 : rng.sign();
+      ys[i] = ctx.f(xs[i]) + sign * lerp(8, 5, level) * sd;
+      info.index = i;
+    }
+  }
+  const line = fitLine(xs, ys);
+  return { type: "diag", ctx, xs, ys, line, res: residuals(xs, ys, line), pattern, info };
+}
+
+function contextPicker(rng, list) {
+  let queue = [];
+  return () => {
+    if (queue.length === 0) queue = rng.shuffle(list);
+    return queue.pop();
+  };
+}
+
+// The tasks of one level. The same seed always gives the same tasks.
+function planLevel(level, seed) {
+  const rng = makeRng((seed * 7919 + level * 1009) >>> 0);
+  const diff = (r) => r / (ROUNDS - 1);
+  const tasks = [];
+  if (level === 1) {
+    const ctx = contextPicker(rng, CONTEXTS);
+    // large, small and ≈ 0 residuals mixed; both signs among the non-zero targets
+    const kinds = rng.shuffle(["far", "near", "zero", rng.next() < 0.5 ? "far" : "near"]);
+    kinds.splice(rng.int(1, 4), 0, "near");
+    const first = rng.sign();
+    const signs = [first, -first].concat(rng.shuffle([1, -1, rng.sign()]));
+    let k = 0;
+    for (let r = 0; r < ROUNDS; r++) {
+      const sign = kinds[r] === "zero" ? 0 : signs[k++];
+      tasks.push(makeFindTask(rng, ctx(), kinds[r], sign, diff(r)));
+    }
+  } else {
+    const ctx = contextPicker(rng, CONTEXTS);
+    const ids = DIAGNOSES.map((d) => d.id);
+    const patterns = rng.shuffle(ids).concat([ids[rng.int(0, ids.length - 1)]]);
+    for (let r = 0; r < ROUNDS; r++) tasks.push(makeDiagTask(rng, ctx(), diff(r), patterns[r]));
+  }
+  return tasks;
+}
+
+// ---------- Scoring and explanations ----------
+
+function scoreFind(task, pick) {
+  if (pick === task.answer) return 100;
+  if (task.target !== 0 && Math.sign(task.res[pick]) !== Math.sign(task.target)) return 0;
+  const err = Math.abs(task.res[pick] - task.target);
+  return Math.max(0, Math.round(50 * (1 - err / (1.5 * task.ctx.sd))));
+}
+
+function diagExplanation(task) {
+  const ctx = task.ctx;
+  if (task.pattern === "ok") {
+    return "Die Residuen streuen ohne Muster um 0, oberhalb und unterhalb etwa gleich weit. "
+      + "Die Gerade beschreibt den Zusammenhang, das Modell kann so verwendet werden.";
+  }
+  if (task.pattern === "kurve") {
+    const where = task.info.up ? "an beiden Rändern positiv und in der Mitte negativ" : "an beiden Rändern negativ und in der Mitte positiv";
+    const line = task.info.up ? "aussen zu tief und in der Mitte zu hoch" : "aussen zu hoch und in der Mitte zu tief";
+    return `Die Residuen bilden einen Bogen: ${where}. Die Gerade liegt also ${line}. `
+      + `Der Zusammenhang zwischen ${ctx.x} und ${ctx.y} ist gekrümmt; eine Gerade reicht nicht, ein Modell mit Kurve passt besser.`;
+  }
+  if (task.pattern === "trichter") {
+    const side = task.info.growsRight ? "grossen" : "kleinen";
+    return `Bei ${side} Werten von ${ctx.x} streuen die Residuen viel stärker. Im Mittel stimmt die Gerade, `
+      + `aber dort sind die Vorhersagen viel unsicherer. Ein einziger MSE für alle Bereiche verdeckt das.`;
+  }
+  const x = task.xs[task.info.index];
+  return `Ein Punkt (bei ${ctx.x} ≈ ${fmt(x)} ${ctx.xu}) liegt weit weg von allen anderen. `
+    + "Weil der MSE die Residuen quadriert, zieht dieser eine Punkt die Gerade zu sich. "
+    + "Zuerst prüfen: Messfehler, Sensorausfall oder Sonderfall? Erst dann entscheiden, ob er entfernt wird.";
+}
+
+// ---------- Formatting ----------
+
+function fmt(v, digits) {
+  if (digits === undefined) {
+    const a = Math.abs(v);
+    digits = a >= 100 ? 0 : a >= 10 ? 1 : a >= 1 ? 2 : 3;
+  }
+  return v.toLocaleString("de-CH", { maximumFractionDigits: digits, minimumFractionDigits: 0 });
+}
+
+// Residual with sign: "+3.2" or "−6"
+function fmtRes(v, digits) {
+  return (v < 0 ? "−" : v > 0 ? "+" : "") + fmt(Math.abs(v), digits);
+}
+
+function fmtSigned(v, digits) {
+  return (v < 0 ? "−" : "") + fmt(Math.abs(v), digits);
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+}
+
+// ---------- Personal best (localStorage, optional) ----------
+
+function loadBest() {
+  try {
+    const obj = JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
+    return obj && typeof obj === "object" ? obj : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveBest(obj) {
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(obj));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+// ---------- SVG plotting ----------
+
+const SVG_NS = "http://www.w3.org/2000/svg";
+
+function el(tag, attrs, parent, text) {
+  const node = document.createElementNS(SVG_NS, tag);
+  for (const k in attrs) node.setAttribute(k, attrs[k]);
+  if (text !== undefined) node.textContent = text;
+  if (parent) parent.appendChild(node);
+  return node;
+}
+
+function paddedDomain(values, pad) {
+  const lo = Math.min(...values), hi = Math.max(...values);
+  const span = hi - lo || 1;
+  return [lo - span * pad, hi + span * pad];
+}
+
+function niceTicks(lo, hi, count) {
+  const raw = (hi - lo) / count;
+  const p = 10 ** Math.floor(Math.log10(raw));
+  const f = raw / p;
+  const step = (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * p;
+  const ticks = [];
+  for (let v = Math.ceil(lo / step) * step; v <= hi + step * 1e-9; v += step) ticks.push(Number(v.toFixed(10)));
+  return ticks;
+}
+
+function makeScales(w, h, xd, yd, yLines) {
+  const small = w < 560;
+  const font = small ? 13 : 18;
+  const m = { l: (small ? 56 : 84) + (yLines - 1) * (font + 4), r: 14, t: 12, b: small ? 46 : 62 };
+  const pw = w - m.l - m.r, ph = h - m.t - m.b;
+  return {
+    m, pw, ph, xd, yd, small, font,
+    x: (v) => m.l + ((v - xd[0]) / (xd[1] - xd[0])) * pw,
+    y: (v) => m.t + (1 - (v - yd[0]) / (yd[1] - yd[0])) * ph,
+  };
+}
+
+// yLabel: one string or an array of lines (left to right)
+function drawAxes(svg, s, xLabel, yLabel) {
+  const g = el("g", { "font-size": s.font, fill: "var(--muted)" }, svg);
+  for (const v of niceTicks(s.xd[0], s.xd[1], s.small ? 4 : 7)) {
+    const px = s.x(v);
+    el("line", { x1: px, x2: px, y1: s.m.t, y2: s.m.t + s.ph, stroke: "var(--grid)" }, g);
+    el("text", { x: px, y: s.m.t + s.ph + s.font + 4, "text-anchor": "middle" }, g, fmtSigned(v));
+  }
+  for (const v of niceTicks(s.yd[0], s.yd[1], s.small ? 4 : 6)) {
+    const py = s.y(v);
+    el("line", { x1: s.m.l, x2: s.m.l + s.pw, y1: py, y2: py, stroke: "var(--grid)" }, g);
+    el("text", { x: s.m.l - 6, y: py + s.font * 0.35, "text-anchor": "end" }, g, fmtSigned(v));
+  }
+  el("rect", { x: s.m.l, y: s.m.t, width: s.pw, height: s.ph, fill: "none", stroke: "var(--border)" }, g);
+  el("text", { x: s.m.l + s.pw / 2, y: s.m.t + s.ph + 2 * s.font + 12, "text-anchor": "middle", fill: "var(--fg)", "font-weight": 600 }, g, xLabel);
+  const lines = Array.isArray(yLabel) ? yLabel : [yLabel];
+  const ty = s.m.t + s.ph / 2;
+  lines.forEach((text, i) => {
+    const tx = s.font + i * (s.font + 4);
+    el("text", { x: tx, y: ty, transform: `rotate(-90 ${tx} ${ty})`, "text-anchor": "middle", fill: "var(--fg)", "font-weight": i === 0 ? 600 : 400 }, g, text);
+  });
+}
+
+let clipCounter = 0;
+function clipTo(svg, s) {
+  const id = `plot-area-${++clipCounter}`;
+  const defs = el("defs", {}, svg);
+  const cp = el("clipPath", { id }, defs);
+  el("rect", { x: s.m.l, y: s.m.t, width: s.pw, height: s.ph }, cp);
+  return el("g", { "clip-path": `url(#${id})` }, svg);
+}
+
+function drawLine(g, s, line, attrs) {
+  const [x0, x1] = s.xd;
+  el("line", { x1: s.x(x0), y1: s.y(predict(line, x0)), x2: s.x(x1), y2: s.y(predict(line, x1)), ...attrs }, g);
+}
+
+function pointRadius(s) { return s.small ? 5.5 : 7; }
+
+function drawPoints(g, s, xs, ys) {
+  const r = pointRadius(s);
+  xs.forEach((x, i) => el("circle", { cx: s.x(x), cy: s.y(ys[i]), r, fill: "var(--point)", "fill-opacity": 0.85 }, g));
+}
+
+function xLabelOf(ctx) { return `${ctx.x} [${ctx.xu}]`; }
+function yLabelOf(ctx) { return `${ctx.y} [${ctx.yu}]`; }
+function residualLabel(ctx) { return [`Residuum [${ctx.yu}]`, "(tatsächlich − vorhergesagt)"]; }
+
+// Residual plot: x = input variable, y = residual, dashed line at 0.
+function drawResidualPlot(svg, w, h, ctx, xs, res, yd) {
+  const s = makeScales(w, h, paddedDomain(xs, 0.05), yd, 2);
+  drawAxes(svg, s, xLabelOf(ctx), residualLabel(ctx));
+  const g = clipTo(svg, s);
+  el("line", { x1: s.m.l, x2: s.m.l + s.pw, y1: s.y(0), y2: s.y(0), stroke: "var(--zero)", "stroke-width": 3, "stroke-dasharray": "10 7" }, g);
+  drawPoints(g, s, xs, res);
+  return s;
+}
+
+function symmetricDomain(res, minHalf) {
+  const half = Math.max(minHalf, Math.max(...res.map(Math.abs)) * 1.15);
+  return [-half, half];
+}
+
+// Scatter plot with lines; data domain covers points and lines.
+// active: optional list of highlighted point indices; the others are drawn grey.
+function drawScatter(svg, w, h, ctx, xs, ys, lines, active) {
+  const xd = paddedDomain(xs, 0.05);
+  const ext = ys.slice();
+  for (const l of lines) ext.push(predict(l.line, xd[0]), predict(l.line, xd[1]));
+  const s = makeScales(w, h, xd, paddedDomain(ext, 0.08), 1);
+  drawAxes(svg, s, xLabelOf(ctx), yLabelOf(ctx));
+  const g = clipTo(svg, s);
+  if (active) {
+    const r = pointRadius(s);
+    xs.forEach((x, i) => {
+      if (!active.includes(i)) el("circle", { cx: s.x(x), cy: s.y(ys[i]), r: r - 1, fill: "var(--muted)", "fill-opacity": 0.3 }, g);
+    });
+  } else drawPoints(g, s, xs, ys);
+  for (const l of lines) drawLine(g, s, l.line, l.attrs);
+  if (active) {
+    const r = pointRadius(s) + 1.5;
+    for (const i of active) el("circle", { cx: s.x(xs[i]), cy: s.y(ys[i]), r, fill: "var(--point)", stroke: "var(--bg)", "stroke-width": 2 }, g);
+  }
+  return { s, g };
+}
+
+function label(g, s, x, y, text, color) {
+  const right = x < s.m.l + s.pw - 140;
+  el("text", {
+    x: x + (right ? 20 : -20), y: clamp(y, s.m.t + s.font, s.m.t + s.ph - 4) + s.font * 0.35,
+    "text-anchor": right ? "start" : "end", "font-size": s.font + 2, "font-weight": 700, fill: color,
+    stroke: "var(--bg)", "stroke-width": 5, "paint-order": "stroke",
+  }, g, text);
+}
+
+// ---------- Game state ----------
+
+const S = {
+  phase: "start",   // start, intro, play, end
+  seed: 0,
+  queue: [],        // levels to play, e.g. [2] or [1, 2]
+  qi: 0,
+  tasks: [],
+  r: 0,
+  scores: {},       // level -> points per round
+  ui: {},           // state of the current round
+  record: null,     // levels with a new personal best after the game
+};
+
+function initialSeed() {
+  const fromUrl = Number(new URLSearchParams(location.search).get("seed"));
+  return Number.isInteger(fromUrl) && fromUrl > 0 ? fromUrl : randomSeed();
+}
+
+function randomSeed() {
+  return 1 + Math.floor(Math.random() * 999999);
+}
+
+const level = () => S.queue[S.qi];
+const task = () => S.tasks[S.r];
+
+function startQueue(levels) {
+  S.queue = levels;
+  S.qi = 0;
+  S.scores = {};
+  S.record = null;
+  showIntro();
+}
+
+function showIntro() {
+  S.phase = "intro";
+  S.tasks = planLevel(level(), S.seed);
+  S.r = 0;
+  S.scores[level()] = [];
+  render();
+}
+
+function beginLevel() {
+  S.phase = "play";
+  prepareRound();
+  render();
+}
+
+function prepareRound() {
+  if (task().type === "find") S.ui = { hover: null, pick: null, pts: null };
+  else S.ui = { answer: null, showScatter: false };
+}
+
+function nextRound() {
+  if (S.r + 1 < S.tasks.length) {
+    S.r++;
+    prepareRound();
+    render();
+  } else if (S.qi + 1 < S.queue.length) {
+    S.qi++;
+    showIntro();
+  } else {
+    finish();
+  }
+}
+
+function sum(arr) { return arr.reduce((s, v) => s + v, 0); }
+
+function finish() {
+  S.phase = "end";
+  const best = loadBest();
+  const record = [];
+  for (const lv of S.queue) {
+    const total = sum(S.scores[lv]);
+    if (!(best[lv] >= total)) { if (best[lv] !== undefined) record.push(String(lv)); best[lv] = total; }
+  }
+  if (S.queue.length === ALL_LEVELS.length) {
+    const total = sum(S.queue.map((lv) => sum(S.scores[lv])));
+    if (!(best.all >= total)) { if (best.all !== undefined) record.push("all"); best.all = total; }
+  }
+  S.saved = saveBest(best);
+  S.record = record;
+  render();
+}
+
+// Level 1
+function pickPoint(i) {
+  if (S.ui.pick !== null) return;
+  S.ui.pick = i;
+  S.ui.pts = scoreFind(task(), i);
+  S.scores[level()].push(S.ui.pts);
+  render();
+}
+
+// Level 2 (Diagnose)
+function answerDiag(id) {
+  if (S.ui.answer) return;
+  S.ui.answer = id;
+  S.scores[level()].push(id === task().pattern ? 100 : 0);
+  render();
+}
+
+// ---------- Rendering ----------
+
+let app = null;
+
+function render() {
+  if (S.phase === "start") renderStart();
+  else if (S.phase === "intro") renderIntro();
+  else if (S.phase === "play") renderPlay();
+  else renderEnd();
+  document.getElementById("footer").textContent =
+    `Spiel-Nr. ${S.seed} · DAT-SKI, Unterrichtsblock 8: Lineare Regression · Residuum = tatsächlicher Wert − vorhergesagter Wert`;
+}
+
+// Tiny diagram: line, one point above (positive residual), one below (negative).
+const DEFINITION_SVG = `
+<svg class="mini" viewBox="0 0 420 200" role="img" aria-label="Skizze: Punkt über der Geraden hat ein positives Residuum, Punkt unter der Geraden ein negatives">
+  <line x1="30" y1="175" x2="400" y2="175" stroke="var(--border)" stroke-width="2"/>
+  <line x1="30" y1="175" x2="30" y2="10" stroke="var(--border)" stroke-width="2"/>
+  <line x1="40" y1="160" x2="400" y2="40" stroke="var(--line)" stroke-width="4"/>
+  <line x1="130" y1="130" x2="130" y2="62" stroke="var(--good)" stroke-width="4"/>
+  <circle cx="130" cy="62" r="8" fill="var(--point)"/>
+  <text x="142" y="82" font-size="17" font-weight="700" fill="var(--good)">Residuum &gt; 0</text>
+  <text x="142" y="102" font-size="15" fill="var(--muted)">Punkt über der Geraden</text>
+  <line x1="300" y1="73" x2="300" y2="150" stroke="var(--bad)" stroke-width="4"/>
+  <circle cx="300" cy="150" r="8" fill="var(--point)"/>
+  <text x="290" y="130" font-size="17" font-weight="700" fill="var(--bad)" text-anchor="end">Residuum &lt; 0</text>
+  <text x="290" y="150" font-size="15" fill="var(--muted)" text-anchor="end">Punkt unter der Geraden</text>
+  <text x="392" y="30" font-size="15" fill="var(--line)" text-anchor="end">Gerade = Vorhersage ŷ</text>
+</svg>`;
+
+function bestText(best, key, max) {
+  return best[key] !== undefined ? `Dein Bestwert: ${best[key]} / ${max}` : "Noch nicht gespielt";
+}
+
+function renderStart() {
+  const best = loadBest();
+  const levelButtons = ALL_LEVELS.map((lv) => `
+    <button type="button" data-levels="${lv}">
+      <span class="t">Level ${lv}: ${LEVELS[lv].title}</span>
+      <span class="d">${LEVELS[lv].short}</span>
+      <span class="d">${bestText(best, lv, MAX_PER_LEVEL)}</span>
+    </button>`).join("");
+  app.innerHTML = `
+    <div class="grid2">
+      <div class="card">
+        <h2>Was ist ein Residuum?</h2>
+        <p class="def"><b>Residuum = tatsächlicher Wert − vorhergesagter Wert</b></p>
+        ${DEFINITION_SVG}
+        <ul>
+          <li>Punkt über der Geraden → Residuum positiv, unter der Geraden → negativ.</li>
+          <li>Im <b>Residuenplot</b> steht auf der x-Achse die Eingangsgrösse (z. B. Aussentemperatur [°C]),
+            auf der y-Achse das Residuum. Die gestrichelte Linie markiert 0.</li>
+          <li>Ein gutes Modell: Residuen streuen zufällig um 0, ohne Muster.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Level wählen</h2>
+        <div class="levels">
+          ${levelButtons}
+          <button type="button" class="primary" data-levels="${ALL_LEVELS.join(",")}">
+            <span class="t">Alle nacheinander</span>
+            <span class="d">Level 1 und 2 mit je ${ROUNDS} Runden · ${bestText(best, "all", ALL_LEVELS.length * MAX_PER_LEVEL)}</span>
+          </button>
+        </div>
+      </div>
+    </div>`;
+  app.querySelectorAll("[data-levels]").forEach((b) => b.addEventListener("click", () => {
+    startQueue(b.dataset.levels.split(",").map(Number));
+  }));
+}
+
+function renderIntro() {
+  const lv = level();
+  const L = LEVELS[lv];
+  const part = S.queue.length > 1 ? ` <span class="muted">(${S.qi + 1} von ${S.queue.length})</span>` : "";
+  app.innerHTML = `
+    <div class="card" style="max-width: 60em">
+      <h2>Level ${lv}: ${L.title}${part}</h2>
+      <ul>${L.howto.map((h) => `<li>${h}</li>`).join("")}</ul>
+      <div class="row" style="margin-top: 0.6em">
+        <button class="primary" id="go" type="button">Los geht's</button>
+        <span class="muted">${ROUNDS} Runden, je bis 100 Punkte</span>
+      </div>
+    </div>`;
+  const go = app.querySelector("#go");
+  go.addEventListener("click", beginLevel);
+  go.focus();
+}
+
+function statusHtml() {
+  const lv = level();
+  return `
+    <div class="status">
+      <div class="what">Level ${lv}: <b>${LEVELS[lv].title}</b> · Runde ${S.r + 1} / ${ROUNDS}</div>
+      <span class="chip">Punkte: ${sum(S.scores[lv])}</span>
+    </div>`;
+}
+
+function renderPlay() {
+  const t = task();
+  if (t.type === "find") renderFind(t);
+  else renderDiag(t);
+}
+
+function nextLabel() {
+  if (S.r + 1 < S.tasks.length) return "Weiter";
+  return S.qi + 1 < S.queue.length ? `Weiter zu Level ${S.queue[S.qi + 1]}` : "Zum Ergebnis";
+}
+
+function svgSize(svg) {
+  const w = Math.max(220, svg.clientWidth), h = Math.max(200, svg.clientHeight);
+  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  svg.replaceChildren();
+  return [w, h];
+}
+
+// ----- Level 1 -----
+
+function targetText(t) {
+  return t.target === 0 ? `Residuum ≈ 0 ${t.ctx.yu}` : `Residuum ${fmtRes(t.target, decimalsOf(t.step))} ${t.ctx.yu}`;
+}
+
+function renderFind(t) {
+  const c = t.ctx;
+  app.innerHTML = `
+    <section>
+      ${statusHtml()}
+      <p class="task"><b>${esc(c.title)}:</b> Finde unter den dunklen Punkten den Punkt mit
+        <span class="goal">${esc(targetText(t))}</span>.</p>
+      <div class="plot"><svg id="plot" role="img" aria-label="Streudiagramm mit Regressionsgerade, Punkte anklickbar"></svg></div>
+      <div class="bottom" id="bottom"></div>
+    </section>`;
+  const svg = app.querySelector("#plot");
+  setupPick(svg);
+  drawFind();
+  const bottom = app.querySelector("#bottom");
+  if (S.ui.pick === null) {
+    bottom.innerHTML = `<div class="info muted">Klicke oder tippe auf einen der 10 dunklen Punkte. Die blaue Linie ist die berechnete Regressionsgerade (die Vorhersage).</div>`;
+    return;
+  }
+  const pick = S.ui.pick, pts = S.ui.pts;
+  const rp = t.res[pick], ra = t.res[t.answer];
+  const side = (r) => (r > 0 ? "über der Geraden → positiv" : "unter der Geraden → negativ");
+  const goal = targetText(t);
+  let head;
+  if (pick === t.answer) {
+    head = `<span class="ok">Richtig, 100 Punkte.</span> Dein Punkt hat Residuum ${fmtRes(rp)} ${esc(c.yu)} (${side(rp)}).`;
+  } else if (t.target !== 0 && Math.sign(rp) !== Math.sign(t.target)) {
+    head = `<span class="no">Falsches Vorzeichen, 0 Punkte.</span> Dein Punkt liegt ${side(rp)} (${fmtRes(rp)} ${esc(c.yu)}).
+      Gesucht war ${esc(goal)}: der grüne Punkt, ${side(ra)} (${fmtRes(ra)} ${esc(c.yu)}).`;
+  } else {
+    const zeroHint = t.target === 0 ? " Residuum ≈ 0 heisst: Der Punkt liegt fast genau auf der Geraden." : "";
+    head = `<span class="${pts >= 25 ? "ok" : "no"}">Daneben, ${pts} Punkte.</span> Dein Punkt: ${fmtRes(rp)} ${esc(c.yu)}.
+      Am nächsten an ${esc(goal)} liegt der grüne Punkt mit ${fmtRes(ra)} ${esc(c.yu)}.${zeroHint}`;
+  }
+  bottom.innerHTML = `<div class="info">${head} <span class="muted">Die senkrechten Striche sind die Residuen: Abstand vom Punkt zur Geraden.</span></div>
+    <button class="primary" id="next" type="button">${nextLabel()}</button>`;
+  bottom.querySelector("#next").addEventListener("click", nextRound);
+}
+
+function drawFind() {
+  const svg = document.getElementById("plot");
+  if (!svg) return;
+  const [w, h] = svgSize(svg);
+  const t = task();
+  const { s, g } = drawScatter(svg, w, h, t.ctx, t.xs, t.ys,
+    [{ line: t.line, attrs: { stroke: "var(--line)", "stroke-width": s0(w) } }], t.clickable);
+  S.view = s;
+  const r = pointRadius(s) + 1.5;
+  const mark = (i, color, withLabel) => {
+    const x = t.xs[i], y = t.ys[i], yh = predict(t.line, x);
+    el("line", { x1: s.x(x), x2: s.x(x), y1: s.y(y), y2: s.y(yh), stroke: color, "stroke-width": s.small ? 3 : 4 }, g);
+    el("circle", { cx: s.x(x), cy: s.y(y), r: r + 5, fill: "none", stroke: color, "stroke-width": 3 }, g);
+    if (withLabel) label(g, s, s.x(x), s.y((y + yh) / 2), `${fmtRes(t.res[i])} ${t.ctx.yu}`, color);
+  };
+  if (S.ui.pick === null) {
+    if (S.ui.hover !== null) {
+      const i = S.ui.hover;
+      el("circle", { cx: s.x(t.xs[i]), cy: s.y(t.ys[i]), r: r + 5, fill: "none", stroke: "var(--you)", "stroke-width": 3 }, g);
+    }
+    svg.classList.add("pick");
+  } else {
+    svg.classList.remove("pick");
+    if (S.ui.pick !== t.answer) mark(S.ui.pick, "var(--you)", true);
+    mark(t.answer, "var(--good)", true);
+  }
+}
+
+function s0(w) { return w < 560 ? 3 : 4.5; }
+
+function nearestPoint(px, py) {
+  const s = S.view, t = task();
+  let best = null, bestD = Infinity;
+  for (const i of t.clickable) {
+    const d = Math.hypot(s.x(t.xs[i]) - px, s.y(t.ys[i]) - py);
+    if (d < bestD) { bestD = d; best = i; }
+  }
+  return bestD <= (s.small ? 32 : 40) ? best : null;
+}
+
+function setupPick(svg) {
+  const toSvg = (e) => {
+    const r = svg.getBoundingClientRect();
+    const vb = svg.viewBox.baseVal;
+    return { x: ((e.clientX - r.left) / r.width) * vb.width, y: ((e.clientY - r.top) / r.height) * vb.height };
+  };
+  svg.addEventListener("pointermove", (e) => {
+    if (S.ui.pick !== null || e.pointerType === "touch") return;
+    const p = toSvg(e);
+    const i = nearestPoint(p.x, p.y);
+    if (i !== S.ui.hover) { S.ui.hover = i; drawFind(); }
+  });
+  svg.addEventListener("pointerleave", () => {
+    if (S.ui.pick === null && S.ui.hover !== null) { S.ui.hover = null; drawFind(); }
+  });
+  svg.addEventListener("click", (e) => {
+    if (S.ui.pick !== null) return;
+    const p = toSvg(e);
+    const i = nearestPoint(p.x, p.y);
+    if (i !== null) pickPoint(i);
+  });
+}
+
+// ----- Level 2 (Diagnose) -----
+
+function renderDiag(t) {
+  const c = t.ctx;
+  const answered = S.ui.answer !== null;
+  const buttons = DIAGNOSES.map((d, i) => {
+    let cls = "";
+    if (answered) {
+      if (d.id === t.pattern) cls = "correct";
+      else if (d.id === S.ui.answer) cls = "wrong";
+    }
+    return `<button type="button" class="${cls}" data-answer="${d.id}" ${answered ? "disabled" : ""}><span class="key">${i + 1}</span>${d.label}</button>`;
+  }).join("");
+  let info = "";
+  if (answered) {
+    const right = S.ui.answer === t.pattern;
+    const correct = DIAGNOSES.find((d) => d.id === t.pattern);
+    const head = right ? `<span class="ok">Richtig, 100 Punkte.</span>` : `<span class="no">Leider falsch.</span> Richtig ist: <b>${correct.label}</b>.`;
+    info = `<div class="info">${head} ${esc(diagExplanation(t))}</div>
+      <div class="row">
+        <button type="button" id="toggle">${S.ui.showScatter ? "Residuenplot zeigen" : "Streudiagramm zeigen"}</button>
+        <button class="primary" id="next" type="button">${nextLabel()}</button>
+      </div>`;
+  }
+  const what = S.ui.showScatter ? "Streudiagramm mit der berechneten Geraden" : "Residuenplot";
+  app.innerHTML = `
+    <section>
+      ${statusHtml()}
+      <p class="task"><b>Modell: ${esc(c.title)}</b> (lineare Regression, kleinster MSE). ${answered ? `Zu sehen: ${what}.` : "Was bedeutet dieser Residuenplot für das Modell?"}</p>
+      <div class="plot diag"><svg id="plot" role="img" aria-label="${what}"></svg></div>
+      <div class="bottom">${info}<div class="answers">${buttons}</div></div>
+    </section>`;
+  app.querySelectorAll("[data-answer]").forEach((b) => b.addEventListener("click", () => answerDiag(b.dataset.answer)));
+  const next = app.querySelector("#next");
+  if (next) next.addEventListener("click", nextRound);
+  const toggle = app.querySelector("#toggle");
+  if (toggle) toggle.addEventListener("click", toggleScatter);
+  drawDiag();
+}
+
+function toggleScatter() {
+  if (S.ui.answer === null) return;
+  S.ui.showScatter = !S.ui.showScatter;
+  render();
+}
+
+function drawDiag() {
+  const svg = document.getElementById("plot");
+  if (!svg) return;
+  const [w, h] = svgSize(svg);
+  const t = task();
+  if (S.ui.showScatter) {
+    S.view = drawScatter(svg, w, h, t.ctx, t.xs, t.ys, [{ line: t.line, attrs: { stroke: "var(--line)", "stroke-width": s0(w) } }]).s;
+  } else {
+    S.view = drawResidualPlot(svg, w, h, t.ctx, t.xs, t.res, symmetricDomain(t.res, 0));
+  }
+}
+
+// ----- End -----
+
+function renderEnd() {
+  const best = loadBest();
+  const rows = S.queue.map((lv) => {
+    const p = S.scores[lv];
+    const isRecord = S.record.includes(String(lv));
+    return `<tr><td>Level ${lv}: ${LEVELS[lv].title}</td><td class="num"><b>${sum(p)}</b> / ${MAX_PER_LEVEL}</td>
+      <td class="rounds">${p.join(" · ")}</td><td class="num">${best[lv] ?? "–"}${isRecord ? ' <span class="ok">Neuer Rekord!</span>' : ""}</td></tr>`;
+  }).join("");
+  let totalRow = "";
+  if (S.queue.length === ALL_LEVELS.length) {
+    const total = sum(S.queue.map((lv) => sum(S.scores[lv])));
+    totalRow = `<tr><td><b>Total</b></td><td class="num"><b>${total}</b> / ${ALL_LEVELS.length * MAX_PER_LEVEL}</td><td></td>
+      <td class="num">${best.all ?? "–"}${S.record.includes("all") ? ' <span class="ok">Neuer Rekord!</span>' : ""}</td></tr>`;
+  }
+  const storeNote = S.saved ? "Der Bestwert wird nur in diesem Browser gespeichert."
+    : "Bestwerte können in diesem Browser nicht gespeichert werden (privates Fenster?).";
+  app.innerHTML = `
+    <div class="card" style="max-width: 60em">
+      <h2>Ergebnis</h2>
+      <table>
+        <tr><th>Level</th><th class="num">Punkte</th><th>Runden</th><th class="num">Bestwert</th></tr>
+        ${rows}${totalRow}
+      </table>
+      <p class="muted">${storeNote}</p>
+      <h3>Merke</h3>
+      <ul>
+        <li>Residuum = tatsächlicher Wert − vorhergesagter Wert: über der Geraden positiv, unter der Geraden negativ, auf der Geraden ≈ 0.</li>
+        <li>Gutes Modell: Residuen streuen zufällig um 0, ohne Muster.</li>
+        <li>Bogen → Zusammenhang nicht linear. Trichter → Vorhersage in einem Bereich unsicher. Ausreisser → Messwert prüfen.</li>
+      </ul>
+      <div class="row">
+        <button class="primary" id="again" type="button">Nochmals (neue Aufgaben)</button>
+        <button id="home2" type="button">Startseite</button>
+      </div>
+    </div>`;
+  app.querySelector("#again").addEventListener("click", () => { S.seed = randomSeed(); startQueue(S.queue); });
+  app.querySelector("#home2").addEventListener("click", goHome);
+}
+
+// ---------- Global controls ----------
+
+function goHome() {
+  S.seed = randomSeed();
+  S.phase = "start";
+  render();
+}
+
+function onKey(e) {
+  const tag = e.target.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA") {
+    return;
+  } else if (tag === "BUTTON" && (e.key === "Enter" || e.key === " ")) {
+    return;                          // let the focused button do its job
+  }
+  if (S.phase === "intro" && e.key === "Enter") { e.preventDefault(); beginLevel(); return; }
+  if (S.phase !== "play") return;
+  const t = task();
+  if (t.type === "diag") {
+    if (S.ui.answer === null && /^[1-4]$/.test(e.key)) { answerDiag(DIAGNOSES[Number(e.key) - 1].id); return; }
+    if (e.key === "s" || e.key === "S") { toggleScatter(); return; }
+  }
+  const finished = (t.type === "find" && S.ui.pick !== null) || (t.type === "diag" && S.ui.answer !== null);
+  if (e.key === "Enter" && finished) { e.preventDefault(); nextRound(); }
+}
+
+function redraw() {
+  if (S.phase !== "play") return;
+  const t = task();
+  if (t.type === "find") drawFind();
+  else drawDiag();
+}
+
+function boot() {
+  app = document.getElementById("app");
+  S.seed = initialSeed();
+  document.getElementById("home").addEventListener("click", goHome);
+  document.addEventListener("keydown", onKey);
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(redraw, 80);
+  });
+  // ?level=1, 2 or alle opens that level directly (e.g. linked from a slide)
+  const lv = new URLSearchParams(location.search).get("level");
+  if (lv === "alle" || lv === "all") startQueue(ALL_LEVELS);
+  else if (ALL_LEVELS.map(String).includes(lv)) startQueue([Number(lv)]);
+  else render();
+}
+
+// Exposed for automated checks; not needed for playing.
+const DTL = { S, CONTEXTS, DIAGNOSES, ALL_LEVELS, planLevel, fitLine, residuals, predict, niceStep, roundTo, decimalsOf,
+  scoreFind, diagExplanation, pickPoint, answerDiag, nextRound, startQueue, beginLevel };
+if (typeof window !== "undefined") window.DTL = DTL;
+
+if (typeof document !== "undefined" && document.getElementById("app")) boot();
+</script>
+</body>
+</html>
